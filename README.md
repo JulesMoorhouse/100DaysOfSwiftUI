@@ -7,6 +7,6 @@
 - Xnn - Full challenge project
 
 
-**Day 16 **
+**Day 16**
 - Folder: P01 WeSplit 
 - Topics: basics of Swift UI, this was introduction to the basic topics for the WeSplit project
