@@ -12,5 +12,5 @@
 - Topics: basics of Swift UI, this was introduction to the basic topics for the WeSplit project
 
 **Day 17**
-- Folder: P011 WeSplit 
+- Folder: P01a WeSplit 
 - Topics: the real WeSplit application, my first SwiftUI application
