@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingAlert = false
     var body: some View {
         // VStack / HStack / ZStack - examples
         // -----------------------------------
@@ -46,29 +47,70 @@ struct ContentView: View {
         //        }
         // ---
         // Practise grid
-        VStack(spacing: 20) {
-            VStack {
-                HStack {
-                    Text("one")
-                    Text("two")
-                    Text("three")
-                }
-            }
-            VStack {
-                HStack {
-                    Text("four")
-                    Text("five")
-                    Text("six")
-                }
-            }
-            VStack {
-                HStack {
-                    Text("seven")
-                    Text("eight")
-                    Text("nine")
-                }
-            }
+        //        VStack(spacing: 20) {
+        //            VStack {
+        //                HStack {
+        //                    Text("one")
+        //                    Text("two")
+        //                    Text("three")
+        //                }
+        //            }
+        //            VStack {
+        //                HStack {
+        //                    Text("four")
+        //                    Text("five")
+        //                    Text("six")
+        //                }
+        //            }
+        //            VStack {
+        //                HStack {
+        //                    Text("seven")
+        //                    Text("eight")
+        //                    Text("nine")
+        //                }
+        //            }
+        //        }
+        // ---
+        // Colours
+        // -------
+        //        ZStack {
+        //            //Color.red.frame(width: 200, height: 200)
+        //            //Color(red: 1, green: 0.8, blue: 0)
+        //            Color.red.edgesIgnoringSafeArea(.all)
+        //            Text("Your content")
+        //        }
+        // Gradients
+        // ---------
+        //        LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom)
+        // ---
+        //                RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 20, endRadius: 200)
+        // ---
+        //        AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
+        // ---
+        // Buttons and Images
+        // ------------------
+        //        Button("Tap me!") {
+        //            print("Button was tapped")
+        //        }
+        // ---
+        //        Button(action: {
+        //            print("Button was tapped")
+        //        }) {
+        //            //Text("Tap me!")
+        //            //Image(systemName: "pencil")
+        //            HStack(spacing: 10) {
+        //                Image(systemName: "pencil")
+        //                Text("Edit")
+        //            }
+        //        }
+        // ---
+        Button("Show Alert") {
+            self.showingAlert = true
         }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Hello SwiftUI"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
+        }
+        
     }
 }
 
