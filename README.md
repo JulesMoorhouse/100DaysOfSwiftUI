@@ -26,3 +26,7 @@
 **Day 20**
 - Folder [P02 Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02%20Guess%20The%20Flag/P02%20Guess%20The%20Flag)
 - Description: Covers VStack, HStack, ZStack, Colours, Gradients, Button actions and Alerts
+
+**Day 21**
+- Folder [P02A Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02A%20Guess%20The%20Flag/P02A%20Guess%20The%20Flag)
+- Description: Stacking butons, alert and style modifiers
