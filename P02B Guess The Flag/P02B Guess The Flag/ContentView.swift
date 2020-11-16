@@ -15,7 +15,8 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var userScore = 0
-    
+    @State private var message = ""
+
     var body: some View {
         ZStack {
             //Color.blue.edgesIgnoringSafeArea(.all)
@@ -53,7 +54,7 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text("Your score is ??"), dismissButton: .default(Text("Contiue")) {
+            Alert(title: Text(scoreTitle), message: Text(message), dismissButton: .default(Text("Contiue")) {
                 self.askQuestion()
                 })
         }
@@ -62,9 +63,11 @@ struct ContentView: View {
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             scoreTitle = "Correct"
-            self.userScore += 1
+            userScore += 1
+            message = "Your score is \(userScore)"
         } else {
             scoreTitle = "Wrong"
+            message = ("Thats the flag of \(countries[number]).")
         }
         
         showingScore = true
