@@ -20,22 +20,26 @@
 - Description: challenge - additions to the project
 
 **Day 19**
-- Folder [X01 Unit Conversion](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X01%20Unit%20Conversion/X01%20Unit%20Conversion)
+- Folder: [X01 Unit Conversion](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X01%20Unit%20Conversion/X01%20Unit%20Conversion)
 - Description: first full challenge project.
 
 **Day 20**
-- Folder [P02 Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02%20Guess%20The%20Flag/P02%20Guess%20The%20Flag)
+- Folder: [P02 Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02%20Guess%20The%20Flag/P02%20Guess%20The%20Flag)
 - Description: Covers VStack, HStack, ZStack, Colours, Gradients, Button actions and Alerts
 
 **Day 21**
-- Folder [P02A Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02A%20Guess%20The%20Flag/P02A%20Guess%20The%20Flag)
+- Folder: [P02A Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02A%20Guess%20The%20Flag/P02A%20Guess%20The%20Flag)
 - Description: Stacking butons, alert and style modifiers
 
 **Day 22**
-- Folder [P02B Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02B%20Guess%20The%20Flag/P02B%20Guess%20The%20Flag)
+- Folder: [P02B Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P02B%20Guess%20The%20Flag/P02B%20Guess%20The%20Flag)
 - Description: Review day
 
 **Day 23**
-- Folder [P03 Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03%20Views%20And%20Modifiers/P03%20Views%20And%20Modifiers), [P03B Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03B%20Views%20And%20Modifiers/P03B%20Views%20And%20Modifiers), [P03C Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03C%20Views%20And%20Modifiers/P03C%20Views%20And%20Modifiers)
+- Folders: [P03 Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03%20Views%20And%20Modifiers/P03%20Views%20And%20Modifiers), [P03B Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03B%20Views%20And%20Modifiers/P03B%20Views%20And%20Modifiers), [P03C Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03C%20Views%20And%20Modifiers/P03C%20Views%20And%20Modifiers)
 - Description: Views and modifiers
 
+**Day 24**
+- Folders: [P04X WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04X%20WeSplit%20/P01a%20WeSplit) (based on P01A WeSplit), [X02 View Modifier](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X02%20View%20Modifier/X02%20View%20Modifier) (challenge)
+[P04X Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04X%20Guess%20The%20Flag/P02B%20Guess%20The%20Flag) (based on P02B Guess The Flag)
+- Description: Views and Modifiers challenge 
