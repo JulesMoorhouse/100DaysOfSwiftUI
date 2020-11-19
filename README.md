@@ -43,3 +43,7 @@
 - Folders: [P04X WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04X%20WeSplit%20/P01a%20WeSplit) (based on P01A WeSplit), [X02 View Modifier](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X02%20View%20Modifier/X02%20View%20Modifier) (challenge)
 [P04X Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04X%20Guess%20The%20Flag/P02B%20Guess%20The%20Flag) (based on P02B Guess The Flag)
 - Description: Views and Modifiers challenge 
+
+**Day 25**
+- Folder: [X03 Rock Paper Scissors](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X03%20Rock%20Paper%20Scissors/X03%20Rock%20Paper%20Scissors)
+- Description: Milestone / Challenge
