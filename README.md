@@ -47,3 +47,7 @@
 **Day 25**
 - Folder: [X03 Rock Paper Scissors](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X03%20Rock%20Paper%20Scissors/X03%20Rock%20Paper%20Scissors)
 - Description: Milestone / Challenge
+
+**Day 26**
+- Folders: [P05 BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P05%20BetterRest/P05%20BetterRest), [P05B BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P05B%20BetterRest)
+- Description: Date pickers, date components and a basic ML setup
