@@ -59,3 +59,7 @@
 **Day 28**
 - Files: [P05X BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P05X%20BetterRest/P05C%20BetterRest/ContentView.swift)
 - Description: Challenge - DatePicker and Stepper
+
+**Day 29**
+- Files: [P06 WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06%20WordScramble/P06%20WordScramble/ContentView.swift)
+- Description: List, Bundle, UITextChecker and more. List, onAppear(), Bundle, fatalError()
