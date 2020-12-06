@@ -45,7 +45,7 @@ struct ContentView: View {
         //            Text($0)
         //        }
         //        .listStyle(GroupedListStyle())
-        // which is the same as (but we can mix with static rows
+        // which is the same as (but we can mix with static rows)
         List {
             ForEach(people, id: \.self) {
                 Text($0)
