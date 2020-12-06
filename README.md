@@ -42,7 +42,7 @@
 **Day 24**
 - Files: [P04X WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04X%20WeSplit%20/P01a%20WeSplit/ContentView.swift) (based on P01A WeSplit), [X02 View Modifier](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X02%20View%20Modifier/X02%20View%20Modifier/ContentView.swift) (challenge)
 [P04X Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04X%20Guess%20The%20Flag/P02B%20Guess%20The%20Flag/ContentView.swift) (based on P02B Guess The Flag)
-- Description: Views and Modifiers challenge 
+- Description: Views and Modifiers challenge.
 
 **Day 25**
 - File: [X03 Rock Paper Scissors](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/X03%20Rock%20Paper%20Scissors/X03%20Rock%20Paper%20Scissors/ContentView.swift)
@@ -50,4 +50,12 @@
 
 **Day 26**
 - Files: [P05 BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P05%20BetterRest/P05%20BetterRest/ContentView.swift), [P05B BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P05B%20BetterRest)
-- Description: Date pickers, date components and a basic ML setup
+- Description: Date pickers, date components and a basic ML setup.
+
+**Day 27**
+- Files: [P05C BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P05C%20BetterRest/P05C%20BetterRest/ContentView.swift)
+- Description:  Stepper, DatePicker, DateFormatter.
+
+**Day 28**
+- Files: [P05X BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P05X%20BetterRest/P05C%20BetterRest/ContentView.swift)
+- Description: Challenge - DatePicker and Stepper
