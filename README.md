@@ -63,3 +63,7 @@
 **Day 29**
 - Files: [P06 WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06%20WordScramble/P06%20WordScramble/ContentView.swift), [P06B WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06B%20WordScramble/P06B%20WordScramble/ContentView.swift)
 - Description: List, Bundle, UITextChecker and more.
+
+**Day 30**
+- File: [P06C WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06C%20WordScramble/P06C%20WordScramble/ContentView.swift)
+- Description: Complete app with feature / functions from day 28 / 29.
