@@ -61,5 +61,5 @@
 - Description: Challenge - DatePicker and Stepper
 
 **Day 29**
-- Files: [P06 WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06%20WordScramble/P06%20WordScramble/ContentView.swift)
-- Description: List, Bundle, UITextChecker and more. List, onAppear(), Bundle, fatalError()
+- Files: [P06 WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06%20WordScramble/P06%20WordScramble/ContentView.swift), [P06B WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06B%20WordScramble/P06B%20WordScramble/ContentView.swift)
+- Description: List, Bundle, UITextChecker and more.
