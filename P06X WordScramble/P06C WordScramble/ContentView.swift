@@ -12,7 +12,8 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
-    
+    @State private var score = 0
+
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
@@ -29,8 +30,14 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                Text("Score: \(score)")
+                    .font(.headline)
+                    .padding()
             }
             .navigationBarTitle(rootWord)
+            .navigationBarItems(trailing: Button(action: startGame) {
+                Text("Restart")
+            })
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
@@ -60,8 +67,19 @@ struct ContentView: View {
             return
         }
         
+        guard isShort(word: answer) else {
+            wordError(title: "Word is short", message: "You word must be more than 3 characters!")
+            return
+        }
+        
+        guard isSame(word: answer) else {
+            wordError(title: "Same word", message: "Your word is the same as the base word!")
+            return
+        }
+        
         usedWords.insert(answer, at: 0)
         newWord = ""
+        score += 1
     }
     
     func startGame() {
@@ -69,6 +87,7 @@ struct ContentView: View {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
+                newWord = ""
                 return
             }
         }
@@ -102,7 +121,22 @@ struct ContentView: View {
         return misspelledRange.location == NSNotFound
     }
     
+    func isShort(word: String) -> Bool {
+        if  word.count <= 3 {
+            return false
+        }
+        return true
+    }
+    
+    func isSame(word: String) -> Bool {
+        if word == rootWord {
+            return false
+        }
+        return true
+    }
+    
     func wordError(title: String, message: String) {
+        score -= 1
         errorTitle = title
         errorMessage = message
         showingError = true
