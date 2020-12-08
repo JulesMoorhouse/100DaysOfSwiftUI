@@ -67,3 +67,7 @@
 **Day 30**
 - File: [P06C WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06C%20WordScramble/P06C%20WordScramble/ContentView.swift)
 - Description: Complete app with feature / functions from day 28 / 29.
+
+**Day 31**
+- File: [P06X WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06X%20WordScramble/P06C%20WordScramble/ContentView.swift)
+- Description: Challenge
