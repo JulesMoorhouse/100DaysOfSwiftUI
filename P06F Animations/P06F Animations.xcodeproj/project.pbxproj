@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8836DAC22584F5D700D1ECAE /* P0F Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P0F Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8836DAC22584F5D700D1ECAE /* P06F Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P06F Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8836DAC52584F5D700D1ECAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8836DAC72584F5D700D1ECAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8836DAC92584F5D700D1ECAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		8836DAB92584F5D700D1ECAE = {
 			isa = PBXGroup;
 			children = (
-				8836DAC42584F5D700D1ECAE /* P0F Animations */,
+				8836DAC42584F5D700D1ECAE /* P06F Animations */,
 				8836DAC32584F5D700D1ECAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		8836DAC32584F5D700D1ECAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8836DAC22584F5D700D1ECAE /* P0F Animations.app */,
+				8836DAC22584F5D700D1ECAE /* P06F Animations.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8836DAC42584F5D700D1ECAE /* P0F Animations */ = {
+		8836DAC42584F5D700D1ECAE /* P06F Animations */ = {
 			isa = PBXGroup;
 			children = (
 				8836DAC52584F5D700D1ECAE /* AppDelegate.swift */,
@@ -64,7 +64,7 @@
 				8836DAD32584F5DA00D1ECAE /* Info.plist */,
 				8836DACD2584F5DA00D1ECAE /* Preview Content */,
 			);
-			path = "P0F Animations";
+			path = "P06F Animations";
 			sourceTree = "<group>";
 		};
 		8836DACD2584F5DA00D1ECAE /* Preview Content */ = {
@@ -78,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8836DAC12584F5D700D1ECAE /* P0F Animations */ = {
+		8836DAC12584F5D700D1ECAE /* P06F Animations */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8836DAD62584F5DA00D1ECAE /* Build configuration list for PBXNativeTarget "P0F Animations" */;
+			buildConfigurationList = 8836DAD62584F5DA00D1ECAE /* Build configuration list for PBXNativeTarget "P06F Animations" */;
 			buildPhases = (
 				8836DABE2584F5D700D1ECAE /* Sources */,
 				8836DABF2584F5D700D1ECAE /* Frameworks */,
@@ -90,9 +90,9 @@
 			);
 			dependencies = (
 			);
-			name = "P0F Animations";
+			name = "P06F Animations";
 			productName = "P0F Animations";
-			productReference = 8836DAC22584F5D700D1ECAE /* P0F Animations.app */;
+			productReference = 8836DAC22584F5D700D1ECAE /* P06F Animations.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8836DABD2584F5D700D1ECAE /* Build configuration list for PBXProject "P0F Animations" */;
+			buildConfigurationList = 8836DABD2584F5D700D1ECAE /* Build configuration list for PBXProject "P06F Animations" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8836DAC12584F5D700D1ECAE /* P0F Animations */,
+				8836DAC12584F5D700D1ECAE /* P06F Animations */,
 			);
 		};
 /* End PBXProject section */
@@ -323,7 +323,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8836DABD2584F5D700D1ECAE /* Build configuration list for PBXProject "P0F Animations" */ = {
+		8836DABD2584F5D700D1ECAE /* Build configuration list for PBXProject "P06F Animations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8836DAD42584F5DA00D1ECAE /* Debug */,
@@ -332,7 +332,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8836DAD62584F5DA00D1ECAE /* Build configuration list for PBXNativeTarget "P0F Animations" */ = {
+		8836DAD62584F5DA00D1ECAE /* Build configuration list for PBXNativeTarget "P06F Animations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8836DAD72584F5DA00D1ECAE /* Debug */,
