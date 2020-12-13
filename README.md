@@ -71,3 +71,23 @@
 **Day 31**
 - File: [P06X WordScramble](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P06X%20WordScramble/P06C%20WordScramble/ContentView.swift)
 - Description: Challenge
+
+**Day 32**
+- Files & Descriptions :
+- [P07 Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07%20Animations/P07%20Animations/ContentView.swift) - Implicit animation example. Customizing animations.
+
+- [P07B Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07B%20Animations/P07B%20Animations/ContentView.swift) - Animation bindings.
+
+- [P07C Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07C%20Animations/P07C%20Animations/ContentView.swift) - Explicit animations.
+
+**Day 33**
+- [P07D Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07D%20Animations/P07D%20Animations/ContentView.swift) - Controlling the animation stack.
+
+- [P07E Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07E%20Animations/P07E%20Animations/ContentView.swift) - Animating gestures example.
+
+- [P07F Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07F%20Animations/P07F%20Animations/ContentView.swift) - Animating gestures example.
+
+- [P07G Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07G%20Animations/P07G%20Animations/ContentView.swift) - Showing and hiding views with transitions example.
+
+
+- [P07H Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07H%20Animations/P07H%20Animations/ContentView.swift) - Building custom transitions using ViewModifier example
