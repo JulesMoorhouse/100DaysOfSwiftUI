@@ -80,7 +80,6 @@
 
 **Day 33**
 - [P07D Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07D%20Animations/P07D%20Animations/ContentView.swift) - Controlling the animation stack.
-- [P07E Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07E%20Animations/P07E%20Animations/ContentView.swift) - Animating gestures example.
-- [P07F Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07F%20Animations/P07F%20Animations/ContentView.swift) - Animating gestures example.
+- [P07E Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07E%20Animations/P07E%20Animations/ContentView.swift), [P07F Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07F%20Animations/P07F%20Animations/ContentView.swift) - Animating gestures example.
 - [P07G Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07G%20Animations/P07G%20Animations/ContentView.swift) - Showing and hiding views with transitions example.
 - [P07H Animations](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P07H%20Animations/P07H%20Animations/ContentView.swift) - Building custom transitions using ViewModifier example
