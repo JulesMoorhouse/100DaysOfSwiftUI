@@ -8,7 +8,6 @@
 
 |||
 |-|-|
-|||
 |**Day 16** - [P01 WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01%20WeSplit/P01%20WeSplit/ContentView.swift) - Basics of Swift UI, this was introduction to the basic topics for the WeSplit project | <a href="./Images/day16.png"><img src="./Images/day16.png" width=100></a> |
 |**Day 17** - [P01A WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01a%20WeSplit/P01a%20WeSplit/ContentView.swift) - The real WeSplit application, my first SwiftUI application | <a href="./Images/day17.png"><img src="./Images/day17.png" width=100></a> |
 |**Day 18** - [P01X WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01X%20WeSplit/P01a%20WeSplit/ContentView.swift) - Challenge - additions to the project | <a href="./Images/day18.png"><img src="./Images/day18.png" width=100></a> |
