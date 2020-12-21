@@ -1,7 +1,7 @@
-# Day 16 / 17
+# Day 18 | [HWS 18](https://www.hackingwithswift.com/100/swiftui/18) | [Index](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/README.md)
 
-- Folder: [P01 StormViewer](https://github.com/JulesMoorhouse/100DaysOfSwift/tree/master/P01%20StormViewer/StormViewer) 
+- [P01X WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01X%20WeSplit/P01a%20WeSplit/ContentView.swift) 
 
-- Topics: view controllers, storyboards, FileManager class, UIImageView, UIImage, UINavigationBar and more.
+- Challenge - additions to the project.
 
-<img src="../Images/day16-p01.gif">
+<img src="../Images/day18.png">

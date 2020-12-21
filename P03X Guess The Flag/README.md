@@ -1,7 +1,7 @@
-# Day 16 / 17
+# Day 24 | [HWS 24](https://www.hackingwithswift.com/100/swiftui/24) | [Index](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/README.md)
 
-- Folder: [P01 StormViewer](https://github.com/JulesMoorhouse/100DaysOfSwift/tree/master/P01%20StormViewer/StormViewer) 
+- [P03X Guess The Flag](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03X%20Guess%20The%20Flag/P02B%20Guess%20The%20Flag/ContentView.swift) (based on P02B Guess The Flag) 
 
-- Topics: view controllers, storyboards, FileManager class, UIImageView, UIImage, UINavigationBar and more.
+- Views and Modifiers challenge.
 
-<img src="../Images/day16-p01.gif">
+<img src="../Images/day24c.png">

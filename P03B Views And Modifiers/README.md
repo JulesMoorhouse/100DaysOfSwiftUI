@@ -1,7 +1,8 @@
-# Day 16 / 17
+# Day 23 | [HWS 23](https://www.hackingwithswift.com/100/swiftui/23) | [Index](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/README.md)
 
-- Folder: [P01 StormViewer](https://github.com/JulesMoorhouse/100DaysOfSwift/tree/master/P01%20StormViewer/StormViewer) 
+- [P03B Views And Modifiers](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P03B%20Views%20And%20Modifiers/P03B%20Views%20And%20Modifiers/ContentView.swift)
 
-- Topics: view controllers, storyboards, FileManager class, UIImageView, UIImage, UINavigationBar and more.
+- Views and modifiers.
 
-<img src="../Images/day16-p01.gif">
+<img src="../Images/day23b.png">
+

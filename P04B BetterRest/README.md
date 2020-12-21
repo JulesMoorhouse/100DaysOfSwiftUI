@@ -1,7 +1,5 @@
-# Day 16 / 17
+# Day 26 | [HWS 26](https://www.hackingwithswift.com/100/swiftui/26) | [Index](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/README.md)
 
-- Folder: [P01 StormViewer](https://github.com/JulesMoorhouse/100DaysOfSwift/tree/master/P01%20StormViewer/StormViewer) 
+- [P04B BetterRest](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P04B%20BetterRest) 
 
-- Topics: view controllers, storyboards, FileManager class, UIImageView, UIImage, UINavigationBar and more.
-
-<img src="../Images/day16-p01.gif">
+- Date pickers, date components and a basic ML setup.
