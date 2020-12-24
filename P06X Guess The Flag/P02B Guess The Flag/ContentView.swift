@@ -28,6 +28,10 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var userScore = 0
     @State private var message = ""
+    @State private var correctTapped = false
+    @State private var wrongTapped = false
+    @State private var opacity = 1.0
+    @State private var scaleAmount: CGFloat = 1
 
     var body: some View {
         ZStack {
@@ -52,6 +56,10 @@ struct ContentView: View {
                     }) {
                         FlagImage(flagName: self.countries[number])
                     }
+                    .opacity(self.correctTapped && self.correctAnswer != number ? 1.0 : self.opacity)
+                    .rotation3DEffect(.degrees(self.correctTapped && self.correctAnswer == number ? 360 : 0), axis:  (x: 0, y: 1, z: 0))
+                    .scaleEffect(self.wrongTapped && self.correctAnswer == number ? 1.0 : self.scaleAmount)
+
                 }
                 
                 Text("Score: \(userScore)")
@@ -61,23 +69,35 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text(message), dismissButton: .default(Text("Contiue")) {
+            Alert(title: Text(scoreTitle), message: Text(message), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
                 })
         }
     }
     
     func flagTapped(_ number: Int) {
-        if number == correctAnswer {
-            scoreTitle = "Correct"
-            userScore += 1
-            message = "Your score is \(userScore)"
-        } else {
-            scoreTitle = "Wrong"
-            message = ("Thats the flag of \(countries[number]).")
+        withAnimation(.linear(duration: 3)) {
+            if number == correctAnswer {
+                scoreTitle = "Correct"
+                userScore += 1
+                message = "Your score is \(userScore)"
+                self.correctTapped = true
+                self.opacity -= 0.2
+                
+                
+            } else {
+                scoreTitle = "Wrong"
+                message = ("Thats the flag of \(countries[number]).")
+                self.wrongTapped = true
+                self.scaleAmount += 1
+            }
         }
         
         showingScore = true
+        self.correctTapped = false
+        self.wrongTapped = false
+        self.opacity = 1.0
+        self.scaleAmount = 1.0
     }
     
     func askQuestion() {
