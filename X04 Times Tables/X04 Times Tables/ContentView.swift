@@ -28,7 +28,7 @@ struct ContentView: View {
     @State private var selectedDifficulty = 0
     @State private var showResults = false
     @State private var correctAnswers: [Int] = []
-    @State private var answers: [String] = Array(repeating: "0", count: 11)
+    @State private var yourAnswers: [String] = Array(repeating: "0", count: 11)
     
     let start: [Int] = [1,5,10]
     let end: [Int] = [4,9,12]
@@ -67,7 +67,7 @@ struct ContentView: View {
                     self.selectedTable = 0
                     self.selectedDifficulty = 0
                     self.showResults = false
-                    self.answers = Array(repeating: "0", count: 11)
+                    self.yourAnswers = Array(repeating: "0", count: 11)
                 }) {
                     Text("Again?")
                 }
@@ -77,8 +77,16 @@ struct ContentView: View {
     
     func Results() -> AnyView {
         
+        var score = 0
+        
+        for i in 0 ..< correctAnswers.count {
+            if self.correctAnswers[i] == Int(self.yourAnswers[i]) {
+                score += 1
+            }
+        }
+        
         return AnyView (VStack {
-            Text("Results")
+            Text("You scored \(score) out of \(self.correctAnswers.count).")
         })
     }
     
@@ -90,7 +98,7 @@ struct ContentView: View {
                     Text("\(self.correctAnswers[i] / self.selectedTable) x \(self.selectedTable) = ")
                         .frame(width: 70)
                     TextField("0",
-                              text: self.$answers[i])
+                              text: self.$yourAnswers[i])
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(width: 50)
                 }
