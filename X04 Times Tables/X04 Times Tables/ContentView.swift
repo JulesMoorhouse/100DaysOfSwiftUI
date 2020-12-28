@@ -24,12 +24,11 @@ struct RandomQuestions {
 }
 
 struct ContentView: View {
-    @State private var showTables = true
-    @State private var showDifficulty = false
     @State private var selectedTable = 0
     @State private var selectedDifficulty = 0
-    @State private var questions: [Int] = []
-    @State private var answer: String = ""
+    @State private var showResults = false
+    @State private var correctAnswers: [Int] = []
+    @State private var answers: [String] = Array(repeating: "0", count: 11)
     
     let start: [Int] = [1,5,10]
     let end: [Int] = [4,9,12]
@@ -50,25 +49,50 @@ struct ContentView: View {
                 self.Difficulty()
             }
             
-            if self.selectedDifficulty > 0 {
+            if self.selectedDifficulty > 0 && !self.showResults {
                 VStack {
+                    Text("Table: \(self.selectedTable) Difficulty: \(self.selectedDifficulty)")
                     self.ShowQuestions()
+                    Button(action: {
+                        self.showResults = true
+                    }) {
+                        Text("Done")
+                    }
+                }
+            }
+            
+            if self.showResults {
+                self.Results()
+                Button(action: {
+                    self.selectedTable = 0
+                    self.selectedDifficulty = 0
+                    self.showResults = false
+                    self.answers = Array(repeating: "0", count: 11)
+                }) {
+                    Text("Again?")
                 }
             }
         }
     }
     
-    func ShowQuestions() -> AnyView {
-        
-        DispatchQueue.main.async {
-            self.questions = self.RandQuestions()
-        }
+    func Results() -> AnyView {
         
         return AnyView (VStack {
-            ForEach(questions.indices, id: \.self) { i in
+            Text("Results")
+        })
+    }
+    
+    func ShowQuestions() -> AnyView {
+        
+        return AnyView (VStack {
+            ForEach(correctAnswers.indices, id: \.self) { i in
                 HStack {
-                    Text("\(i) x \(self.questions[i])")
-                    TextField("", text: self.$answer)
+                    Text("\(self.correctAnswers[i] / self.selectedTable) x \(self.selectedTable) = ")
+                        .frame(width: 70)
+                    TextField("0",
+                              text: self.$answers[i])
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 50)
                 }
             }
         })
@@ -80,6 +104,7 @@ struct ContentView: View {
             ForEach(numOfQuestions, id: \.self) { row in
                 Button(action: {
                     self.selectedDifficulty = row
+                    self.correctAnswers = self.RandAnswers()
                 }) {
                     Text("\(row)")
                 }
@@ -107,11 +132,12 @@ struct ContentView: View {
         })
     }
     
-    func RandQuestions() -> [Int] {
+    func RandAnswers() -> [Int] {
         var ret = [Int]()
         
-        for i in 1...selectedDifficulty {
-            ret.append(i * self.selectedTable)
+        for _ in 1...selectedDifficulty {
+            let line = Int.random(in: 1...12)
+            ret.append(line * self.selectedTable)
         }
         
         return ret
