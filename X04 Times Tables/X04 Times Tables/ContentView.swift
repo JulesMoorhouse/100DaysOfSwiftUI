@@ -39,7 +39,7 @@ struct CapsuleButton: ViewModifier {
             .foregroundColor(.white)
             .clipShape(Capsule())
             .padding(20)
-
+        
     }
 }
 
@@ -86,68 +86,47 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             if self.selectedTable == 0 {
-                Text("Times Tables")
-                    .ScreenTitleStyle()
-
-                Text("Select a table")
-                    .SecondaryTitleStyle()
-                
-                ForEach(0 ..< start.count) { inc in
-                    self.Tables(inc: inc)
-                }
+                self.Table()
             }
             
             if self.selectedTable > 0 && self.selectedDifficulty == 0 {
-                Text("Difficulty")
-                    .ScreenTitleStyle()
-                
                 self.Difficulty()
             }
             
             if self.selectedDifficulty > 0 && !self.showResults {
-                VStack {
-                    Text("Test")
-                        .ScreenTitleStyle()
-                    
-                    Text("Table: \(self.selectedTable) Difficulty: \(self.selectedDifficulty)")
-                        .SecondaryTitleStyle()
-                    
-                    self.ShowQuestions()
-                    
-                    Button(action: {
-                        self.showResults = true
-                    }) {
-                        Text("Done")
-                    }
-                    .CapsuleButtonStyle()
-
-                }
+                self.Question()
             }
             
             if self.showResults {
-                VStack {
-                    Text("Results")
-                        .ScreenTitleStyle()
-                    
-                    self.Results()
-                    
-                    Button(action: {
-                        self.selectedTable = 0
-                        self.selectedDifficulty = 0
-                        self.showResults = false
-                        self.yourAnswers = Array(repeating: "0", count: 12)
-                    }) {
-                        Text("Again?")
-                    }
-                    .CapsuleButtonStyle()
-
-                }
+                self.Results()
             }
         }
     }
-
+    
     // ------ Functions ------
     func Results() -> AnyView {
+        
+        return AnyView (
+            VStack {
+                Text("Results")
+                    .ScreenTitleStyle()
+                
+                self.ResultData()
+                
+                Button(action: {
+                    self.selectedTable = 0
+                    self.selectedDifficulty = 0
+                    self.showResults = false
+                    self.yourAnswers = Array(repeating: "0", count: 12)
+                }) {
+                    Text("Again?")
+                }
+                .CapsuleButtonStyle()
+            }
+        )
+    }
+    
+    func ResultData() -> AnyView {
         
         var score = 0
         var explanations = ""
@@ -161,7 +140,7 @@ struct ContentView: View {
         
         if explanations != "" {
             explanations = "Here's the correct answers for sums you got wrong :-\n" +
-                explanations
+            explanations
         }
         
         return AnyView (
@@ -177,7 +156,32 @@ struct ContentView: View {
         )
     }
     
-    func ShowQuestions() -> AnyView {
+    func Question() -> AnyView {
+        
+        return AnyView (
+            VStack {
+                Text("Test")
+                    .ScreenTitleStyle()
+                
+                Text("Table: \(self.selectedTable) Difficulty: \(self.selectedDifficulty)")
+                    .SecondaryTitleStyle()
+                
+                self.QuestionRows()
+                
+                Button(action: {
+                    self.showResults = true
+                }) {
+                    Text("Done")
+                }
+                .CapsuleButtonStyle()
+                
+                
+            }
+        )
+    }
+    
+    
+    func QuestionRows() -> AnyView {
         
         return AnyView (
             VStack {
@@ -201,6 +205,9 @@ struct ContentView: View {
         
         return AnyView (
             VStack {
+                Text("Difficulty")
+                    .ScreenTitleStyle()
+                
                 ForEach(numOfQuestions, id: \.self) { row in
                     Button(action: {
                         self.selectedDifficulty = row
@@ -215,7 +222,25 @@ struct ContentView: View {
         )
     }
     
-    func Tables(inc: Int) -> AnyView {
+    func Table() -> AnyView {
+        
+        return AnyView (
+            VStack {
+                Text("Times Tables")
+                    .ScreenTitleStyle()
+                
+                Text("Select a table")
+                    .SecondaryTitleStyle()
+                
+                ForEach(0 ..< start.count) { inc in
+                    self.TableButton(inc: inc)
+                }
+            }
+        )
+    }
+    
+    func TableButton(inc: Int) -> AnyView {
+        
         return AnyView (
             HStack {
                 ForEach(self.start[inc] ..< (self.end[inc]+1)) { row in
