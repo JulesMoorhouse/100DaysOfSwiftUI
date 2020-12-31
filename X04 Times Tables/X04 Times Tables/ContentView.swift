@@ -35,28 +35,31 @@ struct ContentView: View {
     
     let numOfQuestions: [Int] = [3,6,9,12]
     
-    // ------ BODY ------
+    // ------ Body ------
     var body: some View {
-        ScrollView {
-            if self.selectedTable == 0 {
-                self.Table()
+        ScrollView(.vertical) {
+            VStack {
+                if self.selectedTable == 0 {
+                    self.Table()
+                }
+                
+                if self.selectedTable > 0 && self.selectedDifficulty == 0 {
+                    self.Difficulty()
+                }
+                
+                if self.selectedDifficulty > 0 && !self.showResults {
+                    self.Question()
+                }
+                
+                if self.showResults {
+                    self.Results()
+                }
             }
-            
-            if self.selectedTable > 0 && self.selectedDifficulty == 0 {
-                self.Difficulty()
-            }
-            
-            if self.selectedDifficulty > 0 && !self.showResults {
-                self.Question()
-            }
-            
-            if self.showResults {
-                self.Results()
-            }
+            .frame(maxWidth: .infinity)
         }
     }
     
-    // ------ Functions ------
+    // ------ Results Screen ------
     func Results() -> AnyView {
         
         return AnyView (
@@ -108,7 +111,9 @@ struct ContentView: View {
             }
         )
     }
-    
+    // ------ Results Screen ------
+
+    // ------ Questions Screen ------
     func Question() -> AnyView {
         
         return AnyView (
@@ -133,7 +138,6 @@ struct ContentView: View {
         )
     }
     
-    
     func QuestionRows() -> AnyView {
         
         return AnyView (
@@ -153,7 +157,9 @@ struct ContentView: View {
             }
         )
     }
-    
+    // ------ Questions Screen ------
+
+    // ------ Difficulty Screen ------
     func Difficulty() -> AnyView {
         
         return AnyView (
@@ -174,7 +180,9 @@ struct ContentView: View {
             }
         )
     }
-    
+    // ------ Difficulty Screen ------
+
+    // ------ Table Screen ------
     func Table() -> AnyView {
         
         return AnyView (
@@ -207,11 +215,15 @@ struct ContentView: View {
                     .background(Color.red)
                     .foregroundColor(.white)
                     .clipShape(Circle())
+                    .overlay(
+                        Circle().stroke(Color.yellow, lineWidth: 4))
+
                 }
             }
         )
     }
-    
+    // ------ Table Screen ------
+
     func RandAnswers() -> [Int] {
         var ret = [Int]()
         
