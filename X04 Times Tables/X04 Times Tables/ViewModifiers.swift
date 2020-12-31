@@ -32,14 +32,38 @@ struct SecondaryTitle: ViewModifier {
 }
 
 struct CapsuleButton: ViewModifier {
+    var backgroundColor: Color
+    
     func body(content: Content) -> some View {
         content
             .frame(minWidth: 100, minHeight: 44)
-            .background(Color.blue)
+            .background(backgroundColor)
             .foregroundColor(.white)
             .clipShape(Capsule())
             .padding(20)
         
+    }
+}
+
+struct RedCircleButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(20)
+            .background(Color.red)
+            .foregroundColor(.white)
+            .clipShape(Circle())
+            .overlay(
+                Circle().stroke(Color.yellow, lineWidth: 4))
+    }
+}
+
+struct SmallNumberTextField: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .lineLimit(1)
+            .multilineTextAlignment(.center)
+            .frame(width: 50)
     }
 }
 
@@ -50,7 +74,13 @@ extension View {
     func SecondaryTitleStyle() -> some View {
         self.modifier(SecondaryTitle())
     }
-    func CapsuleButtonStyle() -> some View {
-        self.modifier(CapsuleButton())
+    func CapsuleButtonStyle(backgroundColor: Color) -> some View {
+        self.modifier(CapsuleButton(backgroundColor: backgroundColor))
+    }
+    func RedCircleButtonStyle() -> some View {
+        self.modifier(RedCircleButton())
+    }
+    func SmallNumberTextFieldStyle() -> some View {
+        self.modifier(SmallNumberTextField())
     }
 }

@@ -24,6 +24,7 @@ struct RandomQuestions {
 }
 
 struct ContentView: View {
+    @State private var preSelectedTable = 0
     @State private var selectedTable = 0
     @State private var selectedDifficulty = 0
     @State private var showResults = false
@@ -70,6 +71,7 @@ struct ContentView: View {
                 self.ResultData()
                 
                 Button(action: {
+                    self.preSelectedTable = 0
                     self.selectedTable = 0
                     self.selectedDifficulty = 0
                     self.showResults = false
@@ -77,7 +79,7 @@ struct ContentView: View {
                 }) {
                     Text("Again?")
                 }
-                .CapsuleButtonStyle()
+                .CapsuleButtonStyle(backgroundColor: Color.blue)
             }
         )
     }
@@ -112,7 +114,7 @@ struct ContentView: View {
         )
     }
     // ------ Results Screen ------
-
+    
     // ------ Questions Screen ------
     func Question() -> AnyView {
         
@@ -131,7 +133,7 @@ struct ContentView: View {
                 }) {
                     Text("Done")
                 }
-                .CapsuleButtonStyle()
+                .CapsuleButtonStyle(backgroundColor: Color.blue)
                 
                 
             }
@@ -146,19 +148,18 @@ struct ContentView: View {
                     HStack {
                         Text("\(self.correctAnswers[i] / self.selectedTable) x \(self.selectedTable) = ")
                             .frame(width: 70)
-                        TextField("0",
-                                  text: self.$yourAnswers[i])
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .frame(width: 50)
+                        TextField(
+                            "0",
+                            text: self.$yourAnswers[i]
+                        )
+                        .SmallNumberTextFieldStyle()
                     }
                 }
             }
         )
     }
     // ------ Questions Screen ------
-
+    
     // ------ Difficulty Screen ------
     func Difficulty() -> AnyView {
         
@@ -175,13 +176,13 @@ struct ContentView: View {
                         Text("\(row)")
                             .frame(minWidth: 100, maxWidth: .infinity, minHeight: 44)
                     }
-                    .CapsuleButtonStyle()
+                    .CapsuleButtonStyle(backgroundColor: Color.blue)
                 }
             }
         )
     }
     // ------ Difficulty Screen ------
-
+    
     // ------ Table Screen ------
     func Table() -> AnyView {
         
@@ -196,6 +197,15 @@ struct ContentView: View {
                 ForEach(0 ..< start.count) { inc in
                     self.TableButton(inc: inc)
                 }
+                
+                Button(action: {
+                    if self.preSelectedTable != 0 {
+                        self.selectedTable = self.preSelectedTable
+                    }
+                }) {
+                    Text("Next")
+                }
+                .CapsuleButtonStyle(backgroundColor: self.preSelectedTable != 0 ? Color.blue : Color.gray)
             }
         )
     }
@@ -206,24 +216,18 @@ struct ContentView: View {
             HStack {
                 ForEach(self.start[inc] ..< (self.end[inc]+1)) { row in
                     Button(action: {
-                        self.selectedTable = row
+                        self.preSelectedTable = row
                     }) {
                         Text("\(row)")
                             .frame(width: 18)
                     }
-                    .padding(20)
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .clipShape(Circle())
-                    .overlay(
-                        Circle().stroke(Color.yellow, lineWidth: 4))
-
+                    .RedCircleButtonStyle()
                 }
             }
         )
     }
     // ------ Table Screen ------
-
+    
     func RandAnswers() -> [Int] {
         var ret = [Int]()
         

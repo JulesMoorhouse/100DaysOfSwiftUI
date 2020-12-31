@@ -59,12 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				883A1F6825973170004D1586 /* AppDelegate.swift */,
-				883A1F6A25973170004D1586 /* SceneDelegate.swift */,
-				883A1F6C25973170004D1586 /* ContentView.swift */,
 				883A1F6E25973175004D1586 /* Assets.xcassets */,
-				883A1F7325973175004D1586 /* LaunchScreen.storyboard */,
+				883A1F6C25973170004D1586 /* ContentView.swift */,
 				883A1F7625973175004D1586 /* Info.plist */,
+				883A1F7325973175004D1586 /* LaunchScreen.storyboard */,
 				883A1F7025973175004D1586 /* Preview Content */,
+				883A1F6A25973170004D1586 /* SceneDelegate.swift */,
 				88C87B50259E4DA6005FCFDD /* ViewModifiers.swift */,
 			);
 			path = "X04 Times Tables";
