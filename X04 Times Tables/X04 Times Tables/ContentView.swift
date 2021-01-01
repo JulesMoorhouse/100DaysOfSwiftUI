@@ -205,7 +205,7 @@ struct ContentView: View {
                     }
                 }
                 .CapsuleButtonStyle(backgroundColor: self.preSelectedTable != 0 ? Color.blue : Color.gray)
-                .rotation3DEffect(.degrees(self.animationAmount), axis:  (x: 0, y: 1, z: 0))
+                //.rotation3DEffect(.degrees(self.animationAmount), axis:  (x: 0, y: 1, z: 0))
 
             }
         )
@@ -223,7 +223,10 @@ struct ContentView: View {
 
                         }
                     }
+                    .id(UUID())
                     .RedCircleButtonStyle()
+                    .rotation3DEffect(.degrees(self.animationAmount), axis:  (x: 0, y: 1, z: 0))
+
                 }
             }
         )
