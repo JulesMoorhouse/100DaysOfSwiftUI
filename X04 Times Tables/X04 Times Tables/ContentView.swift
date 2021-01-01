@@ -30,7 +30,8 @@ struct ContentView: View {
     @State private var showResults = false
     @State private var correctAnswers: [Int] = []
     @State private var yourAnswers: [String] = Array(repeating: "0", count: 12)
-    
+    @State private var animationAmount = 0.0
+
     let start: [Int] = [1,3,6, 10]
     let end: [Int] = [2,5,9, 12]
     
@@ -198,14 +199,14 @@ struct ContentView: View {
                     self.TableButton(inc: inc)
                 }
                 
-                Button(action: {
+                Button("Next") {
                     if self.preSelectedTable != 0 {
                         self.selectedTable = self.preSelectedTable
                     }
-                }) {
-                    Text("Next")
                 }
                 .CapsuleButtonStyle(backgroundColor: self.preSelectedTable != 0 ? Color.blue : Color.gray)
+                .rotation3DEffect(.degrees(self.animationAmount), axis:  (x: 0, y: 1, z: 0))
+
             }
         )
     }
@@ -215,11 +216,12 @@ struct ContentView: View {
         return AnyView (
             HStack {
                 ForEach(self.start[inc] ..< (self.end[inc]+1)) { row in
-                    Button(action: {
-                        self.preSelectedTable = row
-                    }) {
-                        Text("\(row)")
-                            .frame(width: 18)
+                    Button("\(row)") {
+                        withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+                            self.animationAmount += 360
+                            self.preSelectedTable = row
+
+                        }
                     }
                     .RedCircleButtonStyle()
                 }
