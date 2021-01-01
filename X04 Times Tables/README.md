@@ -4,5 +4,5 @@
 - [X04 Times Tables](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X04%20Times%20Tables/X04%20Times%20Tables/ContentView.swift) 
   -  Milestone / Challenge 
   
-<img src="../Images/day35.png">
+<img src="../Images/day35.gif">
 
