@@ -217,16 +217,12 @@ struct ContentView: View {
             HStack {
                 ForEach(self.start[inc] ..< (self.end[inc]+1)) { row in
                     Button("\(row)") {
-                        withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                            self.animationAmount += 360
-                            self.preSelectedTable = row
-
-                        }
+                        self.animationAmount += 360
+                        self.preSelectedTable = row
                     }
-                    .id(UUID())
                     .RedCircleButtonStyle()
                     .rotation3DEffect(.degrees(self.animationAmount), axis:  (x: 0, y: 1, z: 0))
-
+                    .animation(self.preSelectedTable == row ? .interpolatingSpring(stiffness: 5, damping: 1) : nil)
                 }
             }
         )
