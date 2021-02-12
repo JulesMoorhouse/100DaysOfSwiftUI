@@ -13,6 +13,7 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = ""
+    @State private var showingError = false
     static let types = ["Business", "Personal"]
 
     var body: some View {
@@ -36,9 +37,17 @@ struct AddView: View {
                         let item = ExpenseItem(name: self.name, type: self.type, amount: actualAmount)
                         self.expenses.items.append(item)
                         self.presentationMode.wrappedValue.dismiss()
+                    } else {
+                        self.showingError = true
                     }
                 }
             )
+            .alert(isPresented: $showingError) {
+                Alert(title: Text("Amount"), message: Text("You didn't provide a valid number!"), dismissButton: .default(Text("OK"))
+                {
+                    self.showingError = false
+                })
+            }
         }
     }
 }

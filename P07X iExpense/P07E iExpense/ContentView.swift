@@ -26,8 +26,7 @@ class Expenses: ObservableObject {
     }
     
     init() {
-        if let items = UserDefaults.standard.data(forKey: "Items")
-        {
+        if let items = UserDefaults.standard.data(forKey: "Items") {
             let decoder = JSONDecoder()
             
             if let decoded = try? decoder.decode([ExpenseItem].self, from: items) {
@@ -46,36 +45,39 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(expenses.items) { item in
-                    //Text(item.name)
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+            VStack {
+                List {
+                    ForEach(expenses.items) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                        
+                            Spacer()
+                        
+                            Text("$\(item.amount)")
+                                .foregroundColor(item.amount < 10 ?
+                                    Color.gray :
+                                    item.amount > 100 ?
+                                    Color.blue :
+                                    Color.black)
                         }
-                        
-                        Spacer()
-                        
-                        Text("$\(item.amount)")
                     }
+                    .onDelete(perform: removeItems)
                 }
-                .onDelete(perform: removeItems)
-            }
-            .navigationTitle("iExpense")
-            .navigationBarItems(trailing:
-                Button(action: {
-//                    let expense = ExpenseItem(name: "Test", type: "Personal", amount: 5)
-//                    self.expenses.items.append(expense)
-                    self.showingAddExpense = true
-                }) {
-                    Image(systemName: "plus")
+                .navigationTitle("iExpense")
+                .navigationBarItems(leading: EditButton(),
+                                    trailing:
+                                    Button(action: {
+                                        self.showingAddExpense = true
+                                    }) {
+                                        Image(systemName: "plus")
+                                    })
+                .sheet(isPresented: $showingAddExpense) {
+                    AddView(expenses: self.expenses)
                 }
-            )
-            .sheet(isPresented: $showingAddExpense) {
-                // Show an AddView here
-                AddView(expenses: self.expenses)
             }
         }
     }
