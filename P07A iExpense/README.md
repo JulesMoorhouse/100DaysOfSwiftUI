@@ -4,4 +4,4 @@
 - 
 - Showing a sheet, a second view with PresentationMode to dismiss the sheet..
   
-<img src="../Images/day36a.png">
+<img src="../Images/day36a.gif">
