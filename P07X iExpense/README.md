@@ -4,3 +4,4 @@
 
 - Challenge.
 
+<img src="../Images/day36x.png">
