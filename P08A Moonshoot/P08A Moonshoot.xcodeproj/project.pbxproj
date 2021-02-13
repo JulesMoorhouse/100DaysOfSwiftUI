@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		885C098425D81CCF00437DD7 /* P08A_MoonshotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C098325D81CCF00437DD7 /* P08A_MoonshotApp.swift */; };
-		885C098625D81CCF00437DD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C098525D81CCF00437DD7 /* ContentView.swift */; };
-		885C098825D81CD200437DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885C098725D81CD200437DD7 /* Assets.xcassets */; };
-		885C098B25D81CD200437DD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885C098A25D81CD200437DD7 /* Preview Assets.xcassets */; };
+		885C09A025D8204B00437DD7 /* P08A_MoonshootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C099F25D8204B00437DD7 /* P08A_MoonshootApp.swift */; };
+		885C09A225D8204B00437DD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C09A125D8204B00437DD7 /* ContentView.swift */; };
+		885C09A425D8204E00437DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885C09A325D8204E00437DD7 /* Assets.xcassets */; };
+		885C09A725D8204E00437DD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885C09A625D8204E00437DD7 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		885C098025D81CCF00437DD7 /* P08A Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P08A Moonshot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		885C098325D81CCF00437DD7 /* P08A_MoonshotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P08A_MoonshotApp.swift; sourceTree = "<group>"; };
-		885C098525D81CCF00437DD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		885C098725D81CD200437DD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		885C098A25D81CD200437DD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		885C098C25D81CD200437DD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885C099C25D8204B00437DD7 /* P08A Moonshoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P08A Moonshoot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		885C099F25D8204B00437DD7 /* P08A_MoonshootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P08A_MoonshootApp.swift; sourceTree = "<group>"; };
+		885C09A125D8204B00437DD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		885C09A325D8204E00437DD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		885C09A625D8204E00437DD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		885C09A825D8204E00437DD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		885C097D25D81CCF00437DD7 /* Frameworks */ = {
+		885C099925D8204B00437DD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,38 +33,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		885C097725D81CCF00437DD7 = {
+		885C099325D8204B00437DD7 = {
 			isa = PBXGroup;
 			children = (
-				885C098225D81CCF00437DD7 /* P08A Moonshot */,
-				885C098125D81CCF00437DD7 /* Products */,
+				885C099E25D8204B00437DD7 /* P08A Moonshoot */,
+				885C099D25D8204B00437DD7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		885C098125D81CCF00437DD7 /* Products */ = {
+		885C099D25D8204B00437DD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				885C098025D81CCF00437DD7 /* P08A Moonshot.app */,
+				885C099C25D8204B00437DD7 /* P08A Moonshoot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		885C098225D81CCF00437DD7 /* P08A Moonshot */ = {
+		885C099E25D8204B00437DD7 /* P08A Moonshoot */ = {
 			isa = PBXGroup;
 			children = (
-				885C098325D81CCF00437DD7 /* P08A_MoonshotApp.swift */,
-				885C098525D81CCF00437DD7 /* ContentView.swift */,
-				885C098725D81CD200437DD7 /* Assets.xcassets */,
-				885C098C25D81CD200437DD7 /* Info.plist */,
-				885C098925D81CD200437DD7 /* Preview Content */,
+				885C099F25D8204B00437DD7 /* P08A_MoonshootApp.swift */,
+				885C09A125D8204B00437DD7 /* ContentView.swift */,
+				885C09A325D8204E00437DD7 /* Assets.xcassets */,
+				885C09A825D8204E00437DD7 /* Info.plist */,
+				885C09A525D8204E00437DD7 /* Preview Content */,
 			);
-			path = "P08A Moonshot";
+			path = "P08A Moonshoot";
 			sourceTree = "<group>";
 		};
-		885C098925D81CD200437DD7 /* Preview Content */ = {
+		885C09A525D8204E00437DD7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				885C098A25D81CD200437DD7 /* Preview Assets.xcassets */,
+				885C09A625D8204E00437DD7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,38 +72,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		885C097F25D81CCF00437DD7 /* P08A Moonshot */ = {
+		885C099B25D8204B00437DD7 /* P08A Moonshoot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 885C098F25D81CD200437DD7 /* Build configuration list for PBXNativeTarget "P08A Moonshot" */;
+			buildConfigurationList = 885C09AB25D8204E00437DD7 /* Build configuration list for PBXNativeTarget "P08A Moonshoot" */;
 			buildPhases = (
-				885C097C25D81CCF00437DD7 /* Sources */,
-				885C097D25D81CCF00437DD7 /* Frameworks */,
-				885C097E25D81CCF00437DD7 /* Resources */,
+				885C099825D8204B00437DD7 /* Sources */,
+				885C099925D8204B00437DD7 /* Frameworks */,
+				885C099A25D8204B00437DD7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "P08A Moonshot";
-			productName = "P08A Moonshot";
-			productReference = 885C098025D81CCF00437DD7 /* P08A Moonshot.app */;
+			name = "P08A Moonshoot";
+			productName = "P08A Moonshoot";
+			productReference = 885C099C25D8204B00437DD7 /* P08A Moonshoot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		885C097825D81CCF00437DD7 /* Project object */ = {
+		885C099425D8204B00437DD7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					885C097F25D81CCF00437DD7 = {
+					885C099B25D8204B00437DD7 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 885C097B25D81CCF00437DD7 /* Build configuration list for PBXProject "P08A Moonshot" */;
+			buildConfigurationList = 885C099725D8204B00437DD7 /* Build configuration list for PBXProject "P08A Moonshoot" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,42 +111,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 885C097725D81CCF00437DD7;
-			productRefGroup = 885C098125D81CCF00437DD7 /* Products */;
+			mainGroup = 885C099325D8204B00437DD7;
+			productRefGroup = 885C099D25D8204B00437DD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				885C097F25D81CCF00437DD7 /* P08A Moonshot */,
+				885C099B25D8204B00437DD7 /* P08A Moonshoot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		885C097E25D81CCF00437DD7 /* Resources */ = {
+		885C099A25D8204B00437DD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885C098B25D81CD200437DD7 /* Preview Assets.xcassets in Resources */,
-				885C098825D81CD200437DD7 /* Assets.xcassets in Resources */,
+				885C09A725D8204E00437DD7 /* Preview Assets.xcassets in Resources */,
+				885C09A425D8204E00437DD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		885C097C25D81CCF00437DD7 /* Sources */ = {
+		885C099825D8204B00437DD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885C098625D81CCF00437DD7 /* ContentView.swift in Sources */,
-				885C098425D81CCF00437DD7 /* P08A_MoonshotApp.swift in Sources */,
+				885C09A225D8204B00437DD7 /* ContentView.swift in Sources */,
+				885C09A025D8204B00437DD7 /* P08A_MoonshootApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		885C098D25D81CD200437DD7 /* Debug */ = {
+		885C09A925D8204E00437DD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,7 +207,7 @@
 			};
 			name = Debug;
 		};
-		885C098E25D81CD200437DD7 /* Release */ = {
+		885C09AA25D8204E00437DD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,44 +262,44 @@
 			};
 			name = Release;
 		};
-		885C099025D81CD200437DD7 /* Debug */ = {
+		885C09AC25D8204E00437DD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"P08A Moonshot/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"P08A Moonshoot/Preview Content\"";
 				DEVELOPMENT_TEAM = LW3B6G4NK9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "P08A Moonshot/Info.plist";
+				INFOPLIST_FILE = "P08A Moonshoot/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mclapps.P08A-Moonshot";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mclapps.P08A-Moonshoot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		885C099125D81CD200437DD7 /* Release */ = {
+		885C09AD25D8204E00437DD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"P08A Moonshot/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"P08A Moonshoot/Preview Content\"";
 				DEVELOPMENT_TEAM = LW3B6G4NK9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "P08A Moonshot/Info.plist";
+				INFOPLIST_FILE = "P08A Moonshoot/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mclapps.P08A-Moonshot";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mclapps.P08A-Moonshoot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		885C097B25D81CCF00437DD7 /* Build configuration list for PBXProject "P08A Moonshot" */ = {
+		885C099725D8204B00437DD7 /* Build configuration list for PBXProject "P08A Moonshoot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				885C098D25D81CD200437DD7 /* Debug */,
-				885C098E25D81CD200437DD7 /* Release */,
+				885C09A925D8204E00437DD7 /* Debug */,
+				885C09AA25D8204E00437DD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		885C098F25D81CD200437DD7 /* Build configuration list for PBXNativeTarget "P08A Moonshot" */ = {
+		885C09AB25D8204E00437DD7 /* Build configuration list for PBXNativeTarget "P08A Moonshoot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				885C099025D81CD200437DD7 /* Debug */,
-				885C099125D81CD200437DD7 /* Release */,
+				885C09AC25D8204E00437DD7 /* Debug */,
+				885C09AD25D8204E00437DD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 885C097825D81CCF00437DD7 /* Project object */;
+	rootObject = 885C099425D8204B00437DD7 /* Project object */;
 }
