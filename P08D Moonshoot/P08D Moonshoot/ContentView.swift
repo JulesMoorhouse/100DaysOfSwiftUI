@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  P08D Moonshoot
+//  P08D Moonshot
 //
 //  Created by Julian Moorhouse on 19/02/2021.
 //
@@ -28,7 +28,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("Moonshoot")
+            .navigationBarTitle("Moonshot")
         }
     }
 }

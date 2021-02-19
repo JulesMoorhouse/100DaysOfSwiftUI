@@ -1,6 +1,6 @@
 //
-//  P08_MoonshootApp.swift
-//  P08 Moonshoot
+//  P08_MoonshotApp.swift
+//  P08 Moonshot
 //
 //  Created by Julian Moorhouse on 13/02/2021.
 //
