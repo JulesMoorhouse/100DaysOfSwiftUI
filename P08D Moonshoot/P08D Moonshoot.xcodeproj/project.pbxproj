@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		887A641425DFE7B9004E1729 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A641325DFE7B9004E1729 /* AstronautView.swift */; };
 		88BA7CEB25DFAA1B00D98F21 /* P08D_MoonshootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA7CEA25DFAA1B00D98F21 /* P08D_MoonshootApp.swift */; };
 		88BA7CED25DFAA1B00D98F21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BA7CEC25DFAA1B00D98F21 /* ContentView.swift */; };
 		88BA7CEF25DFAA1C00D98F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BA7CEE25DFAA1C00D98F21 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		887A641325DFE7B9004E1729 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 		88BA7CE725DFAA1B00D98F21 /* P08D Moonshoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P08D Moonshoot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BA7CEA25DFAA1B00D98F21 /* P08D_MoonshootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P08D_MoonshootApp.swift; sourceTree = "<group>"; };
 		88BA7CEC25DFAA1B00D98F21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				88BA7D0225DFAE9F00D98F21 /* Bundle-Decodable.swift */,
 				88BA7D0525DFB3F600D98F21 /* Mission.swift */,
 				88BA7D0825DFD62A00D98F21 /* MissionView.swift */,
+				887A641325DFE7B9004E1729 /* AstronautView.swift */,
 			);
 			path = "P08D Moonshoot";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887A641425DFE7B9004E1729 /* AstronautView.swift in Sources */,
 				88BA7D0025DFAD7400D98F21 /* Astronaut.swift in Sources */,
 				88BA7CED25DFAA1B00D98F21 /* ContentView.swift in Sources */,
 				88BA7CEB25DFAA1B00D98F21 /* P08D_MoonshootApp.swift in Sources */,
