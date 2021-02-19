@@ -32,7 +32,13 @@ struct Mission: Codable, Identifiable {
             formatter.dateStyle = .long
             return formatter.string(from: launchDate)
         } else {
-            return "N/A"
+            return "Never launched"
         }
+    }
+    
+    var crewDisplay: String {
+        let stringArray = crew.map{ String($0.name.capitalized)}
+        return stringArray.joined(separator: ", ")
+
     }
 }
