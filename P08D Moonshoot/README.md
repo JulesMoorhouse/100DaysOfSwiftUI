@@ -4,3 +4,4 @@
 
 - Loading codable data from a file, generics, view / date formatting.
   
+<img src="../Images/day40d.png">
