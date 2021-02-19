@@ -2,5 +2,5 @@
 
 - [P08D Moonshoot](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P08D%20Moonshoot/P08D%20Moonshoot/ContentView.swift)
 
-- Loading codable data from a file, generics.
+- Loading codable data from a file, generics, view / date formatting.
   
