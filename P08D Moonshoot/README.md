@@ -2,6 +2,7 @@
 
 - [P08D Moonshot](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P08D%20Moonshoot/P08D%20Moonshoot/ContentView.swift)
 
-- Loading codable data from a file, generics, view / date formatting, ScrollView / GeometryReader.
+- Loading codable data from a file, generics, view / date formatting, ScrollView / GeometryReader, merged codable structures.
   
 <img src="../Images/day40d.png">
+<img src="../Images/day40d2.png">
