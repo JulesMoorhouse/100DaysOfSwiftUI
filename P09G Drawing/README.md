@@ -4,4 +4,4 @@
 
 - Special effects in SwiftUI: blurs, blending, and more - blending aka multiply.
 
-<img src="../Images/day44g.png">
+<img src="../Images/day45g.png">
