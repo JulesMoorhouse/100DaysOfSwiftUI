@@ -4,4 +4,4 @@
 
 - Special effects in SwiftUI: blurs, blending, and more - saturation / blur.
 
-<img src="../Images/day44i.gif">
+<img src="../Images/day45i.gif">

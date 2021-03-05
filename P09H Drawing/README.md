@@ -4,4 +4,4 @@
 
 - Special effects in SwiftUI: blurs, blending, and more - blendMode.
 
-<img src="../Images/day44h.gif">
+<img src="../Images/day45h.gif">
