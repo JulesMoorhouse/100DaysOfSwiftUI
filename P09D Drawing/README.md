@@ -4,4 +4,4 @@
 
 - Creative borders and fills using ImagePaint - border.
 
-<img src="../Images/day44d.gif">
+<img src="../Images/day44d.png">

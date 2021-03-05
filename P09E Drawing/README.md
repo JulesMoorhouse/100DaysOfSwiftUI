@@ -4,4 +4,4 @@
 
 - Creative borders and fills using ImagePaint - strokeBorder.
 
-<img src="../Images/day44e.gif">
+<img src="../Images/day44e.png">
