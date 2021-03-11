@@ -11,7 +11,7 @@ struct Activity: Identifiable, Codable {
     var id = UUID()
     let title: String
     let description: String
-    let amount: Int
+    var amount: Int
 }
 
 class Activities: ObservableObject {
@@ -49,7 +49,7 @@ struct ContentView: View {
                 List {
                     ForEach(activities.items) { item in
                         NavigationLink(destination:
-                            ActivityView(activity: item))
+                            ActivityView(activities: self.activities, selectedItem: item))
                         {
                             HStack {
                                 VStack(alignment: .leading) {
@@ -60,7 +60,7 @@ struct ContentView: View {
                                 
                                 Spacer()
                                 
-                                Text("$\(item.amount)")
+                                Text("\(item.amount)")
                                     .foregroundColor(item.amount < 10 ?
                                         Color.gray :
                                         item.amount > 100 ?

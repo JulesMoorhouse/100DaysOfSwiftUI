@@ -8,33 +8,33 @@
 import SwiftUI
 
 struct ActivityView: View {
-    var activity: Activity
-    
+    @ObservedObject var activities: Activities
+    @State var selectedItem: Activity
+
     var body: some View {
         VStack(alignment: .leading) {
-                Text(activity.title)
+                Text(selectedItem.title)
                     .font(.title)
                     .padding(.bottom)
             
-                Text(activity.description)
+                Text(selectedItem.description)
                     .padding(.bottom)
             
-                Text("\(activity.amount)")
+                Text("\(selectedItem.amount)")
                     .font(.headline)
                 
             Button(action: {
-                //self.activity.amount += 1
+                self.selectedItem.amount += 1
+                self.saveActivity()
             }) {
                 Text("+")
             }
-            
-            
                 Spacer()
             }
-        
     }
     
-    init(activity: Activity) {
-        self.activity = activity
+    func saveActivity() {
+        guard let index = activities.items.firstIndex(where: {$0.id == selectedItem.id }) else { return }
+        activities.items[index].amount = selectedItem.amount
     }
 }
