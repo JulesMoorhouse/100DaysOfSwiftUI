@@ -48,21 +48,25 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(activities.items) { item in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(item.title)
-                                    .font(.headline)
-                                Text(item.description)
+                        NavigationLink(destination:
+                            ActivityView(activity: item))
+                        {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.title)
+                                        .font(.headline)
+                                    Text(item.description)
+                                }
+                                
+                                Spacer()
+                                
+                                Text("$\(item.amount)")
+                                    .foregroundColor(item.amount < 10 ?
+                                        Color.gray :
+                                        item.amount > 100 ?
+                                        Color.blue :
+                                        Color.black)
                             }
-                        
-                            Spacer()
-                        
-                            Text("$\(item.amount)")
-                                .foregroundColor(item.amount < 10 ?
-                                    Color.gray :
-                                    item.amount > 100 ?
-                                    Color.blue :
-                                    Color.black)
                         }
                     }
                     .onDelete(perform: removeItems)
