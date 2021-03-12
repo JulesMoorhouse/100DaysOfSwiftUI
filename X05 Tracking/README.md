@@ -2,9 +2,7 @@
 
 ## X05 Tracking
 
-[ContentView](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X05%20Tracking/X05%20Tracking/ContentView.swift)
-[AddView](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X05%20Tracking/X05%20Tracking/AddView.swift)
-[ActivityView](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X05%20Tracking/X05%20Tracking/ActivityView.swift)
+[ContentView](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X05%20Tracking/X05%20Tracking/ContentView.swift) | [AddView](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X05%20Tracking/X05%20Tracking/AddView.swift) | [ActivityView](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X05%20Tracking/X05%20Tracking/ActivityView.swift)
 
 - Challenge.
 
