@@ -6,4 +6,6 @@
 
 - Challenge.
 
+* Here's a good overview of [topics](https://www.hackingwithswift.com/guide/ios-swiftui/4/1/what-you-learned) covered to date.
+
 <img src="../Images/day47.gif">
