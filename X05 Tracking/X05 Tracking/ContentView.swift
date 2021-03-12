@@ -56,22 +56,19 @@ struct ContentView: View {
                                     Text(item.title)
                                         .font(.headline)
                                     Text(item.description)
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
                                 }
                                 
                                 Spacer()
                                 
                                 Text("\(item.amount)")
-                                    .foregroundColor(item.amount < 10 ?
-                                        Color.gray :
-                                        item.amount > 100 ?
-                                        Color.blue :
-                                        Color.black)
                             }
                         }
                     }
                     .onDelete(perform: removeItems)
                 }
-                .navigationTitle("Habit Tracker")
+                .navigationTitle("Activity Tracker")
                 .navigationBarItems(leading: EditButton(),
                                     trailing:
                                     Button(action: {

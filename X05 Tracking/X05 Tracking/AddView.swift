@@ -12,7 +12,7 @@ struct AddView: View {
     @ObservedObject var activities: Activities
     @State private var name = ""
     @State private var description = ""
-    @State private var amount = ""
+    @State private var amount = "0"
     @State private var showingError = false
 
     var body: some View {
@@ -37,12 +37,12 @@ struct AddView: View {
                     .frame(minHeight: 100.0)
                 }
 
-                Section {
-                    TextField("Amount", text: $amount)
-                        .keyboardType(.numberPad)
-                }
+//                Section {
+//                    TextField("Amount", text: $amount)
+//                        .keyboardType(.numberPad)
+//                }
             }
-            .navigationBarTitle("Add new habit")
+            .navigationBarTitle("Add new activity")
             .navigationBarItems(trailing:
                 Button("Save") {
                     if let actualAmount = Int(self.amount) {
