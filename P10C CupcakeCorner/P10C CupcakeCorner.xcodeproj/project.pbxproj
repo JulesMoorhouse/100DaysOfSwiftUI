@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		888A574925FCBC10002866A4 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A574825FCBC10002866A4 /* CheckoutView.swift */; };
 		88BEAE5025FBAD47009098B5 /* P10C_CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEAE4F25FBAD47009098B5 /* P10C_CupcakeCornerApp.swift */; };
 		88BEAE5225FBAD47009098B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEAE5125FBAD47009098B5 /* ContentView.swift */; };
 		88BEAE5425FBAD49009098B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BEAE5325FBAD49009098B5 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		888A574825FCBC10002866A4 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		88BEAE4C25FBAD47009098B5 /* P10C CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P10C CupcakeCorner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BEAE4F25FBAD47009098B5 /* P10C_CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P10C_CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		88BEAE5125FBAD47009098B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				88BEAE5525FBAD49009098B5 /* Preview Content */,
 				88BEAE5F25FBAF9B009098B5 /* Order.swift */,
 				88BEAE6225FBB30B009098B5 /* AddressView.swift */,
+				888A574825FCBC10002866A4 /* CheckoutView.swift */,
 			);
 			path = "P10C CupcakeCorner";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				88BEAE6025FBAF9B009098B5 /* Order.swift in Sources */,
 				88BEAE6325FBB30B009098B5 /* AddressView.swift in Sources */,
+				888A574925FCBC10002866A4 /* CheckoutView.swift in Sources */,
 				88BEAE5225FBAD47009098B5 /* ContentView.swift in Sources */,
 				88BEAE5025FBAD47009098B5 /* P10C_CupcakeCornerApp.swift in Sources */,
 			);

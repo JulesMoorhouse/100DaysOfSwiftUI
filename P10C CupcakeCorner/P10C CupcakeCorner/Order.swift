@@ -21,6 +21,21 @@ class Order: ObservableObject {
             }
         }
     }
+    
     @Published var extraFrosting = false
     @Published var addSprinkles = false
+    
+    @Published var name = ""
+    @Published var streetAddress = ""
+    @Published var town = ""
+    @Published var county = ""
+    @Published var postCode = ""
+    
+    var hasValidAddress: Bool {
+        if name.isEmpty || streetAddress.isEmpty || county.isEmpty || postCode.isEmpty {
+            return false
+        }
+        
+        return true
+    }
 }
