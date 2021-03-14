@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var order = Order()
-    
+    @ObservedObject var cupCakes = CupCakes()
+
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Select your cake type", selection: $order.type) {
+                    Picker("Select your cake type", selection: $cupCakes.order.type) {
                         ForEach(0 ..< Order.types.count, id: \.self) {
                             Text(Order.types[$0])
                         }
                     }
                     
-                    Stepper(value: $order.quantity, in: 3 ... 20) {
-                        Text("Number of cakes: \(order.quantity)")
+                    Stepper(value: $cupCakes.order.quantity, in: 3 ... 20) {
+                        Text("Number of cakes: \(cupCakes.order.quantity)")
                     }
                 }
                 
                 Section {
-                    Toggle(isOn: $order.specialRequestEnabled.animation()) {
+                    Toggle(isOn: $cupCakes.order.specialRequestEnabled.animation()) {
                         Text("Any special requests?")
                     }
                     
-                    if order.specialRequestEnabled {
-                        Toggle(isOn: $order.extraFrosting) {
+                    if cupCakes.order.specialRequestEnabled {
+                        Toggle(isOn: $cupCakes.order.extraFrosting) {
                             Text("Add extra frosting")
                         }
                         
-                        Toggle(isOn: $order.addSprinkles) {
+                        Toggle(isOn: $cupCakes.order.addSprinkles) {
                             Text("Add extra sprinkles")
                         }
                     }
@@ -43,7 +43,7 @@ struct ContentView: View {
                 
                 Section {
                     NavigationLink(destination:
-                        AddressView(order: order)) {
+                                    AddressView(cupCakes: cupCakes)) {
                         Text("Delivery details")
                     }
                 }
