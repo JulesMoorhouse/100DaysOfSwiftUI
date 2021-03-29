@@ -4,4 +4,3 @@
 
 - Challenge.
 
-<img src="../Images/xxx.gif">
