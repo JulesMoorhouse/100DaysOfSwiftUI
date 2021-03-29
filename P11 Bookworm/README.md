@@ -4,4 +4,4 @@
 
 - Creating a custom component with @Binding
 
-<img src="../Images/day53.gif">
+<img src="../Images/day53.png">
