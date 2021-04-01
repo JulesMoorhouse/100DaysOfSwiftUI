@@ -24,7 +24,7 @@ struct ContentView: View {
                     NavigationLink(destination: DetailView(book: book)) {
                         EmojiRatingView(rating: book.rating)
                             .font(.largeTitle)
-                        
+
                         VStack(alignment: .leading) {
                             Text(book.title ?? "Unknown title")
                                 .font(.headline)
@@ -33,19 +33,29 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteBooks)
             }
-                .navigationBarTitle("Bookworm")
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        self.showingAddScreen.toggle()
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                )
-                .sheet(isPresented: $showingAddScreen) {
-                    AddBookView().environment(\.managedObjectContext, self.moc)
+            .navigationBarTitle("Bookworm")
+            .navigationBarItems(leading: EditButton(), trailing:
+                Button(action: {
+                    self.showingAddScreen.toggle()
+                }) {
+                    Image(systemName: "plus")
                 }
+            )
+            .sheet(isPresented: $showingAddScreen) {
+                AddBookView().environment(\.managedObjectContext, self.moc)
+            }
         }
+    }
+
+    func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
+            moc.delete(book)
+        }
+
+        try? moc.save()
     }
 }
 
