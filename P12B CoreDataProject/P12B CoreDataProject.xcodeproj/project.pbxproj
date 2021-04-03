@@ -13,6 +13,8 @@
 		8890F41126186F160020F7DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8890F41026186F160020F7DE /* Preview Assets.xcassets */; };
 		8890F41326186F160020F7DE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890F41226186F160020F7DE /* Persistence.swift */; };
 		8890F41626186F160020F7DE /* P12B_CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8890F41426186F160020F7DE /* P12B_CoreDataProject.xcdatamodeld */; };
+		8890F420261870B90020F7DE /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890F41E261870B90020F7DE /* Movie+CoreDataClass.swift */; };
+		8890F421261870B90020F7DE /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890F41F261870B90020F7DE /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8890F41226186F160020F7DE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8890F41526186F160020F7DE /* P12B_CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P12B_CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
 		8890F41726186F160020F7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8890F41E261870B90020F7DE /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8890F41F261870B90020F7DE /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		8890F40826186F130020F7DE /* P12B CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				8890F41E261870B90020F7DE /* Movie+CoreDataClass.swift */,
+				8890F41F261870B90020F7DE /* Movie+CoreDataProperties.swift */,
 				8890F40926186F130020F7DE /* P12B_CoreDataProjectApp.swift */,
 				8890F40B26186F130020F7DE /* ContentView.swift */,
 				8890F40D26186F160020F7DE /* Assets.xcassets */,
@@ -147,6 +153,8 @@
 				8890F41326186F160020F7DE /* Persistence.swift in Sources */,
 				8890F41626186F160020F7DE /* P12B_CoreDataProject.xcdatamodeld in Sources */,
 				8890F40C26186F130020F7DE /* ContentView.swift in Sources */,
+				8890F420261870B90020F7DE /* Movie+CoreDataClass.swift in Sources */,
+				8890F421261870B90020F7DE /* Movie+CoreDataProperties.swift in Sources */,
 				8890F40A26186F130020F7DE /* P12B_CoreDataProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
