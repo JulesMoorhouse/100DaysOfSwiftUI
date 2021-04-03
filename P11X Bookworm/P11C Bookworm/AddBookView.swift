@@ -19,6 +19,10 @@ struct AddBookView: View {
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
+    var disableForm: Bool {
+        title.count < 5 || author.count < 5 || genre.count < 1 || review.count < 5
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -47,12 +51,14 @@ struct AddBookView: View {
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        newBook.timestamp = Date()
                         
                         try? self.moc.save()
                         
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }
+                .disabled(disableForm)
             }
             .navigationBarTitle("Add Book")
         }

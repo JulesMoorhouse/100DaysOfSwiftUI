@@ -33,6 +33,8 @@ struct DetailView: View {
                         .offset(x: -5, y: -5)
                 }
                 
+                Text(formattedDate)
+                
                 Text(self.book.author ?? "Unknown author")
                     .font(.title)
                     .foregroundColor(.secondary)
@@ -66,6 +68,17 @@ struct DetailView: View {
         try? self.moc.save()
         
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    var formattedDate: String {
+        if let date = book.timestamp {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .medium
+            return formatter.string(from: date)
+        } else {
+            return "No date"
+        }
     }
 }
 
