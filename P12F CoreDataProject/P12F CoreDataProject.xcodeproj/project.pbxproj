@@ -13,6 +13,9 @@
 		885F249826188C7C0022E243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885F249726188C7C0022E243 /* Preview Assets.xcassets */; };
 		885F249A26188C7C0022E243 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F249926188C7C0022E243 /* Persistence.swift */; };
 		885F249D26188C7C0022E243 /* P12F_CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 885F249B26188C7C0022E243 /* P12F_CoreDataProject.xcdatamodeld */; };
+		885F24A726188D370022E243 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24A526188D370022E243 /* Singer+CoreDataClass.swift */; };
+		885F24A826188D370022E243 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24A626188D370022E243 /* Singer+CoreDataProperties.swift */; };
+		885F24AB26188EC80022E243 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24AA26188EC80022E243 /* FilteredList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		885F249926188C7C0022E243 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		885F249C26188C7C0022E243 /* P12F_CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P12F_CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
 		885F249E26188C7C0022E243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885F24A526188D370022E243 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		885F24A626188D370022E243 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		885F24AA26188EC80022E243 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		885F248F26188C7A0022E243 /* P12F CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				885F24A526188D370022E243 /* Singer+CoreDataClass.swift */,
+				885F24A626188D370022E243 /* Singer+CoreDataProperties.swift */,
 				885F249026188C7A0022E243 /* P12F_CoreDataProjectApp.swift */,
 				885F249226188C7A0022E243 /* ContentView.swift */,
 				885F249426188C7C0022E243 /* Assets.xcassets */,
@@ -63,6 +71,7 @@
 				885F249E26188C7C0022E243 /* Info.plist */,
 				885F249B26188C7C0022E243 /* P12F_CoreDataProject.xcdatamodeld */,
 				885F249626188C7C0022E243 /* Preview Content */,
+				885F24AA26188EC80022E243 /* FilteredList.swift */,
 			);
 			path = "P12F CoreDataProject";
 			sourceTree = "<group>";
@@ -145,9 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				885F249A26188C7C0022E243 /* Persistence.swift in Sources */,
+				885F24A826188D370022E243 /* Singer+CoreDataProperties.swift in Sources */,
 				885F249D26188C7C0022E243 /* P12F_CoreDataProject.xcdatamodeld in Sources */,
+				885F24A726188D370022E243 /* Singer+CoreDataClass.swift in Sources */,
 				885F249326188C7A0022E243 /* ContentView.swift in Sources */,
 				885F249126188C7A0022E243 /* P12F_CoreDataProjectApp.swift in Sources */,
+				885F24AB26188EC80022E243 /* FilteredList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
