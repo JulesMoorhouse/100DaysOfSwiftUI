@@ -4,5 +4,3 @@
 
 - Challenge
 
-<img src="../Images/day55.gif">
-
