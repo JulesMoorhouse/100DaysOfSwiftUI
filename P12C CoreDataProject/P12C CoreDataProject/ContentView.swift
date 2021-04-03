@@ -9,11 +9,11 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var moc
 
     var body: some View {
-        List {
-
+        Button("Save") {
+            try? self.moc.save()
         }
     }
 }
