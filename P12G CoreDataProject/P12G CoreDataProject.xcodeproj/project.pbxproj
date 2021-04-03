@@ -13,6 +13,10 @@
 		885F24C1261895810022E243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885F24C0261895810022E243 /* Preview Assets.xcassets */; };
 		885F24C3261895810022E243 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24C2261895810022E243 /* Persistence.swift */; };
 		885F24C6261895810022E243 /* P12G_CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 885F24C4261895810022E243 /* P12G_CoreDataProject.xcdatamodeld */; };
+		885F24D22618AD4E0022E243 /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24CE2618AD4E0022E243 /* Candy+CoreDataClass.swift */; };
+		885F24D32618AD4E0022E243 /* Candy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24CF2618AD4E0022E243 /* Candy+CoreDataProperties.swift */; };
+		885F24D42618AD4E0022E243 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24D02618AD4E0022E243 /* Country+CoreDataClass.swift */; };
+		885F24D52618AD4E0022E243 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24D12618AD4E0022E243 /* Country+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		885F24C2261895810022E243 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		885F24C5261895810022E243 /* P12G_CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P12G_CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
 		885F24C7261895810022E243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885F24CE2618AD4E0022E243 /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		885F24CF2618AD4E0022E243 /* Candy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		885F24D02618AD4E0022E243 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		885F24D12618AD4E0022E243 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 		885F24B82618957E0022E243 /* P12G CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				885F24CE2618AD4E0022E243 /* Candy+CoreDataClass.swift */,
+				885F24CF2618AD4E0022E243 /* Candy+CoreDataProperties.swift */,
+				885F24D02618AD4E0022E243 /* Country+CoreDataClass.swift */,
+				885F24D12618AD4E0022E243 /* Country+CoreDataProperties.swift */,
 				885F24B92618957E0022E243 /* P12G_CoreDataProjectApp.swift */,
 				885F24BB2618957E0022E243 /* ContentView.swift */,
 				885F24BD261895810022E243 /* Assets.xcassets */,
@@ -145,7 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				885F24C6261895810022E243 /* P12G_CoreDataProject.xcdatamodeld in Sources */,
+				885F24D22618AD4E0022E243 /* Candy+CoreDataClass.swift in Sources */,
 				885F24C3261895810022E243 /* Persistence.swift in Sources */,
+				885F24D32618AD4E0022E243 /* Candy+CoreDataProperties.swift in Sources */,
+				885F24D52618AD4E0022E243 /* Country+CoreDataProperties.swift in Sources */,
+				885F24D42618AD4E0022E243 /* Country+CoreDataClass.swift in Sources */,
 				885F24BC2618957E0022E243 /* ContentView.swift in Sources */,
 				885F24BA2618957E0022E243 /* P12G_CoreDataProjectApp.swift in Sources */,
 			);
