@@ -5,4 +5,4 @@
 
 - Dynamically filtering @FetchRequest with SwiftUI. 
 
-<img src="./Images/day58f.gif" />
+<img src="../Images/day58f.gif" />

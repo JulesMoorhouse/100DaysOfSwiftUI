@@ -4,4 +4,4 @@
  
  - One-to-many relationships with Core Data, SwiftUI, and @FetchRequest.
 
-<img src="./Images/day58g.gif" />
+<img src="../Images/day58g.gif" />
