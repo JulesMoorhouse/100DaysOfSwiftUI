@@ -11,10 +11,12 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @State var lastNameFilter = "A"
+    @State var sort: [NSSortDescriptor] = []
+    @State var predicate = Predicate.beginsWith
     
     var body: some View {
         VStack {
-            FilteredList(filterKey: "lastName", filterValue: lastNameFilter) { (singer: Singer) in
+            FilteredList(filterKey: "lastName", filterValue: lastNameFilter, sort: sort, predicate: predicate) { (singer: Singer) in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedFirstName)")
             }
             
@@ -41,6 +43,30 @@ struct ContentView: View {
             Button("Show S") {
                 self.lastNameFilter = "S"
             }
+
+            Button("First name sort asc") {
+                self.sort = [
+                    NSSortDescriptor(keyPath: \Singer.firstName, ascending: true),
+                    NSSortDescriptor(keyPath: \Singer.lastName, ascending: true)
+                ]
+            }
+            
+            Button("last name sort desc") {
+                self.sort = [
+                    NSSortDescriptor(keyPath: \Singer.lastName, ascending: false),
+                    NSSortDescriptor(keyPath: \Singer.firstName, ascending: true)
+                ]
+            }
+            
+            Button("Predicate - Begins With") {
+                self.predicate  = .beginsWith
+            }
+            
+            Button("Predicate - Less than") {
+                self.predicate  = .lessThan
+            }
+            
+            Spacer(minLength: 10)
         }
     }
 }
