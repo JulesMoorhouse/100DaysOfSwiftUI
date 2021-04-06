@@ -13,6 +13,9 @@
 		885F24F1261A2A7B0022E243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885F24F0261A2A7B0022E243 /* Preview Assets.xcassets */; };
 		885F24F3261A2A7B0022E243 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24F2261A2A7B0022E243 /* Persistence.swift */; };
 		885F24F6261A2A7B0022E243 /* X06_Friends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 885F24F4261A2A7B0022E243 /* X06_Friends.xcdatamodeld */; };
+		885F24FF261A2C510022E243 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24FE261A2C510022E243 /* User.swift */; };
+		885F2502261A2C680022E243 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2501261A2C680022E243 /* Friend.swift */; };
+		885F2505261A3ADC0022E243 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2504261A3ADC0022E243 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		885F24F2261A2A7B0022E243 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		885F24F5261A2A7B0022E243 /* X06_Friends.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = X06_Friends.xcdatamodel; sourceTree = "<group>"; };
 		885F24F7261A2A7B0022E243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885F24FE261A2C510022E243 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		885F2501261A2C680022E243 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		885F2504261A3ADC0022E243 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				885F24F7261A2A7B0022E243 /* Info.plist */,
 				885F24F4261A2A7B0022E243 /* X06_Friends.xcdatamodeld */,
 				885F24EF261A2A7B0022E243 /* Preview Content */,
+				885F24FE261A2C510022E243 /* User.swift */,
+				885F2501261A2C680022E243 /* Friend.swift */,
+				885F2504261A3ADC0022E243 /* DetailView.swift */,
 			);
 			path = "X06 Friends";
 			sourceTree = "<group>";
@@ -147,6 +156,9 @@
 				885F24F6261A2A7B0022E243 /* X06_Friends.xcdatamodeld in Sources */,
 				885F24F3261A2A7B0022E243 /* Persistence.swift in Sources */,
 				885F24EC261A2A780022E243 /* ContentView.swift in Sources */,
+				885F2505261A3ADC0022E243 /* DetailView.swift in Sources */,
+				885F2502261A2C680022E243 /* Friend.swift in Sources */,
+				885F24FF261A2C510022E243 /* User.swift in Sources */,
 				885F24EA261A2A780022E243 /* X06_FriendsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
