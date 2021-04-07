@@ -10,8 +10,6 @@ import SwiftUI
 struct DetailView: View {
     
     let user: User
-    let userFriends: [User]
-    let allUsers: [User]
 
     var body: some View {
         Form {
@@ -23,7 +21,7 @@ struct DetailView: View {
                         .background(Color.gray.opacity(0.55))
                         .clipShape(Circle())
                         
-                    Text(user.name)
+                    Text(user.wrappedName)
                         .font(.largeTitle)
                 }
                 .frame(maxWidth: .infinity)
@@ -40,13 +38,13 @@ struct DetailView: View {
                     Text("Email")
                         .font(.headline)
                     Spacer()
-                    Text(user.email)
+                    Text(user.wrappedEmail)
                 }
                 HStack {
                     Text("Company")
                         .font(.headline)
                     Spacer()
-                    Text(user.company)
+                    Text(user.wrappedCompany)
                 }
                 HStack {
                     Text("Registered")
@@ -54,54 +52,36 @@ struct DetailView: View {
                     Spacer()
                     Text(user.formattedRegisteredDate)
                 }
-                
             }
             
             Section(header: Text("Address")) {
-                Text(user.address)
+                Text(user.wrappedAddress)
             }
 
             Section(header: Text("About")) {
-                Text(user.about)
+                Text(user.wrappedAbout)
             }
             
             Section(header: Text("Tags")) {
-                Text(user.tags.joined(separator: ", "))
+                Text(user.wrappedTags)
             }
             
             Section(header: Text("Friends"))  {
-                ForEach(self.userFriends, id: \.id) { friend in
+                ForEach(user.friendsArray) { friend in
                     
-                    NavigationLink(destination: DetailView(user: friend, users: allUsers)) {
-                        Text(friend.name)
+                    NavigationLink(destination: DetailView(user: friend)) {
+                        Text(friend.wrappedName)
                     }
                 }
             }
         }
-        .navigationBarTitle(Text(user.name), displayMode: .inline)
-    }
-    
-    init(user: User, users: [User]) {
-        self.user = user
-        self.allUsers = users;
-        
-        var matches = [User]()
-        
-        for friend in user.friends {
-            if let match = users.first(where: { $0.id == friend.id}) {
-                matches.append(match)
-            } else {
-                fatalError("Missing \(friend)")
-            }
-        }
-        
-        self.userFriends = matches
+        .navigationBarTitle(Text(user.wrappedName), displayMode: .inline)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         let user: [User] = []
-        DetailView(user: user[0], users: user)
+        DetailView(user: user[0])
     }
 }

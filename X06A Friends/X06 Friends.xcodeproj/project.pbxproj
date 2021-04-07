@@ -13,9 +13,11 @@
 		885F24F1261A2A7B0022E243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 885F24F0261A2A7B0022E243 /* Preview Assets.xcassets */; };
 		885F24F3261A2A7B0022E243 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24F2261A2A7B0022E243 /* Persistence.swift */; };
 		885F24F6261A2A7B0022E243 /* X06_Friends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 885F24F4261A2A7B0022E243 /* X06_Friends.xcdatamodeld */; };
-		885F24FF261A2C510022E243 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24FE261A2C510022E243 /* User.swift */; };
-		885F2502261A2C680022E243 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2501261A2C680022E243 /* Friend.swift */; };
+		885F24FF261A2C510022E243 /* JsonUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F24FE261A2C510022E243 /* JsonUser.swift */; };
+		885F2502261A2C680022E243 /* JsonFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2501261A2C680022E243 /* JsonFriend.swift */; };
 		885F2505261A3ADC0022E243 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2504261A3ADC0022E243 /* DetailView.swift */; };
+		887EBFCB261DDD88006489ED /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EBFC9261DDD88006489ED /* User+CoreDataClass.swift */; };
+		887EBFCC261DDD88006489ED /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EBFCA261DDD88006489ED /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +29,11 @@
 		885F24F2261A2A7B0022E243 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		885F24F5261A2A7B0022E243 /* X06_Friends.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = X06_Friends.xcdatamodel; sourceTree = "<group>"; };
 		885F24F7261A2A7B0022E243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		885F24FE261A2C510022E243 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		885F2501261A2C680022E243 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		885F24FE261A2C510022E243 /* JsonUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUser.swift; sourceTree = "<group>"; };
+		885F2501261A2C680022E243 /* JsonFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFriend.swift; sourceTree = "<group>"; };
 		885F2504261A3ADC0022E243 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		887EBFC9261DDD88006489ED /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		887EBFCA261DDD88006489ED /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		885F24E8261A2A780022E243 /* X06 Friends */ = {
 			isa = PBXGroup;
 			children = (
+				887EBFC9261DDD88006489ED /* User+CoreDataClass.swift */,
+				887EBFCA261DDD88006489ED /* User+CoreDataProperties.swift */,
 				885F24E9261A2A780022E243 /* X06_FriendsApp.swift */,
 				885F24EB261A2A780022E243 /* ContentView.swift */,
 				885F24ED261A2A7B0022E243 /* Assets.xcassets */,
@@ -69,8 +75,8 @@
 				885F24F7261A2A7B0022E243 /* Info.plist */,
 				885F24F4261A2A7B0022E243 /* X06_Friends.xcdatamodeld */,
 				885F24EF261A2A7B0022E243 /* Preview Content */,
-				885F24FE261A2C510022E243 /* User.swift */,
-				885F2501261A2C680022E243 /* Friend.swift */,
+				885F24FE261A2C510022E243 /* JsonUser.swift */,
+				885F2501261A2C680022E243 /* JsonFriend.swift */,
 				885F2504261A3ADC0022E243 /* DetailView.swift */,
 			);
 			path = "X06 Friends";
@@ -157,9 +163,11 @@
 				885F24F3261A2A7B0022E243 /* Persistence.swift in Sources */,
 				885F24EC261A2A780022E243 /* ContentView.swift in Sources */,
 				885F2505261A3ADC0022E243 /* DetailView.swift in Sources */,
-				885F2502261A2C680022E243 /* Friend.swift in Sources */,
-				885F24FF261A2C510022E243 /* User.swift in Sources */,
+				885F2502261A2C680022E243 /* JsonFriend.swift in Sources */,
+				885F24FF261A2C510022E243 /* JsonUser.swift in Sources */,
+				887EBFCB261DDD88006489ED /* User+CoreDataClass.swift in Sources */,
 				885F24EA261A2A780022E243 /* X06_FriendsApp.swift in Sources */,
+				887EBFCC261DDD88006489ED /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
