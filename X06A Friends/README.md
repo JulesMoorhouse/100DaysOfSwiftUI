@@ -2,8 +2,7 @@
 
 - [X06A Friends](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X06A%20Friends/X06%20Friends/ContentView.swift) 
 - [DetailView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X06A%20Friends/X06%20Friends/DetailView.swift) 
-- [User.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X06%A20Friends/X06%20Friends/User.swift) 
 
-- Challenge. 
+- Challenge with Core Data. 
 
-<img src="../Images/day61.gif">
+<img src="../Images/day61.png">
