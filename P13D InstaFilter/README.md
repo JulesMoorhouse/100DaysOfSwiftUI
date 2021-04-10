@@ -4,4 +4,4 @@
  
  - Using coordinators to manage SwiftUI view controllers.
 
-<img src="../Images/day63c.png" />
+<img src="../Images/day64d.gif" />
