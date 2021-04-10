@@ -11,6 +11,7 @@
 		88F0C14D2621920700B907AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C14C2621920700B907AD /* ContentView.swift */; };
 		88F0C14F2621920C00B907AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F0C14E2621920C00B907AD /* Assets.xcassets */; };
 		88F0C1522621920C00B907AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F0C1512621920C00B907AD /* Preview Assets.xcassets */; };
+		88F0C15B262243C900B907AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C15A262243C800B907AD /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		88F0C14E2621920C00B907AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88F0C1512621920C00B907AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		88F0C1532621920C00B907AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F0C15A262243C800B907AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				88F0C14E2621920C00B907AD /* Assets.xcassets */,
 				88F0C1532621920C00B907AD /* Info.plist */,
 				88F0C1502621920C00B907AD /* Preview Content */,
+				88F0C15A262243C800B907AD /* ImagePicker.swift */,
 			);
 			path = "P13E InstaFilter";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F0C15B262243C900B907AD /* ImagePicker.swift in Sources */,
 				88F0C14D2621920700B907AD /* ContentView.swift in Sources */,
 				88F0C14B2621920700B907AD /* P13E_InstaFilterApp.swift in Sources */,
 			);
