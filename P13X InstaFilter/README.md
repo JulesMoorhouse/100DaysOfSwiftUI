@@ -4,4 +4,4 @@
  
  - Challenge
   
-<img src="../Images/day65e.gif" />
+<img src="../Images/day67.png" />
