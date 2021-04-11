@@ -166,7 +166,7 @@ struct ContentView: View {
         guard let outputImage = currentFilter.outputImage else { return }
         
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
-        let uiImage = UIImage(cgImage: cgimg)
+            let uiImage = UIImage(cgImage: cgimg)
             image = Image(uiImage: uiImage)
             processedImage = uiImage
         }
