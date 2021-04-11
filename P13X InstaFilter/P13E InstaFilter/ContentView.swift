@@ -12,11 +12,15 @@ import SwiftUI
 struct ContentView: View {
     @State private var image: Image?
     @State private var filterIntensity = 0.5
-    
+    @State private var filterRadius = 0.5
+    @State private var filterScale = 0.5
+
+    @State private var showingNoImageAlert = false
     @State private var showingFilterSheet = false
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
+    @State private var filterButtonTitle = "Sepia Tone"
     
     @State var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
@@ -31,6 +35,27 @@ struct ContentView: View {
                 self.applyProcessing()
             }
         )
+
+        let radius = Binding<Double>(
+            get: {
+                self.filterRadius
+            },
+            set: {
+                self.filterRadius = $0
+                self.applyProcessing()
+            }
+        )
+        
+        let scale = Binding<Double>(
+            get: {
+                self.filterScale
+            },
+            set: {
+                self.filterScale = $0
+                self.applyProcessing()
+            }
+        )
+        
         return NavigationView {
             VStack {
                 ZStack {
@@ -51,21 +76,36 @@ struct ContentView: View {
                     self.showingImagePicker = true
                 }
                 
-                HStack {
-                    Text("Intensity")
-                    Slider(value: intensity)
+                VStack {
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: intensity)
+                    }
+
+                    HStack {
+                        Text("Radius")
+                        Slider(value: radius)
+                    }
+                    
+                    HStack {
+                        Text("Scale")
+                        Slider(value: scale)
+                    }
                 }
                 .padding(.vertical)
                 
                 HStack {
-                    Button("Change Filter") {
+                    Button(self.filterButtonTitle) {
                         self.showingFilterSheet = true
                     }
                     
                     Spacer()
                     
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.showingNoImageAlert = true
+                            return
+                        }
                         
                         let imageSaver = ImageSaver()
                         
@@ -88,15 +128,20 @@ struct ContentView: View {
             }
             .actionSheet(isPresented: $showingFilterSheet) {
                 ActionSheet(title: Text("Select a filter"), buttons: [
-                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
-                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
-                    .default(Text("Guaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
-                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
-                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
-                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
-                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize(), title: "Crystallize") },
+                    .default(Text("Edges")) { self.setFilter(CIFilter.edges(), title: "Edges") },
+                    .default(Text("Guaussian Blur")) { self.setFilter(CIFilter.gaussianBlur(), title: "Guaussian Blur") },
+                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate(), title: "Pixellate") },
+                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone(), title: "Sepia Tone") },
+                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask(), title: "Unsharp Mask") },
+                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette(), title: "Vignette") },
                     .cancel()
                 ])
+            }
+            .alert(isPresented: $showingNoImageAlert) {
+                Alert(title: Text("Image"), message: Text("Please select an image"), dismissButton: .default(Text("OK")) {
+                    self.showingNoImageAlert = false
+                })
             }
         }
     }
@@ -114,9 +159,9 @@ struct ContentView: View {
         
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
         
-        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
+        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterRadius * 200, forKey: kCIInputRadiusKey) }
         
-        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
+        if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterScale * 10, forKey: kCIInputScaleKey) }
         
         guard let outputImage = currentFilter.outputImage else { return }
         
@@ -127,7 +172,8 @@ struct ContentView: View {
         }
     }
     
-    func setFilter(_ filter: CIFilter) {
+    func setFilter(_ filter: CIFilter, title: String) {
+        filterButtonTitle = title
         currentFilter = filter
         loadImage()
     }
