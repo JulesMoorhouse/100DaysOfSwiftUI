@@ -11,6 +11,8 @@
 		88F0C18F262315D300B907AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C18E262315D300B907AD /* ContentView.swift */; };
 		88F0C191262315D600B907AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F0C190262315D600B907AD /* Assets.xcassets */; };
 		88F0C194262315D600B907AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F0C193262315D600B907AD /* Preview Assets.xcassets */; };
+		88F0C19E2623220900B907AD /* FileManager-Decodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C19D2623220900B907AD /* FileManager-Decodeable.swift */; };
+		88F0C1A12623270100B907AD /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C1A02623270000B907AD /* BlogPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		88F0C190262315D600B907AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88F0C193262315D600B907AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		88F0C195262315D600B907AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F0C19D2623220900B907AD /* FileManager-Decodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Decodeable.swift"; sourceTree = "<group>"; };
+		88F0C1A02623270000B907AD /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				88F0C190262315D600B907AD /* Assets.xcassets */,
 				88F0C195262315D600B907AD /* Info.plist */,
 				88F0C192262315D600B907AD /* Preview Content */,
+				88F0C19D2623220900B907AD /* FileManager-Decodeable.swift */,
+				88F0C1A02623270000B907AD /* BlogPost.swift */,
 			);
 			path = "P14A BucketList";
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F0C18F262315D300B907AD /* ContentView.swift in Sources */,
+				88F0C19E2623220900B907AD /* FileManager-Decodeable.swift in Sources */,
 				88F0C18D262315D300B907AD /* P14A_BucketListApp.swift in Sources */,
+				88F0C1A12623270100B907AD /* BlogPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,12 +16,22 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .onTapGesture {
-                let str = "Test Message"
+
+                let JSON = """
+                {
+                    "title": "Optionals in Swift explained: 5 things you should know",
+                    "url": "https://www.avanderlee.com/swift/optionals-in-swift-explained-5-things-you-should-know/",
+                    "views": 47093
+                }
+                """
+                
                 let url = self.getDocumentsDirectory().appendingPathComponent("message.txt")
                 
                 do {
-                    try str.write(to: url, atomically: true, encoding: .utf8)
-                    let input = try String(contentsOf: url)
+                    try JSON.write(to: url, atomically: true, encoding: .utf8)
+                    //let input = try String(contentsOf: url)
+                    
+                    let input: BlogPost = FileManager.default.decode("message.txt")
                     print(input)
                 } catch {
                     print(error.localizedDescription)
