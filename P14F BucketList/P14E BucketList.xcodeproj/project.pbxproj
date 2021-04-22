@@ -14,6 +14,7 @@
 		88131A812631796A00E09825 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A802631796A00E09825 /* MapView.swift */; };
 		88131A852631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A842631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift */; };
 		88131A882631AA7C00E09825 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A872631AA7C00E09825 /* EditView.swift */; };
+		88131A8B2631B03B00E09825 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A8A2631B03B00E09825 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		88131A802631796A00E09825 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		88131A842631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
 		88131A872631AA7C00E09825 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		88131A8A2631B03B00E09825 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				88131A802631796A00E09825 /* MapView.swift */,
 				88131A842631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift */,
 				88131A872631AA7C00E09825 /* EditView.swift */,
+				88131A8A2631B03B00E09825 /* Result.swift */,
 			);
 			path = "P14E BucketList";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88131A8B2631B03B00E09825 /* Result.swift in Sources */,
 				88131A73263176A600E09825 /* ContentView.swift in Sources */,
 				88131A882631AA7C00E09825 /* EditView.swift in Sources */,
 				88131A852631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift in Sources */,
