@@ -8,6 +8,8 @@
 import MapKit
 
 extension MKPointAnnotation: ObservableObject {
+
+    // no need for published as view doesn't need to be refreshed as the user type
     public var wrappedTitle: String {
         get {
             self.title ?? "Unknown value"
@@ -18,6 +20,7 @@ extension MKPointAnnotation: ObservableObject {
         }
     }
     
+    // no need for published as view doesn't need to be refreshed as the user type
     public var wrappedSubtitle: String {
         get {
             self.subtitle ?? "Unknown value"

@@ -12,9 +12,10 @@
 		88131A75263176A700E09825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88131A74263176A700E09825 /* Assets.xcassets */; };
 		88131A78263176A700E09825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88131A77263176A700E09825 /* Preview Assets.xcassets */; };
 		88131A812631796A00E09825 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A802631796A00E09825 /* MapView.swift */; };
-		88131A852631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A842631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift */; };
+		88131A852631A8DC00E09825 /* MKPointAnnotation+ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A842631A8DC00E09825 /* MKPointAnnotation+ObservableObject.swift */; };
 		88131A882631AA7C00E09825 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A872631AA7C00E09825 /* EditView.swift */; };
 		88131A8B2631B03B00E09825 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131A8A2631B03B00E09825 /* Result.swift */; };
+		88F0C1C12631F29600B907AD /* CodableMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C1C02631F29600B907AD /* CodableMKPointAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +26,10 @@
 		88131A77263176A700E09825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		88131A79263176A700E09825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88131A802631796A00E09825 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		88131A842631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
+		88131A842631A8DC00E09825 /* MKPointAnnotation+ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation+ObservableObject.swift"; sourceTree = "<group>"; };
 		88131A872631AA7C00E09825 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		88131A8A2631B03B00E09825 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		88F0C1C02631F29600B907AD /* CodableMKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMKPointAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,10 @@
 				88131A79263176A700E09825 /* Info.plist */,
 				88131A76263176A700E09825 /* Preview Content */,
 				88131A802631796A00E09825 /* MapView.swift */,
-				88131A842631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift */,
+				88131A842631A8DC00E09825 /* MKPointAnnotation+ObservableObject.swift */,
 				88131A872631AA7C00E09825 /* EditView.swift */,
 				88131A8A2631B03B00E09825 /* Result.swift */,
+				88F0C1C02631F29600B907AD /* CodableMKPointAnnotation.swift */,
 			);
 			path = "P14E BucketList";
 			sourceTree = "<group>";
@@ -150,10 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F0C1C12631F29600B907AD /* CodableMKPointAnnotation.swift in Sources */,
 				88131A8B2631B03B00E09825 /* Result.swift in Sources */,
 				88131A73263176A600E09825 /* ContentView.swift in Sources */,
 				88131A882631AA7C00E09825 /* EditView.swift in Sources */,
-				88131A852631A8DC00E09825 /* MKPointAnnotation-ObservableObject.swift in Sources */,
+				88131A852631A8DC00E09825 /* MKPointAnnotation+ObservableObject.swift in Sources */,
 				88131A812631796A00E09825 /* MapView.swift in Sources */,
 				88131A71263176A600E09825 /* P14E_BucketListApp.swift in Sources */,
 			);

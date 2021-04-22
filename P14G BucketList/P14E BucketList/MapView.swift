@@ -12,7 +12,7 @@ struct MapView: UIViewRepresentable {
     @Binding var centerCoordinate: CLLocationCoordinate2D
     @Binding var selectedPlace: MKPointAnnotation?
     @Binding var showingPlaceDetails: Bool
-    var annotations: [MKAnnotation]
+    var annotations: [MKPointAnnotation]
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
