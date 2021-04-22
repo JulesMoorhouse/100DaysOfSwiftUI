@@ -5,4 +5,4 @@
 - Integrating MapKit with SwiftUI.
 - Communicating with a MapKit coordinator.
 
-<img src="../Images/day68c.png" />
+<img src="../Images/day69c.png" />
