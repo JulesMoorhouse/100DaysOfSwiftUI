@@ -4,3 +4,7 @@
 - [MapView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P14F%20BucketList/P14E%20BucketList/MapView.swift)
 
 - Extending existing types to support ObservableObject.
+- Downloading data from Wikipedia.
+- Sorting Wikipedia results.
+
+<img src="../Images/day71f.gif" />
