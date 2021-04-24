@@ -76,7 +76,6 @@ extension MKPointAnnotation {
         
         return annotation
     }
-    
 }
 
 struct MapView_Previews: PreviewProvider {
