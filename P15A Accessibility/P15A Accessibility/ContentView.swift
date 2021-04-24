@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+//        Image(decorative: "character")
+//            .accessibility(hidden: true)
+        VStack {
+            Text("Your score is")
+            Text("1000")
+                .font(.title)
+        }
+        //.accessibilityElement(children: .combine)
+        .accessibility(label: Text("Your score is 1000"))
     }
 }
 
