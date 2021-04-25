@@ -3,3 +3,5 @@
 - [P15B Accessibility](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P15B%20Accessibility/P15B%20Accessibility/ContentView.swift) 
 
 - Reading the value of controls.
+
+Remember voice over only works on actual devices.

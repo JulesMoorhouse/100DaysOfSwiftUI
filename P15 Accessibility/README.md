@@ -3,3 +3,5 @@
 - [P15 Accessibility](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P15%20Accessibility/P15%20Accessibility/ContentView.swift) 
 
 - Identifying views with useful labels.
+
+Remember voice over only works on actual devices.

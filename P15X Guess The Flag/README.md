@@ -5,3 +5,5 @@
 - Accessibility update.
 
 Note: source code for this day where copied from challenge updates P06X, P05X and P11X to P15X, however the P15 updates are from on today's videos. Aka the actual changes in the videos are different, as updates were made on code updated in challenges.
+
+Remember voice over only works on actual devices.
