@@ -34,6 +34,9 @@ struct ContentView: View {
                             mission.crewDisplay)
                             .foregroundColor(.secondary)
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibility(label: Text("Mission \(mission.displayName) \(mission.formattedLaunchDate)"))
+
                 }
             }
             .navigationBarTitle("Moonshot")

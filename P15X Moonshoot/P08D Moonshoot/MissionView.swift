@@ -21,14 +21,14 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
+                    Image(decorative: self.mission.image)
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
 
                     Text(self.mission.formattedLaunchDate)
-                    
+                        .accessibility(label: Text("The \(self.mission.displayName) Launch Date \(self.mission.formattedLaunchDate)"))
                     Text(self.mission.description)
                         .padding()
 
@@ -43,7 +43,7 @@ struct MissionView: View {
                                         .clipShape(Capsule())
                                         .overlay(Capsule()
                                             .stroke(Color.primary, lineWidth: 1))
-                            
+                                    
                                     VStack(alignment: .leading) {
                                         Text(crewMember.astronaut.name)
                                             .font(.headline)
@@ -51,7 +51,9 @@ struct MissionView: View {
                                         Text(crewMember.role)
                                             .foregroundColor(.secondary)
                                     }
-                            
+                                    .accessibilityElement(children: .ignore)
+                                    .accessibility(label: Text("The  \(crewMember.role) of \(self.mission.displayName) was   \(crewMember.astronaut.name)"))
+                                    
                                     Spacer()
                                 }
                                 .padding(.horizontal)

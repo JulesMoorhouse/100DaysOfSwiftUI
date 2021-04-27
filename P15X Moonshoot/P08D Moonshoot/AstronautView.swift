@@ -23,7 +23,7 @@ struct AstronautView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.astronaut.id)
+                    Image(decorative: self.astronaut.id)
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width)
@@ -48,6 +48,8 @@ struct AstronautView: View {
                             }
                             .frame(maxWidth:.infinity, alignment: .leading)
                             .padding(.horizontal)
+                            .accessibilityElement(children: .ignore)
+                            .accessibility(label: Text("Mission \(mission.displayName) \(mission.formattedLaunchDate)"))
                         }
                 }
             }

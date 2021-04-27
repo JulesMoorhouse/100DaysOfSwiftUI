@@ -21,6 +21,7 @@ struct CheckoutView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: geo.size.width)
+                        .accessibilityElement(children: .ignore)
                     
                     Text("Your total is £\(self.cupCakes.order.cost, specifier: "%.2f")")
                         .font(.title)
