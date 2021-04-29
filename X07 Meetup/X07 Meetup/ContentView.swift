@@ -5,8 +5,8 @@
 //  Created by Julian Moorhouse on 27/04/2021.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -17,20 +17,20 @@ struct ContentView: View {
     private var items: FetchedResults<Contacts>
 
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(items) { item in
+                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                    }
+                    .onDelete(perform: deleteItems)
+                }
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
+            .navigationBarTitle("Meetup")
+            .navigationBarItems(leading: EditButton(), trailing:
+                Button(action: addItem) {
+                    Image(systemName: "plus")
+                })
         }
     }
 
@@ -62,6 +62,26 @@ struct ContentView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+        }
+    }
+
+    func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+
+    func saveImage(imageFileName: String, image: UIImage) {
+        do {
+            let filename = getDocumentDirectory().appendingPathComponent(imageFileName)
+
+            let jpegData = image.jpegData(compressionQuality: 0.8)
+
+            try jpegData?.write(to: filename, options: [.atomicWrite, .completeFileProtection])
+
+            print("Saved correctly")
+        } catch {
+            print("Unable to save data. \(error.localizedDescription)")
+            print("\(error)")
         }
     }
 }
