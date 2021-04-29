@@ -23,14 +23,15 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(items) { item in
-                        VStack(alignment: .leading) {
+                        NavigationLink(destination: DetailView(contact: item)) {
+                            VStack(alignment: .leading) {
                                 HStack {
                                     Text(item.firstName!)
                                     Text(item.lastName!)
-                                    
                                 }
                                 Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                             }
+                        }
                     }
                     .onDelete(perform: deleteItems)
                 }
@@ -40,12 +41,11 @@ struct ContentView: View {
                 Button(action: {
                     self.showingAddScreen.toggle()
                 }) {
-                    Image(systemName: "plus")
+                        Image(systemName: "plus")
                 })
             .sheet(isPresented: $showingAddScreen) {
                 AddView().environment(\.managedObjectContext, self.moc)
             }
-
         }
     }
 
