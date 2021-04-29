@@ -9,79 +9,58 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) var moc
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Contacts.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Contacts>
 
+    @State private var showingAddScreen = false
+
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(items) { item in
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        VStack(alignment: .leading) {
+                                HStack {
+                                    Text(item.firstName!)
+                                    Text(item.lastName!)
+                                    
+                                }
+                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                            }
                     }
                     .onDelete(perform: deleteItems)
                 }
             }
             .navigationBarTitle("Meetup")
             .navigationBarItems(leading: EditButton(), trailing:
-                Button(action: addItem) {
+                Button(action: {
+                    self.showingAddScreen.toggle()
+                }) {
                     Image(systemName: "plus")
                 })
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Contacts(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            .sheet(isPresented: $showingAddScreen) {
+                AddView().environment(\.managedObjectContext, self.moc)
             }
+
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { items[$0] }.forEach(moc.delete)
 
             do {
-                try viewContext.save()
+                try moc.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
-        }
-    }
-
-    func getDocumentDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-
-    func saveImage(imageFileName: String, image: UIImage) {
-        do {
-            let filename = getDocumentDirectory().appendingPathComponent(imageFileName)
-
-            let jpegData = image.jpegData(compressionQuality: 0.8)
-
-            try jpegData?.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-
-            print("Saved correctly")
-        } catch {
-            print("Unable to save data. \(error.localizedDescription)")
-            print("\(error)")
         }
     }
 }

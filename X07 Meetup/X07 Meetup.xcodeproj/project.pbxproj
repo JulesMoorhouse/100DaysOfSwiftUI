@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88C59ACD263B218D00281F0B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59ACC263B218D00281F0B /* ImagePicker.swift */; };
+		88C59AF1263B2BCE00281F0B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59AF0263B2BCE00281F0B /* AddView.swift */; };
 		88F0C23C2638918600B907AD /* X07_MeetupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C23B2638918600B907AD /* X07_MeetupApp.swift */; };
 		88F0C23E2638918600B907AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C23D2638918600B907AD /* ContentView.swift */; };
 		88F0C2402638918C00B907AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F0C23F2638918C00B907AD /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		88C59ACC263B218D00281F0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		88C59AF0263B2BCE00281F0B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		88F0C2382638918600B907AD /* X07 Meetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "X07 Meetup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F0C23B2638918600B907AD /* X07_MeetupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X07_MeetupApp.swift; sourceTree = "<group>"; };
 		88F0C23D2638918600B907AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				88F0C2442638918C00B907AD /* Persistence.swift */,
 				88F0C2492638918C00B907AD /* Info.plist */,
 				88F0C2462638918C00B907AD /* X07_Meetup.xcdatamodeld */,
+				88C59AF0263B2BCE00281F0B /* AddView.swift */,
 				88F0C2412638918C00B907AD /* Preview Content */,
 				88C59ACC263B218D00281F0B /* ImagePicker.swift */,
 			);
@@ -149,6 +152,7 @@
 			files = (
 				88F0C2452638918C00B907AD /* Persistence.swift in Sources */,
 				88F0C2482638918C00B907AD /* X07_Meetup.xcdatamodeld in Sources */,
+				88C59AF1263B2BCE00281F0B /* AddView.swift in Sources */,
 				88C59ACD263B218D00281F0B /* ImagePicker.swift in Sources */,
 				88F0C23E2638918600B907AD /* ContentView.swift in Sources */,
 				88F0C23C2638918600B907AD /* X07_MeetupApp.swift in Sources */,
