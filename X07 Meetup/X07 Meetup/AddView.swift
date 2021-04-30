@@ -17,8 +17,8 @@ struct AddView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Last Name", text: $firstName)
-                TextField("First Name", text: $lastName)
+                TextField("First Name", text: $firstName)
+                TextField("Last Name", text: $lastName)
             }
             .navigationBarTitle("Add new contact")
             .navigationBarItems(trailing:

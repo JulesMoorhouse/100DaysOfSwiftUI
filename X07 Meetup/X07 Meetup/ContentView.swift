@@ -12,9 +12,12 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Contacts.timestamp, ascending: true)],
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Contacts.lastName, ascending: true),
+            NSSortDescriptor(keyPath: \Contacts.firstName, ascending: true)
+        ],
         animation: .default)
-    private var items: FetchedResults<Contacts>
+     var items: FetchedResults<Contacts>
 
     @State private var showingAddScreen = false
 
@@ -22,8 +25,10 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(items) { item in
-                        NavigationLink(destination: DetailView(contact: item)) {
+                    ForEach(self.items, id: \.self) { item in
+                        NavigationLink(destination:
+                                        DetailView(contact: item)
+                                        .environment(\.managedObjectContext, self.moc)) {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text(item.firstName!)
@@ -44,7 +49,8 @@ struct ContentView: View {
                         Image(systemName: "plus")
                 })
             .sheet(isPresented: $showingAddScreen) {
-                AddView().environment(\.managedObjectContext, self.moc)
+                AddView()
+                    .environment(\.managedObjectContext, self.moc)
             }
         }
     }
