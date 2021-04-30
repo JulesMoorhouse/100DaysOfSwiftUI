@@ -34,7 +34,9 @@ struct AddView: View {
                             image?
                                 .resizable()
                                 .scaledToFit()
-
+                                .clipShape(Circle())
+                                .frame( maxWidth: .infinity, maxHeight: 200)
+                            
                         } else {
                             Text("Tap to select a photo")
                                 .frame(maxWidth: 150, maxHeight: 150)
