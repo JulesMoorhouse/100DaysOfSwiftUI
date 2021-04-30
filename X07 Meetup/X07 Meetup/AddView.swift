@@ -5,29 +5,72 @@
 //  Created by Julian Moorhouse on 29/04/2021.
 //
 
+import CoreData
 import SwiftUI
 
 struct AddView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
 
+    @State private var showingImagePicker = false
+
+    @State private var image: Image?
+    @State private var inputImage: UIImage?
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var photoFile = UUID()
 
     var body: some View {
         NavigationView {
-            Form {
-                TextField("First Name", text: $firstName)
-                TextField("Last Name", text: $lastName)
+            VStack {
+                ZStack {
+                    Rectangle()
+                        .fill(Color.secondary)
+                        .frame(maxHeight: 200)
+                        .clipShape(Circle())
+                        .padding(10)
+                    if image != nil {
+                        image?
+                            .resizable()
+                            .scaledToFit()
+                        
+                    } else {
+                        Text("Tap to select\na picture")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                    }
+                }
+
+                .onTapGesture {
+                    self.showingImagePicker = true
+                }
+                VStack {
+                    Form {
+                        TextField("First Name", text: $firstName)
+                        TextField("Last Name", text: $lastName)
+                    }
+                }
+                Spacer()
             }
-            .navigationBarTitle("Add new contact")
+
+            .sheet(isPresented: $showingImagePicker,onDismiss:{
+                    handleImage(photoFile: self.photoFile.uuidString)
+            }) {
+                ImagePicker(image: self.$inputImage)
+            }
+            .navigationBarTitle("New contact", displayMode: .inline)
             .navigationBarItems(trailing:
                 Button("Save") {
                     let item = Contact(context: self.moc)
                     item.firstName = self.firstName
                     item.lastName = self.lastName
                     item.timestamp = Date()
-
+                    
+                    if image != nil {
+                        item.photoFile = photoFile
+                    }
+                    
                     do {
                         try self.moc.save()
                     } catch {
@@ -36,31 +79,20 @@ struct AddView: View {
                         let nsError = error as NSError
                         fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                     }
-                    
+
                     self.presentationMode.wrappedValue.dismiss()
                 }
             )
         }
+
     }
-    
-    func getDocumentDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
-    func saveImage(imageFileName: String, image: UIImage) {
-        do {
-            let filename = getDocumentDirectory().appendingPathComponent(imageFileName)
 
-            let jpegData = image.jpegData(compressionQuality: 0.8)
+    func handleImage(photoFile: String) {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
 
-            try jpegData?.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-
-            print("Saved correctly")
-        } catch {
-            print("Unable to save data. \(error.localizedDescription)")
-            print("\(error)")
-        }
+        let imageSaver = ImageManager()
+        imageSaver.writeToFile(photoFile: photoFile, image: inputImage)
     }
 }
 

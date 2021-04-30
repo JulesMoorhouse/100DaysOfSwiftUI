@@ -16,39 +16,51 @@ struct DetailView: View {
 
     @State private var firstName = ""
     @State private var lastName = ""
+    @State private var image = Image(systemName: "questionmark.square.fill")
+    @State private var inputImage: UIImage?
 
     var body: some View {
-        Form {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("First name")
-                    .font(.headline)
-                TextField("", text: $firstName)
-                    .foregroundColor(.secondary)
-            }
+            Form {
+                Section {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame( maxWidth: .infinity, maxHeight: 200)
+                }
+                    Section {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("First name")
+                                .font(.headline)
+                            TextField("", text: $firstName)
+                                .foregroundColor(.secondary)
+                        }
 
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Last name")
-                    .font(.headline)
-                TextField("", text: $lastName)
-                    .foregroundColor(.secondary)
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("Last name")
+                                .font(.headline)
+                            TextField("", text: $lastName)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+            .onAppear {
+                // Should use wrapped
+                self.firstName = self.contact.firstName ?? ""
+                self.lastName = self.contact.lastName ?? ""
+
+                let imageSaver = ImageManager()
+                image = imageSaver.loadImage(imageFileName: self.contact.photoFile?.uuidString ?? "")
             }
-        }
-        .onAppear {
-            //Should use wrapped
-            self.firstName = self.contact.firstName ?? ""
-            self.lastName = self.contact.lastName ?? ""
         }
         .navigationBarTitle("Contact Details", displayMode: .inline)
         .navigationBarItems(trailing: Button(action: save) { Text("Save") })
-
-        Spacer()
     }
 
     func save() {
         self.contact.firstName = self.firstName
         self.contact.lastName = self.lastName
         self.contact.timestamp = Date()
-                
+
         do {
             if self.moc.hasChanges {
                 try self.moc.save()
@@ -61,6 +73,14 @@ struct DetailView: View {
         }
 
         self.presentationMode.wrappedValue.dismiss()
+    }
+
+    func handleImage(photoFile: String) {
+        guard let inputImage = inputImage else { return }
+        self.image = Image(uiImage: inputImage)
+
+        let imageSaver = ImageManager()
+        imageSaver.writeToFile(photoFile: photoFile, image: inputImage)
     }
 }
 
