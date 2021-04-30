@@ -53,14 +53,10 @@ struct AddView: View {
 
                 Section {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("First name")
-                            .font(.headline)
                         TextField("First Name", text: $firstName)
                     }
 
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Last name")
-                            .font(.headline)
                         TextField("Last Name", text: $lastName)
                     }
                 }

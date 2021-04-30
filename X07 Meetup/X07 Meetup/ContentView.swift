@@ -17,30 +17,35 @@ struct ContentView: View {
             NSSortDescriptor(keyPath: \Contact.firstName, ascending: true)
         ],
         animation: .default)
-     var contacts: FetchedResults<Contact>
+    var contacts: FetchedResults<Contact>
 
     @State private var showingAddScreen = false
 
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(self.contacts, id: \.self) { item in
-                        NavigationLink(destination:
-                                        DetailView(contact: item)
-                                        .environment(\.managedObjectContext, self.moc)) {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Text(item.firstName!)
-                                    Text(item.lastName!)
-                                }
-                                Text("Added \(item.timestamp!, formatter: itemFormatter)")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
+                if self.contacts.count == 0 {
+                    Text("Please add some contacts")
+                        .foregroundColor(.secondary)
+                } else {
+                    List {
+                        ForEach(self.contacts, id: \.self) { item in
+                            NavigationLink(destination:
+                                DetailView(contact: item)
+                                    .environment(\.managedObjectContext, self.moc)) {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(item.wrappedFirstName)
+                                            Text(item.wrappedLastName)
+                                        }
+                                        Text("Added \(item.timestamp!, formatter: itemFormatter)")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
                             }
                         }
+                        .onDelete(perform: deleteItems)
                     }
-                    .onDelete(perform: deleteItems)
                 }
             }
             .navigationBarTitle("Meetup")
@@ -59,6 +64,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
+            // Should also delete images
             offsets.map { contacts[$0] }.forEach(moc.delete)
 
             do {

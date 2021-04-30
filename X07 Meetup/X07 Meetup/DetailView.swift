@@ -62,12 +62,12 @@ struct DetailView: View {
                     }
             .onAppear {
                 // Should use wrapped
-                self.firstName = self.contact.firstName ?? ""
-                self.lastName = self.contact.lastName ?? ""
-                self.photoFile = self.contact.photoFile ?? UUID()
+                self.firstName = self.contact.wrappedFirstName
+                self.lastName = self.contact.wrappedLastName
+                self.photoFile = self.contact.wrappedPhotoFile
                 
                 let imageSaver = ImageManager()
-                image = imageSaver.loadImage(imageFileName: self.contact.photoFile?.uuidString ?? "")
+                image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
             }
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: {
