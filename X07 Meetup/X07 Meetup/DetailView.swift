@@ -14,19 +14,36 @@ struct DetailView: View {
 
     @State var contact: Contact
 
+    @State private var showingImagePicker = false
+    
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var image = Image(systemName: "questionmark.square.fill")
     @State private var inputImage: UIImage?
-
+    @State private var photoFile = UUID()
+    
     var body: some View {
             Form {
                 Section {
+                    ZStack(alignment: .bottomTrailing) {
                     image
                         .resizable()
                         .scaledToFit()
                         .clipShape(Circle())
                         .frame( maxWidth: .infinity, maxHeight: 200)
+                        
+                        
+                        Circle()
+                            .fill(Color.secondary.opacity(0.3))
+                            .frame(width: 40, height: 40)
+                        
+                        Button(action: {
+                            self.showingImagePicker = true
+                        }) {
+                        Image(systemName: "photo")
+                            .frame(width: 40, height: 40)
+                        }
+                    }
                 }
                     Section {
                         VStack(alignment: .leading, spacing: 0) {
@@ -47,10 +64,16 @@ struct DetailView: View {
                 // Should use wrapped
                 self.firstName = self.contact.firstName ?? ""
                 self.lastName = self.contact.lastName ?? ""
-
+                self.photoFile = self.contact.photoFile ?? UUID()
+                
                 let imageSaver = ImageManager()
                 image = imageSaver.loadImage(imageFileName: self.contact.photoFile?.uuidString ?? "")
             }
+        }
+        .sheet(isPresented: $showingImagePicker, onDismiss: {
+            handleImage(photoFile: self.photoFile.uuidString)
+        }) {
+            ImagePicker(image: self.$inputImage)
         }
         .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") })
@@ -60,7 +83,8 @@ struct DetailView: View {
         self.contact.firstName = self.firstName
         self.contact.lastName = self.lastName
         self.contact.timestamp = Date()
-
+        self.contact.photoFile = self.photoFile
+        
         do {
             if self.moc.hasChanges {
                 try self.moc.save()

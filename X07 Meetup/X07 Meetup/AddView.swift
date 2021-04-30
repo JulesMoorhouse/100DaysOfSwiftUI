@@ -26,7 +26,7 @@ struct AddView: View {
                 Section {
                     ZStack {
                         Rectangle()
-                            .fill(Color.secondary)
+                            .fill(Color.secondary.opacity(0.3))
                             .frame(maxHeight: 200)
                             .clipShape(Circle())
                             .padding(10)
