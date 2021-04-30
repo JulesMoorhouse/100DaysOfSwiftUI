@@ -52,7 +52,7 @@ struct DetailView: View {
                 image = imageSaver.loadImage(imageFileName: self.contact.photoFile?.uuidString ?? "")
             }
         }
-        .navigationBarTitle("Contact Details", displayMode: .inline)
+        .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") })
     }
 

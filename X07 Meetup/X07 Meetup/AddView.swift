@@ -22,69 +22,81 @@ struct AddView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                ZStack {
-                    Rectangle()
-                        .fill(Color.secondary)
-                        .frame(maxHeight: 200)
-                        .clipShape(Circle())
-                        .padding(10)
-                    if image != nil {
-                        image?
-                            .resizable()
-                            .scaledToFit()
-                        
-                    } else {
-                        Text("Tap to select\na picture")
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
+            Form {
+                Section {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.secondary)
+                            .frame(maxHeight: 200)
+                            .clipShape(Circle())
+                            .padding(10)
+                        if image != nil {
+                            image?
+                                .resizable()
+                                .scaledToFit()
+
+                        } else {
+                            Text("Tap to select a photo")
+                                .frame(maxWidth: 150, maxHeight: 150)
+                                .lineLimit(3)
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .multilineTextAlignment(.center)
+                        }
                     }
+
+                    .onTapGesture {
+                        self.showingImagePicker = true
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 200)
                 }
 
-                .onTapGesture {
-                    self.showingImagePicker = true
-                }
-                VStack {
-                    Form {
+                Section {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("First name")
+                            .font(.headline)
                         TextField("First Name", text: $firstName)
+                    }
+
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Last name")
+                            .font(.headline)
                         TextField("Last Name", text: $lastName)
                     }
                 }
-                Spacer()
             }
 
-            .sheet(isPresented: $showingImagePicker,onDismiss:{
-                    handleImage(photoFile: self.photoFile.uuidString)
+            .sheet(isPresented: $showingImagePicker, onDismiss: {
+                handleImage(photoFile: self.photoFile.uuidString)
             }) {
                 ImagePicker(image: self.$inputImage)
             }
-            .navigationBarTitle("New contact", displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button("Save") {
-                    let item = Contact(context: self.moc)
-                    item.firstName = self.firstName
-                    item.lastName = self.lastName
-                    item.timestamp = Date()
-                    
-                    if image != nil {
-                        item.photoFile = photoFile
-                    }
-                    
-                    do {
-                        try self.moc.save()
-                    } catch {
-                        // Replace this implementation with code to handle the error appropriately.
-                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                        let nsError = error as NSError
-                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                    }
+            .navigationBarTitle("New contact")
+            .navigationBarItems(leading: Button("Cancel") {
+                self.presentationMode.wrappedValue.dismiss()
+            },
+            trailing: Button("Save") {
+                let item = Contact(context: self.moc)
+                item.firstName = self.firstName
+                item.lastName = self.lastName
+                item.timestamp = Date()
 
-                    self.presentationMode.wrappedValue.dismiss()
+                if image != nil {
+                    item.photoFile = photoFile
                 }
-            )
-        }
 
+                do {
+                    try self.moc.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nsError = error as NSError
+                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                }
+
+                self.presentationMode.wrappedValue.dismiss()
+            })
+        }
     }
 
     func handleImage(photoFile: String) {
