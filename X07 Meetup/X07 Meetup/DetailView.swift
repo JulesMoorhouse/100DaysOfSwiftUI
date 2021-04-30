@@ -12,7 +12,7 @@ struct DetailView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
 
-    @State var contact: Contacts
+    @State var contact: Contact
 
     @State private var firstName = ""
     @State private var lastName = ""
@@ -68,7 +68,7 @@ struct DetailView_Previews: PreviewProvider {
     static let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
 
     static var previews: some View {
-        let contact = Contacts(context: moc)
+        let contact = Contact(context: moc)
         contact.firstName = "John"
         contact.lastName = "Smith"
 

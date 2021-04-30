@@ -23,7 +23,7 @@ struct AddView: View {
             .navigationBarTitle("Add new contact")
             .navigationBarItems(trailing:
                 Button("Save") {
-                    let item = Contacts(context: self.moc)
+                    let item = Contact(context: self.moc)
                     item.firstName = self.firstName
                     item.lastName = self.lastName
                     item.timestamp = Date()

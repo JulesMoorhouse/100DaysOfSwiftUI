@@ -13,11 +13,11 @@ struct ContentView: View {
 
     @FetchRequest(
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \Contacts.lastName, ascending: true),
-            NSSortDescriptor(keyPath: \Contacts.firstName, ascending: true)
+            NSSortDescriptor(keyPath: \Contact.lastName, ascending: true),
+            NSSortDescriptor(keyPath: \Contact.firstName, ascending: true)
         ],
         animation: .default)
-     var items: FetchedResults<Contacts>
+     var contacts: FetchedResults<Contact>
 
     @State private var showingAddScreen = false
 
@@ -25,7 +25,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(self.items, id: \.self) { item in
+                    ForEach(self.contacts, id: \.self) { item in
                         NavigationLink(destination:
                                         DetailView(contact: item)
                                         .environment(\.managedObjectContext, self.moc)) {
@@ -34,7 +34,9 @@ struct ContentView: View {
                                     Text(item.firstName!)
                                     Text(item.lastName!)
                                 }
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                Text("Added \(item.timestamp!, formatter: itemFormatter)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
                             }
                         }
                     }
@@ -57,7 +59,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(moc.delete)
+            offsets.map { contacts[$0] }.forEach(moc.delete)
 
             do {
                 try moc.save()
@@ -73,8 +75,8 @@ struct ContentView: View {
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
+    formatter.dateStyle = .long
+    formatter.timeStyle = .short
     return formatter
 }()
 
