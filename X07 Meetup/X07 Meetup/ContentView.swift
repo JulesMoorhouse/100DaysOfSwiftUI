@@ -43,17 +43,24 @@ struct ContentView: View {
                                             .foregroundColor(.secondary)
                                     }
                             }
+                            .accessibilityElement(children: .combine)
+                            .accessibility(label: Text("\(item.wrappedFirstName) \(item.wrappedLastName)"))
                         }
                         .onDelete(perform: deleteItems)
                     }
                 }
             }
             .navigationBarTitle("Meetup")
-            .navigationBarItems(leading: EditButton(), trailing:
+            .navigationBarItems(leading:
+                EditButton()
+                    .accessibility(label: Text("Edit contacts")),
+                trailing:
                 Button(action: {
                     self.showingAddScreen.toggle()
                 }) {
                         Image(systemName: "plus")
+                            .accessibility(label: Text("Add a new contact"))
+
                 })
             .sheet(isPresented: $showingAddScreen) {
                 AddView()

@@ -15,57 +15,60 @@ struct DetailView: View {
     @State var contact: Contact
 
     @State private var showingImagePicker = false
-    
+
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var image = Image(systemName: "questionmark.square.fill")
     @State private var inputImage: UIImage?
     @State private var photoFile = UUID()
-    
+
     var body: some View {
-            Form {
-                Section {
-                    ZStack(alignment: .bottomTrailing) {
+        Form {
+            Section(header: Text("").accessibility(hidden: true)) {
+                ZStack(alignment: .bottomTrailing) {
                     image
                         .resizable()
                         .scaledToFit()
                         .clipShape(Circle())
-                        .frame( maxWidth: .infinity, maxHeight: 200)
-                        
-                        
+                        .frame(maxWidth: .infinity, maxHeight: 200)
+
+                    Group {
                         Circle()
                             .fill(Color.secondary.opacity(0.3))
                             .frame(width: 40, height: 40)
-                        
+
                         Button(action: {
                             self.showingImagePicker = true
                         }) {
-                        Image(systemName: "photo")
-                            .frame(width: 40, height: 40)
+                            Image(systemName: "photo")
+                                .frame(width: 40, height: 40)
                         }
+                        .accessibility(hidden: true)
                     }
+                    .accessibility(label: Text("Change photo"))
                 }
-                    Section {
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text("First name")
-                                .font(.headline)
-                            TextField("", text: $firstName)
-                                .foregroundColor(.secondary)
-                        }
+            }
+            Section(header: Text("").accessibility(hidden: true)) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("First name")
+                        .font(.headline)
+                    TextField("", text: $firstName)
+                        .foregroundColor(.secondary)
+                }
 
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text("Last name")
-                                .font(.headline)
-                            TextField("", text: $lastName)
-                                .foregroundColor(.secondary)
-                        }
-                    }
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("Last name")
+                        .font(.headline)
+                    TextField("", text: $lastName)
+                        .foregroundColor(.secondary)
+                }
+            }
             .onAppear {
                 // Should use wrapped
                 self.firstName = self.contact.wrappedFirstName
                 self.lastName = self.contact.wrappedLastName
                 self.photoFile = self.contact.wrappedPhotoFile
-                
+
                 let imageSaver = ImageManager()
                 image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
             }
@@ -76,7 +79,7 @@ struct DetailView: View {
             ImagePicker(image: self.$inputImage)
         }
         .navigationBarTitle("\(firstName) \(lastName)")
-        .navigationBarItems(trailing: Button(action: save) { Text("Save") })
+        .navigationBarItems(trailing: Button(action: save) { Text("Save") }.accessibility(label: Text("Save contact changes")))
     }
 
     func save() {
@@ -84,7 +87,7 @@ struct DetailView: View {
         self.contact.lastName = self.lastName
         self.contact.timestamp = Date()
         self.contact.photoFile = self.photoFile
-        
+
         do {
             if self.moc.hasChanges {
                 try self.moc.save()
