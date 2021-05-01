@@ -13,7 +13,6 @@ struct AddView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @State private var showingImagePicker = false
-
     @State private var image: Image?
     @State private var firstName = ""
     @State private var lastName = ""
@@ -26,28 +25,30 @@ struct AddView: View {
             PersonalView(firstName: self.$firstName, lastName: self.$lastName)
         }
         .navigationBarTitle("New contact")
-        .navigationBarItems(trailing:
-            Button("Save") {
-                let item = Contact(context: self.moc)
-                item.firstName = self.firstName
-                item.lastName = self.lastName
-                item.timestamp = Date()
+        .navigationBarItems(trailing: Button(action: save) { Text("Save") }
+            .accessibility(label: Text("Save new changes")))
+    }
 
-                if image != nil {
-                    item.photoFile = photoFile
-                }
+    func save() {
+        let item = Contact(context: self.moc)
+        item.firstName = self.firstName
+        item.lastName = self.lastName
+        item.timestamp = Date()
 
-                do {
-                    try self.moc.save()
-                } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                }
+        if self.image != nil {
+            item.photoFile = self.photoFile
+        }
 
-                self.presentationMode.wrappedValue.dismiss()
-            }.accessibility(label: Text("Save new contact")))
+        do {
+            try self.moc.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

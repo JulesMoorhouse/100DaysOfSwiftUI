@@ -15,7 +15,6 @@ struct DetailView: View {
     @State var contact: Contact
 
     @State private var showingImagePicker = false
-
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var image: Image?
@@ -39,7 +38,8 @@ struct DetailView: View {
         }
 
         .navigationBarTitle("\(firstName) \(lastName)")
-        .navigationBarItems(trailing: Button(action: save) { Text("Save") }.accessibility(label: Text("Save contact changes")))
+        .navigationBarItems(trailing: Button(action: save) { Text("Save") }
+            .accessibility(label: Text("Save contact changes")))
     }
 
     func save() {
@@ -61,8 +61,6 @@ struct DetailView: View {
 
         self.presentationMode.wrappedValue.dismiss()
     }
-
-
 }
 
 struct DetailView_Previews: PreviewProvider {
