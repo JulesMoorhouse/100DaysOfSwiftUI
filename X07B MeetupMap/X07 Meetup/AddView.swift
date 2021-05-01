@@ -23,15 +23,7 @@ struct AddView: View {
         Form {
             PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
 
-            Section(header: Text("").accessibility(hidden: true)) {
-                VStack(alignment: .leading, spacing: 0) {
-                    TextField("First Name", text: $firstName)
-                }
-
-                VStack(alignment: .leading, spacing: 0) {
-                    TextField("Last Name", text: $lastName)
-                }
-            }
+            PersonalView(firstName: self.$firstName, lastName: self.$lastName)
         }
         .navigationBarTitle("New contact")
         .navigationBarItems(trailing:

@@ -26,24 +26,16 @@ struct DetailView: View {
         Form {
             PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
 
-            Section(header: Text("").accessibility(hidden: true)) {
-                VStack(alignment: .leading, spacing: 0) {
-                    TextField("First Name", text: $firstName)
-                }
+            PersonalView(firstName: self.$firstName, lastName: self.$lastName)
+                .onAppear {
+                    // Should use wrapped
+                    self.firstName = self.contact.wrappedFirstName
+                    self.lastName = self.contact.wrappedLastName
+                    self.photoFile = self.contact.wrappedPhotoFile
 
-                VStack(alignment: .leading, spacing: 0) {
-                    TextField("Last Name", text: $lastName)
+                    let imageSaver = ImageManager()
+                    image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
                 }
-            }
-            .onAppear {
-                // Should use wrapped
-                self.firstName = self.contact.wrappedFirstName
-                self.lastName = self.contact.wrappedLastName
-                self.photoFile = self.contact.wrappedPhotoFile
-
-                let imageSaver = ImageManager()
-                image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
-            }
         }
 
         .navigationBarTitle("\(firstName) \(lastName)")
