@@ -19,6 +19,8 @@ extension Contact {
     @NSManaged public var lastName: String?
     @NSManaged public var photoFile: UUID?
     @NSManaged public var timestamp: Date?
+    @NSManaged public var latitude: NSNumber?
+    @NSManaged public var longitude: NSNumber?
 
     var wrappedFirstName: String {
         firstName ?? "Unknown first name"

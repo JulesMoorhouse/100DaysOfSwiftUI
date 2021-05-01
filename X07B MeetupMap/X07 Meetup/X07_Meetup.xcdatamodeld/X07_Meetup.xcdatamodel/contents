@@ -3,10 +3,12 @@
     <entity name="Contact" representedClassName="Contact" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="photoFile" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Contact" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Contact" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

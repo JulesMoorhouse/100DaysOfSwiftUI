@@ -19,7 +19,7 @@ struct AddView: View {
     @State private var lastName = ""
     @State private var photoFile = UUID()
     @State private var currentLocation = CLLocationCoordinate2D()
-    @State private var pin = CodableMKPointAnnotation()
+    @State private var pin = MKPointAnnotation()
     @State var locationFetcher: LocationFetcher
 
     var body: some View {
@@ -37,7 +37,7 @@ struct AddView: View {
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
             .accessibility(label: Text("Save new changes")))
         .onAppear {
-            let newLocation = CodableMKPointAnnotation()
+            let newLocation = MKPointAnnotation()
             if let location = self.locationFetcher.lastKnownLocation {
                 print("Your location is \(location)")
 
@@ -57,6 +57,8 @@ struct AddView: View {
         item.firstName = self.firstName
         item.lastName = self.lastName
         item.timestamp = Date()
+        item.latitude = NSNumber(value: self.currentLocation.latitude)
+        item.longitude = NSNumber(value: self.currentLocation.longitude)
 
         if self.image != nil {
             item.photoFile = self.photoFile

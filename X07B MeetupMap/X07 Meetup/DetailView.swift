@@ -6,6 +6,8 @@
 //
 
 import CoreData
+import MapKit
+
 import SwiftUI
 
 struct DetailView: View {
@@ -20,7 +22,9 @@ struct DetailView: View {
     @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var photoFile = UUID()
-
+    @State private var location = CLLocationCoordinate2D()
+    @State private var pin = MKPointAnnotation()
+    
     var body: some View {
         Form {
             PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
@@ -31,10 +35,24 @@ struct DetailView: View {
                     self.firstName = self.contact.wrappedFirstName
                     self.lastName = self.contact.wrappedLastName
                     self.photoFile = self.contact.wrappedPhotoFile
-
+                    
+                    let lat = self.contact.latitude?.doubleValue ?? 0
+                    let lon = self.contact.longitude?.doubleValue ?? 0
+                    self.location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    
+                    let newLocation = MKPointAnnotation()
+                    newLocation.coordinate = self.location
+                    newLocation.title = "Contacts location"
+                    self.pin = newLocation
+                    
                     let imageSaver = ImageManager()
                     image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
                 }
+            
+            Section {
+                MapView(currentLocation: $location, annotation: pin)
+                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
+            }
         }
         .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
@@ -46,6 +64,8 @@ struct DetailView: View {
         self.contact.lastName = self.lastName
         self.contact.timestamp = Date()
         self.contact.photoFile = self.photoFile
+        self.contact.latitude = NSNumber(value: self.location.latitude)
+        self.contact.longitude = NSNumber(value: self.location.longitude)
 
         do {
             if self.moc.hasChanges {
