@@ -18,27 +18,21 @@ struct DetailView: View {
 
     @State private var firstName = ""
     @State private var lastName = ""
-    @State private var image = Image(systemName: "questionmark.square.fill")
+    @State private var image: Image?
     @State private var inputImage: UIImage?
     @State private var photoFile = UUID()
 
     var body: some View {
         Form {
-            PhotoView(image: image, showingImagePicker: self.$showingImagePicker)
+            PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
 
             Section(header: Text("").accessibility(hidden: true)) {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("First name")
-                        .font(.headline)
-                    TextField("", text: $firstName)
-                        .foregroundColor(.secondary)
+                    TextField("First Name", text: $firstName)
                 }
 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Last name")
-                        .font(.headline)
-                    TextField("", text: $lastName)
-                        .foregroundColor(.secondary)
+                    TextField("Last Name", text: $lastName)
                 }
             }
             .onAppear {
@@ -51,11 +45,7 @@ struct DetailView: View {
                 image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
             }
         }
-        .sheet(isPresented: $showingImagePicker, onDismiss: {
-            handleImage(photoFile: self.photoFile.uuidString)
-        }) {
-            ImagePicker(image: self.$inputImage)
-        }
+
         .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }.accessibility(label: Text("Save contact changes")))
     }
@@ -80,13 +70,7 @@ struct DetailView: View {
         self.presentationMode.wrappedValue.dismiss()
     }
 
-    func handleImage(photoFile: String) {
-        guard let inputImage = inputImage else { return }
-        self.image = Image(uiImage: inputImage)
 
-        let imageSaver = ImageManager()
-        imageSaver.writeToFile(photoFile: photoFile, image: inputImage)
-    }
 }
 
 struct DetailView_Previews: PreviewProvider {

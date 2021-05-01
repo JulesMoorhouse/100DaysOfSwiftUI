@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct PhotoView: View {
-    let image: Image?
+    @Binding var image: Image?
     @Binding var showingImagePicker: Bool
+    let photoFile: String
 
+    @State private var inputImage: UIImage?
+    
     var body: some View {
         Section(header: Text("").accessibility(hidden: true)) {
             ZStack(alignment: .bottomTrailing) {
@@ -61,6 +64,19 @@ struct PhotoView: View {
                 self.showingImagePicker = true
             }
         }
+        .sheet(isPresented: $showingImagePicker, onDismiss: {
+            handleImage()
+        }) {
+            ImagePicker(image: self.$inputImage)
+        }
+    }
+    
+    func handleImage() {
+        guard let inputImage = inputImage else { return }
+        self.image = Image(uiImage: inputImage)
+
+        let imageSaver = ImageManager()
+        imageSaver.writeToFile(photoFile: photoFile, image: inputImage)
     }
 }
 
@@ -68,6 +84,6 @@ struct PhotoView_Previews: PreviewProvider {
     static var previews: some View {
         let image = Image(systemName: "questionmark.square.fill")
 
-        PhotoView(image: image, showingImagePicker: .constant(false))
+        PhotoView(image: .constant(image), showingImagePicker: .constant(false), photoFile: UUID().uuidString)
     }
 }

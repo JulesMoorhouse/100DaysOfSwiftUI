@@ -15,14 +15,13 @@ struct AddView: View {
     @State private var showingImagePicker = false
 
     @State private var image: Image?
-    @State private var inputImage: UIImage?
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var photoFile = UUID()
 
     var body: some View {
         Form {
-            PhotoView(image: image, showingImagePicker: self.$showingImagePicker)
+            PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
 
             Section(header: Text("").accessibility(hidden: true)) {
                 VStack(alignment: .leading, spacing: 0) {
@@ -33,11 +32,6 @@ struct AddView: View {
                     TextField("Last Name", text: $lastName)
                 }
             }
-        }
-        .sheet(isPresented: $showingImagePicker, onDismiss: {
-            handleImage(photoFile: self.photoFile.uuidString)
-        }) {
-            ImagePicker(image: self.$inputImage)
         }
         .navigationBarTitle("New contact")
         .navigationBarItems(trailing:
@@ -62,14 +56,6 @@ struct AddView: View {
 
                 self.presentationMode.wrappedValue.dismiss()
             }.accessibility(label: Text("Save new contact")))
-    }
-
-    func handleImage(photoFile: String) {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-
-        let imageSaver = ImageManager()
-        imageSaver.writeToFile(photoFile: photoFile, image: inputImage)
     }
 }
 
