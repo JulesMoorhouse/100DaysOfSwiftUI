@@ -19,6 +19,8 @@ struct ContentView: View {
         animation: .default)
     var contacts: FetchedResults<Contact>
 
+    let locationFetcher = LocationFetcher()
+
     var body: some View {
         NavigationView {
             VStack {
@@ -53,11 +55,14 @@ struct ContentView: View {
                 EditButton()
                     .accessibility(label: Text("Edit contacts")),
                 trailing:
-                NavigationLink(destination: AddView()
+                NavigationLink(destination: AddView(locationFetcher: locationFetcher)
                     .environment(\.managedObjectContext, self.moc)) {
                         Image(systemName: "plus")
                             .accessibility(label: Text("Add a new contact"))
                 })
+            .onAppear() {
+                self.locationFetcher.start()
+            }
         }
     }
 

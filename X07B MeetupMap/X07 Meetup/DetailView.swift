@@ -36,7 +36,6 @@ struct DetailView: View {
                     image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
                 }
         }
-
         .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
             .accessibility(label: Text("Save contact changes")))

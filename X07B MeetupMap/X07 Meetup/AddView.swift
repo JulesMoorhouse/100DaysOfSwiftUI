@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import MapKit
 import SwiftUI
 
 struct AddView: View {
@@ -17,16 +18,40 @@ struct AddView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var photoFile = UUID()
+    @State private var currentLocation = CLLocationCoordinate2D()
+    @State private var locations = [CodableMKPointAnnotation]()
+    @State private var selectedPlace: MKPointAnnotation?
+    @State var locationFetcher: LocationFetcher
 
     var body: some View {
         Form {
             PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
 
             PersonalView(firstName: self.$firstName, lastName: self.$lastName)
+
+            Section {
+                MapView(selectedPlace: $selectedPlace, currentLocation: $currentLocation,  annotations: locations)
+                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
+            }
         }
         .navigationBarTitle("New contact")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
             .accessibility(label: Text("Save new changes")))
+        .onAppear {
+            let newLocation = CodableMKPointAnnotation()
+            if let location = self.locationFetcher.lastKnownLocation {
+                print("Your location is \(location)")
+
+                newLocation.coordinate = location
+                newLocation.title = "Contacts location"
+                self.currentLocation = location
+                self.selectedPlace = newLocation
+            } else {
+                print("Your location is unknown")
+            }
+
+            self.locations.append(newLocation)
+        }
     }
 
     func save() {
@@ -54,6 +79,6 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView()
+        AddView(locationFetcher: LocationFetcher())
     }
 }
