@@ -22,35 +22,7 @@ struct AddView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("").accessibility(hidden: true)) {
-                ZStack {
-                    Rectangle()
-                        .fill(Color.secondary.opacity(0.3))
-                        .frame(maxHeight: 200)
-                        .clipShape(Circle())
-
-                    if image != nil {
-                        image?
-                            .resizable()
-                            .scaledToFit()
-                            .frame(minWidth: 200, minHeight: 200)
-                            .clipShape(Circle())
-
-                    } else {
-                        Text("Tap to select a photo")
-                            .frame(maxWidth: 150, maxHeight: 150)
-                            .lineLimit(3)
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
-                    }
-                }
-                .padding(10)
-                .onTapGesture {
-                    self.showingImagePicker = true
-                }
-                .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
-            }
+            PhotoView(image: image, showingImagePicker: self.$showingImagePicker)
 
             Section(header: Text("").accessibility(hidden: true)) {
                 VStack(alignment: .leading, spacing: 0) {

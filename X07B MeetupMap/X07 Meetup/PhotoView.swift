@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PhotoView: View {
-    let image: Image
+    let image: Image?
     @Binding var showingImagePicker: Bool
 
     var body: some View {
@@ -20,31 +20,46 @@ struct PhotoView: View {
                     .clipShape(Circle())
 
                 VStack {
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(minWidth: 200, minHeight: 200)
-                        .clipShape(Circle())
+                    if image != nil {
+                        image?
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 200, minHeight: 200)
+                            .clipShape(Circle())
+
+                    } else {
+                        Text("Tap to select a photo")
+                            .frame(maxWidth: 150, maxHeight: 150)
+                            .lineLimit(3)
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                    }
                 }
                 .padding(10)
                 .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
 
-                Group {
-                    Circle()
-                        .fill(Color.secondary.opacity(0.3))
-                        .frame(width: 40, height: 40)
-
-                    Button(action: {
-                        self.showingImagePicker = true
-                    }) {
-                        Image(systemName: "photo")
+                if image != nil {
+                    Group {
+                        Circle()
+                            .fill(Color.secondary.opacity(0.3))
                             .frame(width: 40, height: 40)
+
+                        Button(action: {
+                            //
+                        }) {
+                            Image(systemName: "photo")
+                                .frame(width: 40, height: 40)
+                        }
+                        .accessibility(hidden: true)
                     }
-                    .accessibility(hidden: true)
+                    .accessibility(label: Text("Change photo"))
                 }
-                .accessibility(label: Text("Change photo"))
             }
             .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
+            .onTapGesture {
+                self.showingImagePicker = true
+            }
         }
     }
 }
