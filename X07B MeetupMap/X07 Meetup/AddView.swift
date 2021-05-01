@@ -19,8 +19,7 @@ struct AddView: View {
     @State private var lastName = ""
     @State private var photoFile = UUID()
     @State private var currentLocation = CLLocationCoordinate2D()
-    @State private var location = CodableMKPointAnnotation()
-    @State private var selectedPlace: MKPointAnnotation?
+    @State private var pin = CodableMKPointAnnotation()
     @State var locationFetcher: LocationFetcher
 
     var body: some View {
@@ -30,7 +29,7 @@ struct AddView: View {
             PersonalView(firstName: self.$firstName, lastName: self.$lastName)
 
             Section {
-                MapView(selectedPlace: $selectedPlace, currentLocation: $currentLocation, annotation: location)
+                MapView(currentLocation: $currentLocation, annotation: pin)
                     .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
             }
         }
@@ -45,12 +44,11 @@ struct AddView: View {
                 newLocation.coordinate = location
                 newLocation.title = "Contacts location"
                 self.currentLocation = location
-                self.selectedPlace = newLocation
             } else {
                 print("Your location is unknown")
             }
 
-            self.location = newLocation
+            self.pin = newLocation
         }
     }
 
