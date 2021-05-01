@@ -19,7 +19,6 @@ struct AddView: View {
     @State private var lastName = ""
     @State private var photoFile = UUID()
     @State private var currentLocation = CLLocationCoordinate2D()
-    @State private var pin = MKPointAnnotation()
     @State var locationFetcher: LocationFetcher
 
     var body: some View {
@@ -28,27 +27,18 @@ struct AddView: View {
 
             PersonalView(firstName: self.$firstName, lastName: self.$lastName)
 
-            Section {
-                MapView(currentLocation: $currentLocation, annotation: pin)
-                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
-            }
+            LocationView(location: $currentLocation)
         }
         .navigationBarTitle("New contact")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
             .accessibility(label: Text("Save new changes")))
         .onAppear {
-            let newLocation = MKPointAnnotation()
             if let location = self.locationFetcher.lastKnownLocation {
                 print("Your location is \(location)")
-
-                newLocation.coordinate = location
-                newLocation.title = "Contacts location"
                 self.currentLocation = location
             } else {
                 print("Your location is unknown")
             }
-
-            self.pin = newLocation
         }
     }
 

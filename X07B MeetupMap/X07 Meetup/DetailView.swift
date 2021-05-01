@@ -7,7 +7,6 @@
 
 import CoreData
 import MapKit
-
 import SwiftUI
 
 struct DetailView: View {
@@ -23,7 +22,6 @@ struct DetailView: View {
     @State private var inputImage: UIImage?
     @State private var photoFile = UUID()
     @State private var location = CLLocationCoordinate2D()
-    @State private var pin = MKPointAnnotation()
     
     var body: some View {
         Form {
@@ -40,19 +38,11 @@ struct DetailView: View {
                     let lon = self.contact.longitude?.doubleValue ?? 0
                     self.location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                     
-                    let newLocation = MKPointAnnotation()
-                    newLocation.coordinate = self.location
-                    newLocation.title = "Contacts location"
-                    self.pin = newLocation
-                    
                     let imageSaver = ImageManager()
                     image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
                 }
             
-            Section {
-                MapView(currentLocation: $location, annotation: pin)
-                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
-            }
+            LocationView(location: $location)
         }
         .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
