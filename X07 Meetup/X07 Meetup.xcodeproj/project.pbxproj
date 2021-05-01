@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		88032CB7263BF5C000276C99 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88032CB6263BF5C000276C99 /* ImageManager.swift */; };
-		88032CBC263C154B00276C99 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88032CBA263C154B00276C99 /* Contact+CoreDataClass.swift */; };
-		88032CBD263C154B00276C99 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88032CBB263C154B00276C99 /* Contact+CoreDataProperties.swift */; };
 		88C59ACD263B218D00281F0B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59ACC263B218D00281F0B /* ImagePicker.swift */; };
 		88C59AF1263B2BCE00281F0B /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59AF0263B2BCE00281F0B /* AddView.swift */; };
 		88C59AF4263B446100281F0B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59AF3263B446100281F0B /* DetailView.swift */; };
+		88C59B01263D4C2100281F0B /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59AFF263D4C2100281F0B /* Contact+CoreDataClass.swift */; };
+		88C59B02263D4C2100281F0B /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C59B00263D4C2100281F0B /* Contact+CoreDataProperties.swift */; };
 		88F0C23C2638918600B907AD /* X07_MeetupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C23B2638918600B907AD /* X07_MeetupApp.swift */; };
 		88F0C23E2638918600B907AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0C23D2638918600B907AD /* ContentView.swift */; };
 		88F0C2402638918C00B907AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F0C23F2638918C00B907AD /* Assets.xcassets */; };
@@ -23,11 +23,11 @@
 
 /* Begin PBXFileReference section */
 		88032CB6263BF5C000276C99 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		88032CBA263C154B00276C99 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		88032CBB263C154B00276C99 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		88C59ACC263B218D00281F0B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		88C59AF0263B2BCE00281F0B /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		88C59AF3263B446100281F0B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		88C59AFF263D4C2100281F0B /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		88C59B00263D4C2100281F0B /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		88F0C2382638918600B907AD /* X07 Meetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "X07 Meetup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F0C23B2638918600B907AD /* X07_MeetupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X07_MeetupApp.swift; sourceTree = "<group>"; };
 		88F0C23D2638918600B907AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,9 +68,9 @@
 		88F0C23A2638918600B907AD /* X07 Meetup */ = {
 			isa = PBXGroup;
 			children = (
-				88032CBA263C154B00276C99 /* Contact+CoreDataClass.swift */,
-				88032CBB263C154B00276C99 /* Contact+CoreDataProperties.swift */,
 				88F0C23B2638918600B907AD /* X07_MeetupApp.swift */,
+				88C59AFF263D4C2100281F0B /* Contact+CoreDataClass.swift */,
+				88C59B00263D4C2100281F0B /* Contact+CoreDataProperties.swift */,
 				88F0C23D2638918600B907AD /* ContentView.swift */,
 				88F0C23F2638918C00B907AD /* Assets.xcassets */,
 				88F0C2442638918C00B907AD /* Persistence.swift */,
@@ -166,11 +166,11 @@
 				88F0C2482638918C00B907AD /* X07_Meetup.xcdatamodeld in Sources */,
 				88C59AF1263B2BCE00281F0B /* AddView.swift in Sources */,
 				88C59AF4263B446100281F0B /* DetailView.swift in Sources */,
-				88032CBC263C154B00276C99 /* Contact+CoreDataClass.swift in Sources */,
+				88C59B01263D4C2100281F0B /* Contact+CoreDataClass.swift in Sources */,
 				88C59ACD263B218D00281F0B /* ImagePicker.swift in Sources */,
 				88F0C23E2638918600B907AD /* ContentView.swift in Sources */,
 				88F0C23C2638918600B907AD /* X07_MeetupApp.swift in Sources */,
-				88032CBD263C154B00276C99 /* Contact+CoreDataProperties.swift in Sources */,
+				88C59B02263D4C2100281F0B /* Contact+CoreDataProperties.swift in Sources */,
 				88032CB7263BF5C000276C99 /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
