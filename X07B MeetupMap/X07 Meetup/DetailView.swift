@@ -22,7 +22,8 @@ struct DetailView: View {
     @State private var inputImage: UIImage?
     @State private var photoFile = UUID()
     @State private var location = CLLocationCoordinate2D()
-    
+    @State var locationFetcher: LocationFetcher
+
     var body: some View {
         Form {
             PhotoView(image: self.$image, showingImagePicker: self.$showingImagePicker, photoFile: self.photoFile.uuidString)
@@ -42,7 +43,7 @@ struct DetailView: View {
                     image = imageSaver.loadImage(imageFileName: self.contact.photoFileString)
                 }
             
-            LocationView(location: $location)
+            LocationView(location: $location, locationFetcher: locationFetcher)
         }
         .navigationBarTitle("\(firstName) \(lastName)")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
@@ -81,7 +82,7 @@ struct DetailView_Previews: PreviewProvider {
         contact.lastName = "Smith"
 
         return NavigationView {
-            DetailView(contact: contact)
+            DetailView(contact: contact, locationFetcher: LocationFetcher())
         }
     }
 }

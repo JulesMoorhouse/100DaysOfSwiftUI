@@ -37,6 +37,17 @@ extension Contact {
     var photoFileString: String {
         wrappedPhotoFile.uuidString
     }
+    
+    var formattedTimestamp: String {
+        if let date = timestamp {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .short
+            return formatter.string(from: date)
+        } else {
+            return "N/A"
+        }
+    }
 }
 
 extension Contact : Identifiable {

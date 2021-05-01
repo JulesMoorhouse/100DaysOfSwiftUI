@@ -31,14 +31,14 @@ struct ContentView: View {
                     List {
                         ForEach(self.contacts, id: \.self) { item in
                             NavigationLink(destination:
-                                DetailView(contact: item)
+                                DetailView(contact: item, locationFetcher: locationFetcher)
                                     .environment(\.managedObjectContext, self.moc)) {
                                     VStack(alignment: .leading) {
                                         HStack {
                                             Text(item.wrappedFirstName)
                                             Text(item.wrappedLastName)
                                         }
-                                        Text("Added \(item.timestamp!, formatter: itemFormatter)")
+                                        Text("Added \(item.formattedTimestamp)")
                                             .font(.caption)
                                             .foregroundColor(.secondary)
                                     }
@@ -82,13 +82,6 @@ struct ContentView: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .long
-    formatter.timeStyle = .short
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

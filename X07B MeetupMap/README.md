@@ -3,7 +3,8 @@
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X07B%20MeetupMap/X07%20Meetup/ContentView.swift) 
 - [AddView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X07B%20MeetupMap/X07%20Meetup/AddView.swift) 
 - [DetailView.Swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X07B%20MeetupMap/X07%20Meetup/DetailView.swift) 
+- [PhotoView.Swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X07B%20MeetupMap/X07%20Meetup/PhotoView.swift) 
  
-- CChallenge project from day 77 with maps.
+- Challenge project from day 77 with maps.
 
-<img src="../Images/day77.gif">
+<img src="../Images/day78.gif">

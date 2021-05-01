@@ -13,7 +13,7 @@ struct PhotoView: View {
     let photoFile: String
 
     @State private var inputImage: UIImage?
-    
+
     var body: some View {
         Section(header: Text("").accessibility(hidden: true)) {
             ZStack(alignment: .bottomTrailing) {
@@ -43,20 +43,8 @@ struct PhotoView: View {
                 .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
 
                 if image != nil {
-                    Group {
-                        Circle()
-                            .fill(Color.secondary.opacity(0.3))
-                            .frame(width: 40, height: 40)
-
-                        Button(action: {
-                            //
-                        }) {
-                            Image(systemName: "photo")
-                                .frame(width: 40, height: 40)
-                        }
-                        .accessibility(hidden: true)
-                    }
-                    .accessibility(label: Text("Change photo"))
+                    CircleButtonView(imageName: "photo")
+                        .accessibility(label: Text("Change photo"))
                 }
             }
             .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
@@ -70,10 +58,10 @@ struct PhotoView: View {
             ImagePicker(image: self.$inputImage)
         }
     }
-    
+
     func handleImage() {
         guard let inputImage = inputImage else { return }
-        self.image = Image(uiImage: inputImage)
+        image = Image(uiImage: inputImage)
 
         let imageSaver = ImageManager()
         imageSaver.writeToFile(photoFile: photoFile, image: inputImage)

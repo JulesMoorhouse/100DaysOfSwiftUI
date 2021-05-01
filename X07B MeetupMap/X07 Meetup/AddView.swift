@@ -27,7 +27,7 @@ struct AddView: View {
 
             PersonalView(firstName: self.$firstName, lastName: self.$lastName)
 
-            LocationView(location: $currentLocation)
+            LocationView(location: $currentLocation, locationFetcher: locationFetcher)
         }
         .navigationBarTitle("New contact")
         .navigationBarItems(trailing: Button(action: save) { Text("Save") }
