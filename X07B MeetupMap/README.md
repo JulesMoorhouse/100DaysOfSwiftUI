@@ -4,6 +4,6 @@
 - [AddView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X07B%20MeetupMap/X07%20Meetup/AddView.swift) 
 - [DetailView.Swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/X07B%20MeetupMap/X07%20Meetup/DetailView.swift) 
  
-- Challenge project using core data, images save to documents directory, image picker and accessibility.
+- CChallenge project from day 77 with maps.
 
 <img src="../Images/day77.gif">
