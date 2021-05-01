@@ -29,14 +29,13 @@ struct AddView: View {
                             .fill(Color.secondary.opacity(0.3))
                             .frame(maxHeight: 200)
                             .clipShape(Circle())
-                            .padding(10)
 
                         if image != nil {
                             image?
                                 .resizable()
                                 .scaledToFit()
+                                .frame(minWidth: 200, minHeight: 200)
                                 .clipShape(Circle())
-                                .frame(maxWidth: .infinity, maxHeight: 200)
 
                         } else {
                             Text("Tap to select a photo")
@@ -47,10 +46,11 @@ struct AddView: View {
                                 .multilineTextAlignment(.center)
                         }
                     }
+                    .padding(10)
                     .onTapGesture {
                         self.showingImagePicker = true
                     }
-                    .frame(maxWidth: .infinity, minHeight: 200)
+                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
                 }
 
                 Section(header: Text("").accessibility(hidden: true)) {

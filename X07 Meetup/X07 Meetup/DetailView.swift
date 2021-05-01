@@ -26,11 +26,21 @@ struct DetailView: View {
         Form {
             Section(header: Text("").accessibility(hidden: true)) {
                 ZStack(alignment: .bottomTrailing) {
-                    image
-                        .resizable()
-                        .scaledToFit()
+                    Rectangle()
+                        .fill(Color.secondary.opacity(0.3))
+                        .frame(maxHeight: 200)
                         .clipShape(Circle())
-                        .frame(maxWidth: .infinity, maxHeight: 200)
+                    
+                    VStack {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: 200, minHeight: 200)
+                            .clipShape(Circle())
+
+                    }
+                    .padding(10)
+                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
 
                     Group {
                         Circle()
@@ -47,7 +57,9 @@ struct DetailView: View {
                     }
                     .accessibility(label: Text("Change photo"))
                 }
+                .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
             }
+
             Section(header: Text("").accessibility(hidden: true)) {
                 VStack(alignment: .leading, spacing: 0) {
                     Text("First name")
