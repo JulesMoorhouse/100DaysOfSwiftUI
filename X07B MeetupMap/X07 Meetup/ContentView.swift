@@ -19,8 +19,6 @@ struct ContentView: View {
         animation: .default)
     var contacts: FetchedResults<Contact>
 
-    @State private var showingAddScreen = false
-
     var body: some View {
         NavigationView {
             VStack {
@@ -55,17 +53,11 @@ struct ContentView: View {
                 EditButton()
                     .accessibility(label: Text("Edit contacts")),
                 trailing:
-                Button(action: {
-                    self.showingAddScreen.toggle()
-                }) {
+                NavigationLink(destination: AddView()
+                    .environment(\.managedObjectContext, self.moc)) {
                         Image(systemName: "plus")
                             .accessibility(label: Text("Add a new contact"))
-
                 })
-            .sheet(isPresented: $showingAddScreen) {
-                AddView()
-                    .environment(\.managedObjectContext, self.moc)
-            }
         }
     }
 
