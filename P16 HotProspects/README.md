@@ -2,4 +2,4 @@
 
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P16%20HotProspects/P16%20HotProspects/ContentView.swift)
 
-- tbc
+- Reading custom values from the environment with @EnvironmentObject.
