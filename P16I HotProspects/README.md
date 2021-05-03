@@ -4,3 +4,6 @@
 
 - Building our tab bar.
 - Sharing data across tabs using @EnvironmentObject.
+- Dynamically filtering a SwiftUI List.
+
+<img src="../Images/day82i.png">
