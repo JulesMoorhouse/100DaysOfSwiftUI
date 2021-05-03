@@ -13,6 +13,7 @@
 		88BDFBFD26406E94001E9D76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BDFBFC26406E94001E9D76 /* Preview Assets.xcassets */; };
 		88BDFC0626407052001E9D76 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDFC0526407052001E9D76 /* ProspectsView.swift */; };
 		88BDFC0926407063001E9D76 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDFC0826407063001E9D76 /* MeView.swift */; };
+		88BDFC0C26408717001E9D76 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDFC0B26408717001E9D76 /* Prospect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		88BDFBFE26406E94001E9D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88BDFC0526407052001E9D76 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		88BDFC0826407063001E9D76 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		88BDFC0B26408717001E9D76 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				88BDFBF526406E91001E9D76 /* P16I_HotProspectsApp.swift */,
 				88BDFBF726406E91001E9D76 /* ContentView.swift */,
+				88BDFC0B26408717001E9D76 /* Prospect.swift */,
 				88BDFC0526407052001E9D76 /* ProspectsView.swift */,
 				88BDFC0826407063001E9D76 /* MeView.swift */,
 				88BDFBF926406E94001E9D76 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BDFC0926407063001E9D76 /* MeView.swift in Sources */,
+				88BDFC0C26408717001E9D76 /* Prospect.swift in Sources */,
 				88BDFC0626407052001E9D76 /* ProspectsView.swift in Sources */,
 				88BDFBF826406E91001E9D76 /* ContentView.swift in Sources */,
 				88BDFBF626406E91001E9D76 /* P16I_HotProspectsApp.swift in Sources */,
