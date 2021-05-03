@@ -3,3 +3,4 @@
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P16I%20HotProspects/P16I%20HotProspects/ContentView.swift)
 
 - Building our tab bar.
+- Sharing data across tabs using @EnvironmentObject.

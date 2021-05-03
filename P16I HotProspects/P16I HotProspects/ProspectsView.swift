@@ -11,34 +11,54 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
-    
+
     @EnvironmentObject var prospects: Prospects
     let filter: FilterType
-    
+
     var title: String {
         switch filter {
         case .none:
             return "Everyone"
         case .contacted:
-        return "Contacted people"
+            return "Contacted people"
         case .uncontacted:
-        return "Uncontacted people"
+            return "Uncontacted people"
         }
     }
-    
+
+    var filteredProspects: [Prospect] {
+        switch filter {
+        case .none:
+            return prospects.people
+        case .contacted:
+            return prospects.people.filter { $0.isContacted }
+        case .uncontacted:
+            return prospects.people.filter { !$0.isContacted }
+        }
+    }
+
     var body: some View {
         NavigationView {
-            Text("People: \(prospects.people.count)")
+            List {
+                ForEach(filteredProspects) { prospect in
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
+                        Text(prospect.emailAddress)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
             .navigationTitle(title)
-                .navigationBarItems(trailing: Button(action: {
-                    let prospect = Prospect()
-                    prospect.name = "Paul Hudson"
-                    prospect.emailAddress = "paul@hackingwithswift.com"
-                    self.prospects.people.append(prospect)
-                }) {
-                    Image(systemName: "qrcode.viewfinder")
-                    Text("Scan")
-                })
+            .navigationBarItems(trailing: Button(action: {
+                let prospect = Prospect()
+                prospect.name = "Paul Hudson"
+                prospect.emailAddress = "paul@hackingwithswift.com"
+                self.prospects.people.append(prospect)
+            }) {
+                Image(systemName: "qrcode.viewfinder")
+                Text("Scan")
+            })
         }
     }
 }
