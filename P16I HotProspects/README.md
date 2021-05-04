@@ -8,6 +8,9 @@
 - Generating and scaling up a QR code.
 - Scanning QR codes with SwiftUI.
 - Adding options with a context menu.
+- Saving and loading data with UserDefaults.
+- Posting notifications to the lock screen.
 
 <img src="../Images/day82i.png">
 <img src="../Images/day83.gif">
+<img src="../Images/day84.gif">
