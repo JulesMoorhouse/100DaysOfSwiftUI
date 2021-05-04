@@ -6,5 +6,7 @@
 - Sharing data across tabs using @EnvironmentObject.
 - Dynamically filtering a SwiftUI List.
 - Generating and scaling up a QR code.
+- Scanning QR codes with SwiftUI.
+- Adding options with a context menu.
 
 <img src="../Images/day82i.png">

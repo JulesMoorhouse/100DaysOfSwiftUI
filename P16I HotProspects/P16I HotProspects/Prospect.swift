@@ -11,7 +11,7 @@ class Prospect: Identifiable, Codable {
     var id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
-    var isContacted = false
+    fileprivate(set) var isContacted = false // fileprivate(set) is used to stop us from accidentally setting isContacted in our code.
     
 }
 
@@ -20,5 +20,10 @@ class Prospects: ObservableObject {
     
     init() {
         self.people = []
+    }
+    
+    func toggle(_ prospect: Prospect) {
+        objectWillChange.send() // Called before animations are correct
+        prospect.isContacted.toggle()
     }
 }
