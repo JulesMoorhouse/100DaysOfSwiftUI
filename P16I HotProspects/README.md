@@ -5,5 +5,6 @@
 - Building our tab bar.
 - Sharing data across tabs using @EnvironmentObject.
 - Dynamically filtering a SwiftUI List.
+- Generating and scaling up a QR code.
 
 <img src="../Images/day82i.png">
