@@ -12,7 +12,6 @@ class Prospect: Identifiable, Codable {
     var name = "Anonymous"
     var emailAddress = ""
     fileprivate(set) var isContacted = false // fileprivate(set) is used to stop us from accidentally setting isContacted in our code.
-    
 }
 
 class Prospects: ObservableObject {
@@ -20,20 +19,46 @@ class Prospects: ObservableObject {
     static let saveKey = "SavedData"
     
     init() {
-        // Notice Self.saveKey has a captial S
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
-            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
-                self.people = decoded
-                return
-            }
-        }
-        
         self.people = []
+        loadData()
+    }
+    
+    func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func loadData() {
+        let filename = getDocumentDirectory().appendingPathComponent(Self.saveKey)
+        
+        do {
+            let fileExists = try filename.checkResourceIsReachable()
+            if fileExists {
+                do {
+                    let data = try Data(contentsOf: filename)
+                    people = try JSONDecoder().decode([Prospect].self, from: data)
+                } catch {
+                    print("Unable to load saved data. \(error.localizedDescription)")
+                    print("\(error)")
+                }
+            } else {
+                print("FILE NOT AVAILABLE")
+            }
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     private func save() {
-        if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+        do {
+            let filename = getDocumentDirectory().appendingPathComponent(Self.saveKey)
+            let data = try JSONEncoder().encode(people)
+
+            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
+            print("Saved correctly")
+        } catch {
+            print("Unable to save data. \(error.localizedDescription)")
+            print("\(error)")
         }
     }
     

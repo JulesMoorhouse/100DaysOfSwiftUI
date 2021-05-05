@@ -16,6 +16,8 @@ struct ProspectsView: View {
 
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var showingActionSheet = false
+
     let filter: FilterType
 
     var title: String {
@@ -44,11 +46,22 @@ struct ProspectsView: View {
         NavigationView {
             List {
                 ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                    VStack {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(prospect.name)
+                                    .font(.headline)
+                                Text(prospect.emailAddress)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            if prospect.isContacted && filter == .none {
+                                Spacer()
+                                
+                                Image(systemName: "envelope.open.fill")
+                                    .padding([.trailing])
+                            }
+                        }
                     }
                     .contextMenu {
                         Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted") {
@@ -64,9 +77,13 @@ struct ProspectsView: View {
                 }
             }
             .navigationTitle(title)
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: Button(action: {
+                self.showingActionSheet = true
+            }) {
+                Image(systemName: "arrow.up.arrow.down.square")
+                Text("Sort")
+            }, trailing: Button(action: {
                 self.isShowingScanner = true
-                
             }) {
                 Image(systemName: "qrcode.viewfinder")
                 Text("Scan")
@@ -74,11 +91,22 @@ struct ProspectsView: View {
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
             }
+            .actionSheet(isPresented: $showingActionSheet) {
+                ActionSheet(title: Text("Sort order"), message: Text("Select a sort order"), buttons: [
+                    .default(Text("Sort by name")) {
+                        //self.backgroundColor = Color.red
+                    },
+                    .default(Text("Sort by most recent")) {
+                        //self.backgroundColor = Color.blue
+                    },
+                    .cancel()
+                ])
+            }
         }
     }
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
-        self.isShowingScanner = false
+        isShowingScanner = false
         
         switch result {
         case .success(let code):
@@ -88,7 +116,7 @@ struct ProspectsView: View {
             let person = Prospect()
             person.name = details[0]
             person.emailAddress = details[1]
-            self.prospects.add(person)
+            prospects.add(person)
             
         case .failure(let error):
             print("Scanning failed \(error.localizedDescription)")
@@ -119,7 +147,7 @@ struct ProspectsView: View {
             if settings.authorizationStatus == .authorized {
                 addRequest()
             } else {
-                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, _ in
                     if success {
                         addRequest()
                     } else {
