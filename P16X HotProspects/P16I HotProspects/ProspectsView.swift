@@ -14,10 +14,15 @@ struct ProspectsView: View {
         case none, contacted, uncontacted
     }
 
+    enum SortType {
+        case name, mostRecent
+    }
+    
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
     @State private var showingActionSheet = false
-
+    @State private var sort: SortType = .name
+    
     let filter: FilterType
 
     var title: String {
@@ -32,14 +37,24 @@ struct ProspectsView: View {
     }
 
     var filteredProspects: [Prospect] {
+        var result: [Prospect]
+        
         switch filter {
         case .none:
-            return prospects.people
+            result = prospects.people
         case .contacted:
-            return prospects.people.filter { $0.isContacted }
+            result = prospects.people.filter { $0.isContacted }
         case .uncontacted:
-            return prospects.people.filter { !$0.isContacted }
+            result = prospects.people.filter { !$0.isContacted }
         }
+        
+        switch sort {
+        case .name:
+            result.sort { $0.name < $1.name }
+        case .mostRecent:
+            result.sort { $0.timeStamp < $1.timeStamp}
+        }
+        return result
     }
 
     var body: some View {
@@ -92,12 +107,12 @@ struct ProspectsView: View {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
             }
             .actionSheet(isPresented: $showingActionSheet) {
-                ActionSheet(title: Text("Sort order"), message: Text("Select a sort order"), buttons: [
+                ActionSheet(title: Text("Sort order"), message: Text("Please select how to sort your contact."), buttons: [
                     .default(Text("Sort by name")) {
-                        //self.backgroundColor = Color.red
+                        self.sort = .name
                     },
                     .default(Text("Sort by most recent")) {
-                        //self.backgroundColor = Color.blue
+                        self.sort = .mostRecent
                     },
                     .cancel()
                 ])
