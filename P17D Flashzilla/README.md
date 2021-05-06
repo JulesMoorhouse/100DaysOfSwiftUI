@@ -4,4 +4,4 @@
 
 - How to use gestures in SwiftUI : combined sequenced gestures.
 
-<img src="../Images/day71f.gif" />
+<img src="../Images/day86c.gif" />
