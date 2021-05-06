@@ -2,4 +2,4 @@
 
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P17G%20Flashzilla/P17G%20Flashzilla/ContentView.swift) 
   
-- Disabling user interactivity with allowsHitTesting() : tbc.
+- Disabling user interactivity with allowsHitTesting() : VStack contentShape.
