@@ -3,3 +3,7 @@
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P17M%20Flashzilla/P17M%20Flashzilla/ContentView.swift) 
   
 - Designing a single card view.
+- Building a stack of cards.
+- Moving views with DragGesture and offset().
+
+<img src="../Images/day88.gif" />

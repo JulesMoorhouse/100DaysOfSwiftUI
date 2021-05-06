@@ -56,12 +56,12 @@
 		88442B74264418BE0091550F /* P17M Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
-				88442B8D26441AFF0091550F /* CardView.swift */,
-				88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */,
-				88442B77264418BE0091550F /* ContentView.swift */,
-				88442B85264419A30091550F /* Card.swift */,
 				88442B79264418C00091550F /* Assets.xcassets */,
+				88442B85264419A30091550F /* Card.swift */,
+				88442B8D26441AFF0091550F /* CardView.swift */,
+				88442B77264418BE0091550F /* ContentView.swift */,
 				88442B7E264418C00091550F /* Info.plist */,
+				88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */,
 				88442B7B264418C00091550F /* Preview Content */,
 			);
 			path = "P17M Flashzilla";
