@@ -9,8 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 300, height: 300)
+                .onTapGesture {
+                    print("Rectangle tapped!")
+                }
+
+//            Circle()
+//                .fill(Color.red)
+//                .frame(width: 300, height: 300)
+//                .onTapGesture {
+//                    print("Circle tapped!")
+//                }
+//                .allowsHitTesting(false) // Only Rectangle Tapped will work
+            
+            Circle()
+                .fill(Color.red)
+                .frame(width: 300, height: 300)
+                .contentShape(Rectangle()) // Only Circle Tapped with work
+                .onTapGesture {
+                    print("Circle tapped!")
+                }
+        }
     }
 }
 
