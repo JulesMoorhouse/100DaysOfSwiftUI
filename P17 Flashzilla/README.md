@@ -2,4 +2,4 @@
 
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P17%20Flashzilla/P17%20Flashzilla/ContentView.swift) 
 
-- tbc
+- How to use gestures in SwiftUI : scaleEffect / MagnificationGesture onLongPressGesture.
