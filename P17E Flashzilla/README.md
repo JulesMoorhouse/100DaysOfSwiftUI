@@ -2,4 +2,4 @@
 
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P17E%20Flashzilla/P17E%20Flashzilla/ContentView.swift) 
 
-- tbc
+- Making vibrations with UINotificationFeedbackGenerator and Core Haptics.
