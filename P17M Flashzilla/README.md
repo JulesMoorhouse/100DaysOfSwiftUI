@@ -5,5 +5,9 @@
 - Designing a single card view.
 - Building a stack of cards.
 - Moving views with DragGesture and offset().
+- Coloring views as we swipe
+- Counting down with a Timer
+- Ending the app with allowsHitTesting()
 
 <img src="../Images/day88.gif" />
+<img src="../Images/day89.gif" />
