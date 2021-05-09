@@ -8,6 +8,10 @@
 - Coloring views as we swipe
 - Counting down with a Timer
 - Ending the app with allowsHitTesting()
+- Making iPhones vibrate with UINotificationFeedbackGenerator.
+- Fixing the bugs.
+- Adding and deleting cards.
 
 <img src="../Images/day88.gif" />
 <img src="../Images/day89.gif" />
+<img src="../Images/day90.gif" />
