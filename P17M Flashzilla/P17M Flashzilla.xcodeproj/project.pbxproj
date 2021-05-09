@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8814716B26486D5800C73766 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814716A26486D5800C73766 /* EditCards.swift */; };
 		88442B76264418BE0091550F /* P17M_FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */; };
 		88442B78264418BE0091550F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88442B77264418BE0091550F /* ContentView.swift */; };
 		88442B7A264418C00091550F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88442B79264418C00091550F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8814716A26486D5800C73766 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		88442B72264418BE0091550F /* P17M Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P17M Flashzilla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P17M_FlashzillaApp.swift; sourceTree = "<group>"; };
 		88442B77264418BE0091550F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				88442B7E264418C00091550F /* Info.plist */,
 				88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */,
 				88442B7B264418C00091550F /* Preview Content */,
+				8814716A26486D5800C73766 /* EditCards.swift */,
 			);
 			path = "P17M Flashzilla";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				88442B78264418BE0091550F /* ContentView.swift in Sources */,
 				88442B86264419A30091550F /* Card.swift in Sources */,
 				88442B8E26441AFF0091550F /* CardView.swift in Sources */,
+				8814716B26486D5800C73766 /* EditCards.swift in Sources */,
 				88442B76264418BE0091550F /* P17M_FlashzillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
