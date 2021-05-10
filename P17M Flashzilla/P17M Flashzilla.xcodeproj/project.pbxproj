@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8814716B26486D5800C73766 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814716A26486D5800C73766 /* EditCards.swift */; };
+		8814716E2649B0E000C73766 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814716D2649B0E000C73766 /* SettingsView.swift */; };
+		881471712649C3AA00C73766 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881471702649C3AA00C73766 /* Settings.swift */; };
 		88442B76264418BE0091550F /* P17M_FlashzillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */; };
 		88442B78264418BE0091550F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88442B77264418BE0091550F /* ContentView.swift */; };
 		88442B7A264418C00091550F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88442B79264418C00091550F /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		8814716A26486D5800C73766 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		8814716D2649B0E000C73766 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		881471702649C3AA00C73766 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		88442B72264418BE0091550F /* P17M Flashzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P17M Flashzilla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P17M_FlashzillaApp.swift; sourceTree = "<group>"; };
 		88442B77264418BE0091550F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,10 +66,12 @@
 				88442B85264419A30091550F /* Card.swift */,
 				88442B8D26441AFF0091550F /* CardView.swift */,
 				88442B77264418BE0091550F /* ContentView.swift */,
+				8814716D2649B0E000C73766 /* SettingsView.swift */,
 				88442B7E264418C00091550F /* Info.plist */,
 				88442B75264418BE0091550F /* P17M_FlashzillaApp.swift */,
 				88442B7B264418C00091550F /* Preview Content */,
 				8814716A26486D5800C73766 /* EditCards.swift */,
+				881471702649C3AA00C73766 /* Settings.swift */,
 			);
 			path = "P17M Flashzilla";
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 				88442B78264418BE0091550F /* ContentView.swift in Sources */,
 				88442B86264419A30091550F /* Card.swift in Sources */,
 				88442B8E26441AFF0091550F /* CardView.swift in Sources */,
+				8814716E2649B0E000C73766 /* SettingsView.swift in Sources */,
+				881471712649C3AA00C73766 /* Settings.swift in Sources */,
 				8814716B26486D5800C73766 /* EditCards.swift in Sources */,
 				88442B76264418BE0091550F /* P17M_FlashzillaApp.swift in Sources */,
 			);
