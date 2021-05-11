@@ -4,4 +4,4 @@
   
 - Alignment and alignment guides.
 
-<img src="../Images/day92c.gif" />
+<img src="../Images/day92c.png" />
