@@ -54,9 +54,10 @@ struct ContentView: View {
                 if timeRemaining != 0 {
                     ZStack {
                         ForEach(0 ..< cards.count, id: \.self) { index in
-                            CardView(card: self.cards[index]) {
+                            CardView(card: self.cards[index]) { correct in
                                 withAnimation {
-                                    self.removeCard(at: index)
+                                    // https://www.hackingwithswift.com/forums/swiftui/day88-draggesture-removal-callback/5751/5809
+                                    self.removeCard(at: index, isCorrect: correct)
                                 }
                             }
                             .stacked(at: index, in: self.cards.count)
@@ -127,9 +128,7 @@ struct ContentView: View {
                     HStack {
                         Button(action: {
                             withAnimation {
-                                if self.settings.loseWrongCards {
-                                    self.removeCard(at: self.cards.count - 1)
-                                }
+                                self.removeCard(at: self.cards.count - 1, isCorrect: false)
                             }
                         }) {
                             Image(systemName: "xmark.circle")
@@ -144,7 +143,7 @@ struct ContentView: View {
                         
                         Button(action: {
                             withAnimation {
-                                self.removeCard(at: self.cards.count - 1)
+                                self.removeCard(at: self.cards.count - 1, isCorrect: true)
                             }
                         }) {
                             Image(systemName: "checkmark.circle")
@@ -185,20 +184,27 @@ struct ContentView: View {
         .onAppear(perform: resetCards)
         if self.showingEditScreen {
             Text("")
-            .sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
-                EditCards()
-            }
+                .sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
+                    EditCards()
+                }
         }
         if self.showingSettingsScreen {
             Text("")
-            .sheet(isPresented: $showingSettingsScreen, onDismiss: loadSettings) {
-                SettingsView()
-            }
+                .sheet(isPresented: $showingSettingsScreen, onDismiss: loadSettings) {
+                    SettingsView()
+                }
         }
     }
 
-    func removeCard(at index: Int) {
+    func removeCard(at index: Int, isCorrect: Bool) {
         guard index >= 0 else { return }
+
+        let card = cards[index]
+        if !isCorrect && settings.loseWrongCards == false {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.cards.insert(card, at: 0)
+            }
+        }
         
         cards.remove(at: index)
         
@@ -227,7 +233,7 @@ struct ContentView: View {
     func loadSettings() {
         if let data = UserDefaults.standard.data(forKey: "Settings") {
             if let decoded = try? JSONDecoder().decode(Settings.self, from: data) {
-                self.settings = decoded
+                settings = decoded
             }
         }
     }

@@ -10,14 +10,14 @@ import SwiftUI
 struct CardView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
-    
+
     let card: Card
-    var removal: (() -> Void)? = nil
-    
+    var answered: ((Bool) -> Void)? = nil
+
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
     @State private var feedback = UINotificationFeedbackGenerator()
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -29,12 +29,12 @@ struct CardView: View {
                 )
                 .background(
                     differentiateWithoutColor
-                    ? nil
-                    : RoundedRectangle(cornerRadius: 25, style: .continuous)
+                        ? nil
+                        : RoundedRectangle(cornerRadius: 25, style: .continuous)
                         .fill(self.setColor(for: offset.width))
                 )
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            
+
             VStack {
                 if accessibilityEnabled {
                     Text(isShowingAnswer ? card.answer : card.prompt)
@@ -71,11 +71,11 @@ struct CardView: View {
                     if abs(self.offset.width) > 100 {
                         if self.offset.width > 0 {
                             self.feedback.notificationOccurred(.success)
+                            self.answered?(true)
                         } else {
                             self.feedback.notificationOccurred(.error)
+                            self.answered?(false)
                         }
-                        
-                        self.removal?()
                     } else {
                         self.offset = .zero
                     }
@@ -86,14 +86,14 @@ struct CardView: View {
         }
         .animation(.spring())
     }
-    
+
     func setColor(for offset: CGFloat) -> Color {
-      if offset > 0 {
-        return .green
-      } else if offset < 0 {
-        return .red
-      }
-      return .white
+        if offset > 0 {
+            return .green
+        } else if offset < 0 {
+            return .red
+        }
+        return .white
     }
 }
 
