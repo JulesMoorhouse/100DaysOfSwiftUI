@@ -10,7 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
-            .padding()
+            .background(Color.blue)
+            // Absolute positioned, this is also a new view which occupies all the space
+            .position(x: 100, y: 100)
+            .background(Color.red)
     }
 }
 
