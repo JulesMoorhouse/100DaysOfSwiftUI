@@ -3,3 +3,5 @@
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P18G%20LayoutAndGeometry/P18G%20LayoutAndGeometry/ContentView.swift)
 
 - Absolute positioning for SwiftUI views.
+
+<img src="../Images/day93g.png" />
