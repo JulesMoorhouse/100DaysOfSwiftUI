@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		887008EF264C7A1C00472F01 /* P18H_LayoutAndGeometryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887008EE264C7A1C00472F01 /* P18H_LayoutAndGeometryApp.swift */; };
-		887008F1264C7A1C00472F01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887008F0264C7A1C00472F01 /* ContentView.swift */; };
-		887008F3264C7A1F00472F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887008F2264C7A1F00472F01 /* Assets.xcassets */; };
-		887008F6264C7A1F00472F01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887008F5264C7A1F00472F01 /* Preview Assets.xcassets */; };
+		8812D29A264DBA7D005B89B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812D299264DBA7D005B89B2 /* AppDelegate.swift */; };
+		8812D29C264DBA7D005B89B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812D29B264DBA7D005B89B2 /* SceneDelegate.swift */; };
+		8812D29E264DBA7D005B89B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8812D29D264DBA7D005B89B2 /* ContentView.swift */; };
+		8812D2A0264DBA80005B89B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8812D29F264DBA80005B89B2 /* Assets.xcassets */; };
+		8812D2A3264DBA80005B89B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8812D2A2264DBA80005B89B2 /* Preview Assets.xcassets */; };
+		8812D2A6264DBA80005B89B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8812D2A4264DBA80005B89B2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		887008EB264C7A1C00472F01 /* P18H LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P18H LayoutAndGeometry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		887008EE264C7A1C00472F01 /* P18H_LayoutAndGeometryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P18H_LayoutAndGeometryApp.swift; sourceTree = "<group>"; };
-		887008F0264C7A1C00472F01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		887008F2264C7A1F00472F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		887008F5264C7A1F00472F01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		887008F7264C7A1F00472F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8812D296264DBA7D005B89B2 /* P18H LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P18H LayoutAndGeometry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8812D299264DBA7D005B89B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8812D29B264DBA7D005B89B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8812D29D264DBA7D005B89B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8812D29F264DBA80005B89B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8812D2A2264DBA80005B89B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8812D2A5264DBA80005B89B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8812D2A7264DBA80005B89B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		887008E8264C7A1C00472F01 /* Frameworks */ = {
+		8812D293264DBA7D005B89B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,38 +37,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		887008E2264C7A1C00472F01 = {
+		8812D28D264DBA7D005B89B2 = {
 			isa = PBXGroup;
 			children = (
-				887008ED264C7A1C00472F01 /* P18H LayoutAndGeometry */,
-				887008EC264C7A1C00472F01 /* Products */,
+				8812D298264DBA7D005B89B2 /* P18H LayoutAndGeometry */,
+				8812D297264DBA7D005B89B2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		887008EC264C7A1C00472F01 /* Products */ = {
+		8812D297264DBA7D005B89B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				887008EB264C7A1C00472F01 /* P18H LayoutAndGeometry.app */,
+				8812D296264DBA7D005B89B2 /* P18H LayoutAndGeometry.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		887008ED264C7A1C00472F01 /* P18H LayoutAndGeometry */ = {
+		8812D298264DBA7D005B89B2 /* P18H LayoutAndGeometry */ = {
 			isa = PBXGroup;
 			children = (
-				887008EE264C7A1C00472F01 /* P18H_LayoutAndGeometryApp.swift */,
-				887008F0264C7A1C00472F01 /* ContentView.swift */,
-				887008F2264C7A1F00472F01 /* Assets.xcassets */,
-				887008F7264C7A1F00472F01 /* Info.plist */,
-				887008F4264C7A1F00472F01 /* Preview Content */,
+				8812D299264DBA7D005B89B2 /* AppDelegate.swift */,
+				8812D29B264DBA7D005B89B2 /* SceneDelegate.swift */,
+				8812D29D264DBA7D005B89B2 /* ContentView.swift */,
+				8812D29F264DBA80005B89B2 /* Assets.xcassets */,
+				8812D2A4264DBA80005B89B2 /* LaunchScreen.storyboard */,
+				8812D2A7264DBA80005B89B2 /* Info.plist */,
+				8812D2A1264DBA80005B89B2 /* Preview Content */,
 			);
 			path = "P18H LayoutAndGeometry";
 			sourceTree = "<group>";
 		};
-		887008F4264C7A1F00472F01 /* Preview Content */ = {
+		8812D2A1264DBA80005B89B2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				887008F5264C7A1F00472F01 /* Preview Assets.xcassets */,
+				8812D2A2264DBA80005B89B2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,13 +78,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		887008EA264C7A1C00472F01 /* P18H LayoutAndGeometry */ = {
+		8812D295264DBA7D005B89B2 /* P18H LayoutAndGeometry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 887008FA264C7A1F00472F01 /* Build configuration list for PBXNativeTarget "P18H LayoutAndGeometry" */;
+			buildConfigurationList = 8812D2AA264DBA80005B89B2 /* Build configuration list for PBXNativeTarget "P18H LayoutAndGeometry" */;
 			buildPhases = (
-				887008E7264C7A1C00472F01 /* Sources */,
-				887008E8264C7A1C00472F01 /* Frameworks */,
-				887008E9264C7A1C00472F01 /* Resources */,
+				8812D292264DBA7D005B89B2 /* Sources */,
+				8812D293264DBA7D005B89B2 /* Frameworks */,
+				8812D294264DBA7D005B89B2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -86,24 +92,24 @@
 			);
 			name = "P18H LayoutAndGeometry";
 			productName = "P18H LayoutAndGeometry";
-			productReference = 887008EB264C7A1C00472F01 /* P18H LayoutAndGeometry.app */;
+			productReference = 8812D296264DBA7D005B89B2 /* P18H LayoutAndGeometry.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		887008E3264C7A1C00472F01 /* Project object */ = {
+		8812D28E264DBA7D005B89B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					887008EA264C7A1C00472F01 = {
+					8812D295264DBA7D005B89B2 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 887008E6264C7A1C00472F01 /* Build configuration list for PBXProject "P18H LayoutAndGeometry" */;
+			buildConfigurationList = 8812D291264DBA7D005B89B2 /* Build configuration list for PBXProject "P18H LayoutAndGeometry" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,42 +117,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 887008E2264C7A1C00472F01;
-			productRefGroup = 887008EC264C7A1C00472F01 /* Products */;
+			mainGroup = 8812D28D264DBA7D005B89B2;
+			productRefGroup = 8812D297264DBA7D005B89B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				887008EA264C7A1C00472F01 /* P18H LayoutAndGeometry */,
+				8812D295264DBA7D005B89B2 /* P18H LayoutAndGeometry */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		887008E9264C7A1C00472F01 /* Resources */ = {
+		8812D294264DBA7D005B89B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887008F6264C7A1F00472F01 /* Preview Assets.xcassets in Resources */,
-				887008F3264C7A1F00472F01 /* Assets.xcassets in Resources */,
+				8812D2A6264DBA80005B89B2 /* LaunchScreen.storyboard in Resources */,
+				8812D2A3264DBA80005B89B2 /* Preview Assets.xcassets in Resources */,
+				8812D2A0264DBA80005B89B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		887008E7264C7A1C00472F01 /* Sources */ = {
+		8812D292264DBA7D005B89B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887008F1264C7A1C00472F01 /* ContentView.swift in Sources */,
-				887008EF264C7A1C00472F01 /* P18H_LayoutAndGeometryApp.swift in Sources */,
+				8812D29A264DBA7D005B89B2 /* AppDelegate.swift in Sources */,
+				8812D29C264DBA7D005B89B2 /* SceneDelegate.swift in Sources */,
+				8812D29E264DBA7D005B89B2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		8812D2A4264DBA80005B89B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8812D2A5264DBA80005B89B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		887008F8264C7A1F00472F01 /* Debug */ = {
+		8812D2A8264DBA80005B89B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -207,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		887008F9264C7A1F00472F01 /* Release */ = {
+		8812D2A9264DBA80005B89B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +281,7 @@
 			};
 			name = Release;
 		};
-		887008FB264C7A1F00472F01 /* Debug */ = {
+		8812D2AB264DBA80005B89B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -272,7 +291,7 @@
 				DEVELOPMENT_TEAM = LW3B6G4NK9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P18H LayoutAndGeometry/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		887008FC264C7A1F00472F01 /* Release */ = {
+		8812D2AC264DBA80005B89B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -294,7 +313,7 @@
 				DEVELOPMENT_TEAM = LW3B6G4NK9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P18H LayoutAndGeometry/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,25 +328,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		887008E6264C7A1C00472F01 /* Build configuration list for PBXProject "P18H LayoutAndGeometry" */ = {
+		8812D291264DBA7D005B89B2 /* Build configuration list for PBXProject "P18H LayoutAndGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				887008F8264C7A1F00472F01 /* Debug */,
-				887008F9264C7A1F00472F01 /* Release */,
+				8812D2A8264DBA80005B89B2 /* Debug */,
+				8812D2A9264DBA80005B89B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		887008FA264C7A1F00472F01 /* Build configuration list for PBXNativeTarget "P18H LayoutAndGeometry" */ = {
+		8812D2AA264DBA80005B89B2 /* Build configuration list for PBXNativeTarget "P18H LayoutAndGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				887008FB264C7A1F00472F01 /* Debug */,
-				887008FC264C7A1F00472F01 /* Release */,
+				8812D2AB264DBA80005B89B2 /* Debug */,
+				8812D2AC264DBA80005B89B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 887008E3264C7A1C00472F01 /* Project object */;
+	rootObject = 8812D28E264DBA7D005B89B2 /* Project object */;
 }
