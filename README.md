@@ -6,7 +6,7 @@
 - PnnA - Project A
 - Xnn - Full challenge project
 
-|| <img src="./Images/spacer.png" width=400 height=1 style="max-width:400px"> |
+|| <img src="./Images/spacer.png" width=400 height=1 style="min-width:400px"> |
 |-|-|
 |**Day 16**<br> - [P01 WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01%20WeSplit) / [Swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01%20WeSplit/P01%20WeSplit/ContentView.swift) - Basics of Swift UI, this was introduction to the basic topics for the WeSplit project | <a href="./Images/day16.png"><img src="./Images/day16.png" width=100></a> |
 |**Day 17**<br> - [P01A WeSplit](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01a%20WeSplit) / [Swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/tree/main/P01a%20WeSplit/P01a%20WeSplit/ContentView.swift) - The real WeSplit application, my first SwiftUI application | <a href="./Images/day17.png"><img src="./Images/day17.png" width=100></a> |
