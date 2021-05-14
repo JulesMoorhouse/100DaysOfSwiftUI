@@ -17,38 +17,27 @@ struct MissionView: View {
     let astronauts: [CrewMember]
     let missions: [Mission]
     
-    private func calc(geo: GeometryProxy) -> CGFloat {
-        
-        return ((geo.frame(in: .global).midY * 2) /
-            geo.frame(in: .local).height) > 0.8 ?
-                0.8 :
-            max((geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height, 0.4)
-     }
-    
     var body: some View {
-
         GeometryReader { fullView in
             ScrollView(.vertical) {
                 VStack {
                     GeometryReader { geo in
-                        Image(decorative: self.mission.image)
-                            .resizable()
-                            .scaledToFit()
-                            .scaleEffect(calc(geo: geo))
-                            
-                            .onTapGesture {
-                                print("height: \(geo.frame(in: .local).height)")
-                                print("midY*2: \(geo.frame(in: .global).midY * 2)")
-                                print("calc1 : \((geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height)")
-                                print("scale : \((geo.frame(in: .global).midY * 2) > geo.frame(in: .local).height ? 0.8 : (geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height)");
-                                print("--")
+                        HStack {
+                            Spacer()
+                        
+                            VStack {
+                                Image(decorative: self.mission.image)
+                                    .resizable()
+                                    .scaledToFit()
                             }
-
+                            .frame(minWidth: fullView.size.width * 0.7)
+                            .scaleEffect(calculateScale(geo: geo), anchor: .bottom)
+                
+                            Spacer()
+                        }
                     }
-                    .frame(minWidth: fullView.size.width * 0.7, minHeight: fullView.size.width * 0.7)
+                    .frame(minWidth: fullView.size.width, minHeight: fullView.size.width * 0.7)
 
-                    //.fixedSize(horizontal: false, vertical: true)
-                    
                     Text(self.mission.formattedLaunchDate)
                         .accessibility(label: Text("The \(self.mission.displayName) Launch Date \(self.mission.formattedLaunchDate)"))
                     Text(self.mission.description)
@@ -59,7 +48,7 @@ struct MissionView: View {
                         crewMember in
                         NavigationLink(
                             destination: AstronautView(astronaut: crewMember.astronaut, missions: self.missions)) {
-                                HStack() {
+                                HStack {
                                     Image(crewMember.astronaut.id)
                                         .resizable()
                                         .frame(width: 83, height: 60)
@@ -108,6 +97,13 @@ struct MissionView: View {
         }
         
         self.astronauts = matches
+    }
+    
+    private func calculateScale(geo: GeometryProxy) -> CGFloat {
+        return ((geo.frame(in: .global).midY * 2) /
+            geo.frame(in: .local).height) > 0.8 ?
+            0.8 :
+            max((geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height, 0.4)
     }
 }
 
