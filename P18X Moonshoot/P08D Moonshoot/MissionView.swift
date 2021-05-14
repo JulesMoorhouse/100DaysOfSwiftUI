@@ -17,19 +17,42 @@ struct MissionView: View {
     let astronauts: [CrewMember]
     let missions: [Mission]
     
+    private func calc(geo: GeometryProxy) -> CGFloat {
+        
+        return ((geo.frame(in: .global).midY * 2) /
+            geo.frame(in: .local).height) > 0.8 ?
+                0.8 :
+            max((geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height, 0.4)
+     }
+    
     var body: some View {
-        GeometryReader { geometry in
+
+        GeometryReader { fullView in
             ScrollView(.vertical) {
                 VStack {
-                    Image(decorative: self.mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
+                    GeometryReader { geo in
+                        Image(decorative: self.mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            .scaleEffect(calc(geo: geo))
+                            
+                            .onTapGesture {
+                                print("height: \(geo.frame(in: .local).height)")
+                                print("midY*2: \(geo.frame(in: .global).midY * 2)")
+                                print("calc1 : \((geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height)")
+                                print("scale : \((geo.frame(in: .global).midY * 2) > geo.frame(in: .local).height ? 0.8 : (geo.frame(in: .global).midY * 2) / geo.frame(in: .local).height)");
+                                print("--")
+                            }
 
+                    }
+                    .frame(minWidth: fullView.size.width * 0.7, minHeight: fullView.size.width * 0.7)
+
+                    //.fixedSize(horizontal: false, vertical: true)
+                    
                     Text(self.mission.formattedLaunchDate)
                         .accessibility(label: Text("The \(self.mission.displayName) Launch Date \(self.mission.formattedLaunchDate)"))
                     Text(self.mission.description)
+                        .fixedSize(horizontal: false, vertical: true)
                         .padding()
 
                     ForEach(self.astronauts, id: \.role) {
