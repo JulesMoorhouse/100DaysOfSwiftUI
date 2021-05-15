@@ -4,3 +4,4 @@
 
 - Change project 8 (Moonshot) so that when you scroll down in MissionView the mission badge image gets smaller. It doesn’t need to shrink away to nothing – going down to maybe 80% is fine.
 
+<img src="../Images/day94a.gif" />
