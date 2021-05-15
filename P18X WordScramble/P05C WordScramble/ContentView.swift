@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var usedWords = ["Arthur", "Ford", "Trillian", "Zaphod", "Marvin"]
+    @State private var usedWords = ["Arthur", "Ford", "Trillian", "Zaphod", "Marvin", "Billy", "Frank", "Mary"]
     @State private var rootWord = ""
     @State private var newWord = ""
     @State private var score = 0
@@ -32,6 +32,7 @@ struct ContentView: View {
                             GeometryReader { geo in
                                 HStack {
                                     Image(systemName: "\(word.count).circle")
+                                        .foregroundColor(setColour(itemGeo: geo, fullGeo: full))
                                     Text(word)
                                 }
                                 .offset(x: calcOffsetX(itemGeo: geo, fullGeo: full), y: 0)
@@ -87,6 +88,15 @@ struct ContentView: View {
         let width = itemGeo.frame(in: .local).size.width
         let position = (scrollFactor * width) - 250//130
         return position > 0 ? position : 0
+    }
+    
+    func setColour(itemGeo: GeometryProxy, fullGeo: GeometryProxy) -> Color {
+        let midY = (itemGeo.frame(in: .global).midY) - 26.5
+        let listHeight = fullGeo.frame(in: .local).size.height
+        let scrollFactor = Double(midY / listHeight)
+        
+        
+        return Color(.sRGB, red: 1.0 - scrollFactor, green: scrollFactor, blue: 1.0, opacity: 1.0)
     }
     
     func addNewWord() {
