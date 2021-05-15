@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var usedWords = [String]()
+    @State private var usedWords = ["Arthur", "Ford", "Trillian", "Zaphod", "Marvin"]
     @State private var rootWord = ""
     @State private var newWord = ""
     @State private var score = 0
@@ -20,33 +20,73 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("Enter your word", text: $newWord, onCommit: addNewWord)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .autocapitalization(.none)
-                    .padding()
-                
-                List(usedWords, id: \.self) { word in
-                    HStack {
-                        Image(systemName: "\(word.count).circle")
-                        Text(word)
+            GeometryReader { full in
+
+                VStack {
+                    TextField("Enter your word", text: $newWord, onCommit: addNewWord)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .autocapitalization(.none)
+                        .padding()
+                    List(usedWords, id: \.self) { word in
+                        VStack {
+                            GeometryReader { geo in
+                                HStack {
+                                    Image(systemName: "\(word.count).circle")
+                                    Text(word)
+                                }
+                                .offset(x: calcOffsetX(itemGeo: geo, fullGeo: full), y: 0)
+//                                .onTapGesture {
+//                                    print("Global midy: \(geo.frame(in: .global).midY)")
+//                                    print("Local midy : \(geo.frame(in: .local).midY)")
+//                                    print("Global h   : \(full.frame(in: .global).size.height)")
+//                                    print("Local h    : \(full.frame(in: .local).size.height)")
+//
+//                                    print("---")
+//                                }
+                            }
+                            .frame(height: 25)
+                        }
+                        .accessibilityElement(children: .ignore)
+                        .accessibility(label: Text("\(word), \(word.count) letters"))
                     }
-                    .accessibilityElement(children: .ignore)
-                    .accessibility(label: Text("\(word), \(word.count) letters"))
+                    Text("Score: \(score)")
+                        .font(.headline)
+                        .padding()
                 }
-                Text("Score: \(score)")
-                    .font(.headline)
-                    .padding()
-            }
-            .navigationBarTitle(rootWord)
-            .navigationBarItems(trailing: Button(action: startGame) {
-                Text("Restart")
-            })
-            .onAppear(perform: startGame)
-            .alert(isPresented: $showingError) {
-                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                .navigationBarTitle(rootWord)
+                .navigationBarItems(trailing: Button(action: startGame) {
+                    Text("Restart")
+                })
+                .onAppear(perform: startGame)
+                .alert(isPresented: $showingError) {
+                    Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                }
             }
         }
+    }
+    
+    // Calculate offset for slide right to left effect when scrolling
+    func calcOffsetX(itemGeo: GeometryProxy, fullGeo: GeometryProxy) -> CGFloat {
+        // Top Row
+        //---
+        //Global midy: 248.5
+        //Local midy : 12.5
+        //Global h   : 551.0
+        //Local h    : 551.0
+
+        // Bottom Row
+        //---
+        // Global midy: 577.5
+        // Local midy : 12.5
+        // Global h   : 551.0
+        // Local h    : 551.0
+        
+        let midY = (itemGeo.frame(in: .global).midY) - 26.5
+        let listHeight = fullGeo.frame(in: .local).size.height
+        let scrollFactor = midY / listHeight
+        let width = itemGeo.frame(in: .local).size.width
+        let position = (scrollFactor * width) - 250//130
+        return position > 0 ? position : 0
     }
     
     func addNewWord() {
@@ -66,7 +106,7 @@ struct ContentView: View {
             return
         }
         
-        guard isReal(word: answer) else  {
+        guard isReal(word: answer) else {
             wordError(title: "Word not possible", message: "That isn't a real word")
             return
         }
@@ -127,7 +167,7 @@ struct ContentView: View {
     }
     
     func isShort(word: String) -> Bool {
-        if  word.count <= 3 {
+        if word.count <= 3 {
             return false
         }
         return true
