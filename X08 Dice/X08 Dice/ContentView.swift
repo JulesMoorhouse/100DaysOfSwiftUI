@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var sides = 4
     @State private var values: [Int] = [4, 5, 6, 7]
-    @State private var sleepAmount = 4
+    @State private var numberOfDice = 4
 
     let possibleSides = [4, 6, 8, 10, 12, 20, 100]
 
@@ -32,26 +32,30 @@ struct ContentView: View {
                     }
 
                     VStack {
-                        Stepper(value: $sleepAmount, in: 1 ... 9, step: 1) {
+                        Stepper(value: $numberOfDice, in: 1 ... 9, step: 1) {
                             HStack {
                                 Text("Number of dice ")
-                                Text("\(sleepAmount)")
+                                Text("\(numberOfDice)")
                                     .foregroundColor(.secondary)
                             }
                         }
                     }
 
-                    VStack {
-                        Button("Rotate") {
-                            self.values = [5, 7, 3, 7, 1, 4, 5]
-                            self.isRotating.toggle()
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Button("Spin") {
+                            withAnimation {
+                                self.spin()
+                            }
                         }
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.blue)
                         .clipShape(Capsule())
-                        .padding(.top)
-
+                        Spacer()
+                    }
+                    
+                    VStack {
                         HStack {
                             Spacer()
 
@@ -72,6 +76,11 @@ struct ContentView: View {
                     Text("Two")
                 }
         }
+    }
+
+    func spin() {
+        self.values = [5, 7, 3, 7, 1, 4, 5]
+        self.isRotating.toggle()
     }
 }
 
