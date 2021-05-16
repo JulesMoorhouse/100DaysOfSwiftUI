@@ -12,23 +12,32 @@ struct CellView: View {
     @Binding var sides: Int
     var row: Int
     var col: Int
-    var text: String
+    @Binding var values: [Int]
+    var index: Int
+    
+    var text: String? {
+         values.count > index ?
+            String(values[index]) :
+            nil
+    }
     
     var body: some View {
-        ZStack {
-            RegularPolygon(sides: UInt(sides))
-                .stroke(Color.blue, lineWidth: 4)
-                .shadow(radius: 4.0, x: 2.0, y: 2.0)
+        if text != nil {
+            ZStack {
+                RegularPolygon(sides: UInt(sides))
+                    .stroke(Color.blue, lineWidth: 4)
+                    .shadow(radius: 4.0, x: 2.0, y: 2.0)
 
-            Text(text)
-                .font(.title)
-                .foregroundColor(.blue)
+                Text(text ?? "")
+                    .font(.title)
+                    .foregroundColor(.blue)
+            }
         }
     }
 }
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView(sides: .constant(4), row: 1, col: 1, text: "A")
+        CellView(sides: .constant(4), row: 1, col: 1, values: .constant([1,2,4,6]), index: 2)
     }
 }

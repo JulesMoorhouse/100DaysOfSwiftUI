@@ -10,46 +10,44 @@ import SwiftUI
 struct DiceView: View {
     @Binding var sides: Int
     @Binding var values: [Int]
-    
+
     let maxRows: Int = 3
     let maxCols: Int = 3
     
     var body: some View {
         GridStack(rows: maxRows, columns: maxCols, spacing: 10) { row, col in
-            if let text = self.text(row, col) {
+            if let idx = self.rowColToIndex(row, col) {
                 CellView(sides: self.$sides,
                          row: row,
                          col: col,
-                         text: text)
+                         values: self.$values,
+                         index: idx)
                     .frame(width: 100, height: 100)
             }
         }
         .frame(width: 300, height: 300, alignment: .center)
+        .padding()
     }
     
-    func text(_ row: Int, _ col: Int) -> String? {
-        let index = self.rowColToIndex(row, col)
+    func rowColToIndex(_ row: Int, _ col: Int) -> Int? {
+        var index: Int = -1
+        var found = false
         
-        return self.values.count > index ?
-            String(self.values[index]) :
-            nil
-    }
-    
-    func rowColToIndex(_ row: Int, _ col: Int) -> Int {
-        var index: Int = 0
         for r in 0 ... row {
             for c in 0 ..< self.maxCols {
                 if r == row {
                     if c < col {
                         index += 1
+                        found = true
                     }
                 }
                 else {
                     index += 1
+                    found = true
                 }
             }
         }
-        return index
+        return found ? index : nil
     }
 }
 

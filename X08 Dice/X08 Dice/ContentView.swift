@@ -27,6 +27,9 @@ struct ContentView: View {
                         .pickerStyle(SegmentedPickerStyle())
                     }
                     
+                    Button("Test") {
+                        self.values = [5,7,3,7]
+                    }
                     // Number of dice
                 }
                 
