@@ -7,14 +7,18 @@
 
 import SwiftUI
 
+struct Dice {
+    var sides: Int
+    var values: [Int] = []
+    var numberOfDice: Int
+    var isRotating: Bool = false
+}
+
 struct ContentView: View {
-    @State private var sides = 4
-    @State private var values: [Int] = [4, 5, 6, 7]
-    @State private var numberOfDice = 4
+    @State private var dice = Dice(sides: 4, numberOfDice: 4)
+    @State private var changedDice = Dice(sides: 0, numberOfDice: 0)
 
     let possibleSides = [4, 6, 8, 10, 12, 20, 100]
-
-    @State private var isRotating = false
 
     var body: some View {
         TabView {
@@ -23,7 +27,7 @@ struct ContentView: View {
                     // Number of Sides
                     VStack(alignment: .leading) {
                         Text("Number of sides")
-                        Picker("", selection: $sides) {
+                        Picker("", selection: $dice.sides) {
                             ForEach(possibleSides, id: \.self) {
                                 Text("\($0)")
                             }
@@ -32,10 +36,10 @@ struct ContentView: View {
                     }
 
                     VStack {
-                        Stepper(value: $numberOfDice, in: 1 ... 9, step: 1) {
+                        Stepper(value: $dice.numberOfDice, in: 1 ... 9, step: 1) {
                             HStack {
                                 Text("Number of dice ")
-                                Text("\(numberOfDice)")
+                                Text("\(dice.numberOfDice)")
                                     .foregroundColor(.secondary)
                             }
                         }
@@ -59,7 +63,7 @@ struct ContentView: View {
                         HStack {
                             Spacer()
 
-                            DiceView(sides: self.$sides, values: self.$values, isRotating: $isRotating)
+                            DiceView(dice: $changedDice)
 
                             Spacer()
                         }
@@ -79,8 +83,10 @@ struct ContentView: View {
     }
 
     func spin() {
-        self.values = [5, 7, 3, 7, 1, 4, 5]
-        self.isRotating.toggle()
+        //dice.values = [5, 7, 3, 7, 1, 4, 5]
+        changedDice = dice
+        changedDice.values = [5, 7, 3, 7, 1, 4, 5]
+        changedDice.isRotating.toggle()
     }
 }
 

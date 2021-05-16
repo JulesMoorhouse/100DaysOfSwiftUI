@@ -9,23 +9,21 @@ import Shapes
 import SwiftUI
 
 struct CellView: View {
-    @Binding var sides: Int
-    @Binding var values: [Int]
-    @Binding var isRotating: Bool
+    @Binding var dice: Dice
     var row: Int
     var col: Int
     var index: Int
     
     var text: String? {
-         values.count > index ?
-            String(values[index]) :
+        dice.values.count > index ?
+            String(dice.values[index]) :
             nil
     }
     
     var body: some View {
         if text != nil {
             ZStack {
-                RegularPolygon(sides: UInt(sides))
+                RegularPolygon(sides: UInt(dice.sides))
                     .stroke(Color.blue, lineWidth: 4)
                     .shadow(radius: 4.0, x: 2.0, y: 2.0)
 
@@ -33,7 +31,7 @@ struct CellView: View {
                     .font(.title)
                     .foregroundColor(.blue)
             }
-            .rotationEffect(Angle.degrees(isRotating ? 360 : 0))
+            .rotationEffect(Angle.degrees(dice.isRotating ? 360 : 0))
             .animation(.default)
         }
     }
@@ -41,6 +39,6 @@ struct CellView: View {
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView(sides: .constant(4), values: .constant([1,2,4,6]), isRotating: .constant(true), row: 1, col: 1, index: 2)
+        CellView(dice: .constant(Dice(sides: 4, numberOfDice: 4)), row: 1, col: 1, index: 2)
     }
 }
