@@ -30,7 +30,7 @@ struct ContentView: View {
                     // Number of dice
                 }
                 
-                DiceView(sides: self.sides, values: self.values)
+                DiceView(sides: self.$sides, values: self.$values)
                 
                 // Total
                 
