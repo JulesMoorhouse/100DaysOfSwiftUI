@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DiceView: View {
-    var sides: UInt
+    var sides: Int
     var values: [Int]
     
     let maxRows: Int = 3
@@ -17,7 +17,7 @@ struct DiceView: View {
     var body: some View {
         GridStack(rows: maxRows, columns: maxCols, spacing: 10) { row, col in
             if let text = self.text(row, col) {
-                CellView(sides: self.sides,
+                CellView(sides: UInt(self.sides),
                          row: row,
                          col: col,
                          text: "\(text)")
