@@ -10,9 +10,10 @@ import SwiftUI
 
 struct CellView: View {
     @Binding var sides: Int
+    @Binding var values: [Int]
+    @Binding var isRotating: Bool
     var row: Int
     var col: Int
-    @Binding var values: [Int]
     var index: Int
     
     var text: String? {
@@ -32,12 +33,14 @@ struct CellView: View {
                     .font(.title)
                     .foregroundColor(.blue)
             }
+            .rotationEffect(Angle.degrees(isRotating ? 360 : 0))
+            .animation(.default)
         }
     }
 }
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView(sides: .constant(4), row: 1, col: 1, values: .constant([1,2,4,6]), index: 2)
+        CellView(sides: .constant(4), values: .constant([1,2,4,6]), isRotating: .constant(true), row: 1, col: 1, index: 2)
     }
 }
