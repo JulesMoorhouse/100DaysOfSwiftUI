@@ -14,9 +14,18 @@ struct DiceListView: View {
     var body: some View {
         List {
             ForEach(dice, id: \.self) { item in
-                Text(item.values ?? "")
+                VStack {
+                DiceView(dice: .constant(self.data(db: item)))
+                }
             }
         }
+    }
+    
+    func data(db: Dice) -> DiceItem {
+        return DiceItem(sides: Int(db.sides),
+                            values: db.valuesArray,
+                            numberOfDice: Int(db.number),
+                            isRotating: false)
     }
 }
 

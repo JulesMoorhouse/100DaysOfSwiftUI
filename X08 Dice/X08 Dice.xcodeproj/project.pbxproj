@@ -21,6 +21,7 @@
 		8896BE172652D79400B7DC95 /* Dice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896BE152652D79400B7DC95 /* Dice+CoreDataClass.swift */; };
 		8896BE182652D79400B7DC95 /* Dice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896BE162652D79400B7DC95 /* Dice+CoreDataProperties.swift */; };
 		8896BE1C2652DE5100B7DC95 /* DiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896BE1B2652DE5100B7DC95 /* DiceListView.swift */; };
+		8896BE1F2652E1C000B7DC95 /* DiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896BE1E2652E1C000B7DC95 /* DiceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		8896BE152652D79400B7DC95 /* Dice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		8896BE162652D79400B7DC95 /* Dice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dice+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		8896BE1B2652DE5100B7DC95 /* DiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceListView.swift; sourceTree = "<group>"; };
+		8896BE1E2652E1C000B7DC95 /* DiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				88110B2E2651233200C1875F /* CellView.swift */,
 				8896BE1226515BDF00B7DC95 /* DiceView.swift */,
 				8896BE1B2652DE5100B7DC95 /* DiceListView.swift */,
+				8896BE1E2652E1C000B7DC95 /* DiceItem.swift */,
 			);
 			path = "X08 Dice";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				8896BE1C2652DE5100B7DC95 /* DiceListView.swift in Sources */,
 				88110B2F2651233200C1875F /* CellView.swift in Sources */,
 				883C211C26503F1F001D21EA /* X08_Dice.xcdatamodeld in Sources */,
+				8896BE1F2652E1C000B7DC95 /* DiceItem.swift in Sources */,
 				8896BE172652D79400B7DC95 /* Dice+CoreDataClass.swift in Sources */,
 				883C211726503F1F001D21EA /* SceneDelegate.swift in Sources */,
 				8896BE1326515BDF00B7DC95 /* DiceView.swift in Sources */,

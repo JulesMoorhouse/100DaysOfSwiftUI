@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct DiceItem {
-    var sides: Int
-    var values: [Int] = []
-    var numberOfDice: Int
-    var isRotating: Bool = false
-}
-
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
 
