@@ -11,7 +11,7 @@ struct DiceItem {
     var sides: Int
     var values: [Int] = []
     var numberOfDice: Int
-    var isRotating: Bool = false
+    //var isRotating: Bool = false
     
     var total: Int {
         if !values.isEmpty {

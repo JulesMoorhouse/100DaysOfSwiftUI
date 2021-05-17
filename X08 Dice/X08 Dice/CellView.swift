@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CellView: View {
     @Binding var dice: DiceItem
+    @Binding var isRotating: Bool
     var row: Int
     var col: Int
     var index: Int
@@ -31,7 +32,7 @@ struct CellView: View {
                     .font(.title)
                     .foregroundColor(.blue)
             }
-            .rotationEffect(Angle.degrees(dice.isRotating ? 360 : 0))
+            .rotationEffect(Angle.degrees(isRotating ? 360 : 0))
             .animation(.default)
         }
     }
@@ -39,6 +40,6 @@ struct CellView: View {
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView(dice: .constant(DiceItem(sides: 4, numberOfDice: 4)), row: 1, col: 1, index: 2)
+        CellView(dice: .constant(DiceItem(sides: 4, numberOfDice: 4)), isRotating: .constant(true) , row: 1, col: 1, index: 2)
     }
 }

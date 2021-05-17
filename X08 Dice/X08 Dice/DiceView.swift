@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DiceView: View {
     @Binding var dice: DiceItem
+    @Binding var isRotating: Bool
 
     let maxRows: Int = 3
     let maxCols: Int = 3
@@ -22,6 +23,7 @@ struct DiceView: View {
             GridStack(rows: maxRows, columns: maxCols, spacing: 5) { row, col in
                 if let idx = self.rowColToIndex(row, col) {
                     CellView(dice: $dice,
+                             isRotating: $isRotating,
                              row: row,
                              col: col,
                              index: idx)
@@ -56,6 +58,6 @@ struct DiceView: View {
 
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
-        DiceView(dice: .constant(DiceItem(sides: 4, numberOfDice: 4)))
+        DiceView(dice: .constant(DiceItem(sides: 4, numberOfDice: 4)), isRotating: .constant(true))
     }
 }

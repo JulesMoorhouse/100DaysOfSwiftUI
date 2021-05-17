@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var dice = DiceItem(sides: 0, numberOfDice: 0)
     @State private var sides: Int = 4
     @State private var numberOfDice: Int = 5
+    @State private var isRotating: Bool = false
 
     let possibleSides = [4, 6, 8, 10, 12, 20, 100]
 
@@ -59,7 +60,7 @@ struct ContentView: View {
                         HStack {
                             Spacer()
 
-                            DiceView(dice: $dice)
+                            DiceView(dice: $dice, isRotating: $isRotating)
 
                             Spacer()
                         }
@@ -88,8 +89,7 @@ struct ContentView: View {
         
         dice = DiceItem(sides: sides,
                            values: ints,
-                           numberOfDice: numberOfDice,
-                           isRotating: true)
+                           numberOfDice: numberOfDice)
         
         let stringArray = ints.map { String($0) }
         
@@ -99,6 +99,8 @@ struct ContentView: View {
         temp.values = stringArray.joined(separator: ",")
         
         try? self.moc.save()
+        
+        isRotating.toggle()
     }
 }
 

@@ -18,7 +18,7 @@ struct DiceListView: View {
                     Section {
                         HStack {
                             Spacer()
-                            DiceView(dice: .constant(self.data(db: item)))
+                            DiceView(dice: .constant(self.data(db: item)), isRotating: .constant(false))
                             Spacer()
                         }
                     }
@@ -30,8 +30,7 @@ struct DiceListView: View {
     func data(db: Dice) -> DiceItem {
         return DiceItem(sides: Int(db.sides),
                         values: db.valuesArray,
-                        numberOfDice: Int(db.number),
-                        isRotating: false)
+                        numberOfDice: Int(db.number))
     }
 }
 
