@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Dice {
+struct DiceItem {
     var sides: Int
     var values: [Int] = []
     var numberOfDice: Int
@@ -15,8 +15,9 @@ struct Dice {
 }
 
 struct ContentView: View {
-    @State private var dice = Dice(sides: 0, numberOfDice: 0)
+    @Environment(\.managedObjectContext) var moc
 
+    @State private var dice = DiceItem(sides: 0, numberOfDice: 0)
     @State private var sides: Int = 4
     @State private var numberOfDice: Int = 5
 
@@ -76,7 +77,8 @@ struct ContentView: View {
                 Image(systemName: "star")
                 Text("One")
             }
-            Text("Tab 2")
+            DiceListView()
+                
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Two")
@@ -90,10 +92,20 @@ struct ContentView: View {
             let randomInt = Int.random(in: 1...sides)
             ints.append(randomInt)
         }
-        dice = Dice(sides: sides,
+        
+        dice = DiceItem(sides: sides,
                            values: ints,
                            numberOfDice: numberOfDice,
                            isRotating: true)
+        
+        let stringArray = ints.map { String($0) }
+        
+        let temp = Dice(context: self.moc)
+        temp.sides = Int16(sides)
+        temp.number = Int16(numberOfDice)
+        temp.values = stringArray.joined(separator: ",")
+        
+        try? self.moc.save()
     }
 }
 

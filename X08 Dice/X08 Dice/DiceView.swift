@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DiceView: View {
-    @Binding var dice: Dice
+    @Binding var dice: DiceItem
 
     let maxRows: Int = 3
     let maxCols: Int = 3
@@ -50,6 +50,6 @@ struct DiceView: View {
 
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
-        DiceView(dice: .constant(Dice(sides: 4, numberOfDice: 4)))
+        DiceView(dice: .constant(DiceItem(sides: 4, numberOfDice: 4)))
     }
 }

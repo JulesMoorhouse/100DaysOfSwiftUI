@@ -9,7 +9,7 @@ import Shapes
 import SwiftUI
 
 struct CellView: View {
-    @Binding var dice: Dice
+    @Binding var dice: DiceItem
     var row: Int
     var col: Int
     var index: Int
@@ -39,6 +39,6 @@ struct CellView: View {
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView(dice: .constant(Dice(sides: 4, numberOfDice: 4)), row: 1, col: 1, index: 2)
+        CellView(dice: .constant(DiceItem(sides: 4, numberOfDice: 4)), row: 1, col: 1, index: 2)
     }
 }
