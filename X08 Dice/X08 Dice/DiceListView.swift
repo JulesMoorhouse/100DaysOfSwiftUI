@@ -12,20 +12,26 @@ struct DiceListView: View {
     @FetchRequest(entity: Dice.entity(), sortDescriptors: []) var dice: FetchedResults<Dice>
 
     var body: some View {
-        List {
-            ForEach(dice, id: \.self) { item in
-                VStack {
-                DiceView(dice: .constant(self.data(db: item)))
+        Form {
+            List {
+                ForEach(dice, id: \.self) { item in
+                    Section {
+                        HStack {
+                            Spacer()
+                            DiceView(dice: .constant(self.data(db: item)))
+                            Spacer()
+                        }
+                    }
                 }
             }
         }
     }
-    
+
     func data(db: Dice) -> DiceItem {
         return DiceItem(sides: Int(db.sides),
-                            values: db.valuesArray,
-                            numberOfDice: Int(db.number),
-                            isRotating: false)
+                        values: db.valuesArray,
+                        numberOfDice: Int(db.number),
+                        isRotating: false)
     }
 }
 
