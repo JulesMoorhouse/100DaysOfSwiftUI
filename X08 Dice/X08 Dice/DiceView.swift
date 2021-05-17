@@ -14,16 +14,22 @@ struct DiceView: View {
     let maxCols: Int = 3
     
     var body: some View {
-        GridStack(rows: maxRows, columns: maxCols, spacing: 10) { row, col in
-            if let idx = self.rowColToIndex(row, col) {
-                CellView(dice: $dice,
-                         row: row,
-                         col: col,
-                         index: idx)
-                    .frame(width: 80, height: 80)
+        VStack {
+            Text("Total: \(dice.total)")
+                .font(.headline)
+                .foregroundColor(.secondary)
+            
+            GridStack(rows: maxRows, columns: maxCols, spacing: 5) { row, col in
+                if let idx = self.rowColToIndex(row, col) {
+                    CellView(dice: $dice,
+                             row: row,
+                             col: col,
+                             index: idx)
+                        .frame(width: 80, height: 80)
+                }
             }
+            .frame(width: 260, height: 260, alignment: .center)
         }
-        .frame(width: 300, height: 300, alignment: .center)
     }
     
     func rowColToIndex(_ row: Int, _ col: Int) -> Int? {
