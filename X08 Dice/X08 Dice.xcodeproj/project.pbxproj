@@ -74,21 +74,21 @@
 		883C211326503F1F001D21EA /* X08 Dice */ = {
 			isa = PBXGroup;
 			children = (
+				883C211426503F1F001D21EA /* AppDelegate.swift */,
+				883C211D26503F23001D21EA /* Assets.xcassets */,
+				88110B2E2651233200C1875F /* CellView.swift */,
+				883C211826503F1F001D21EA /* ContentView.swift */,
 				8896BE152652D79400B7DC95 /* Dice+CoreDataClass.swift */,
 				8896BE162652D79400B7DC95 /* Dice+CoreDataProperties.swift */,
-				883C211426503F1F001D21EA /* AppDelegate.swift */,
-				883C211626503F1F001D21EA /* SceneDelegate.swift */,
-				883C211826503F1F001D21EA /* ContentView.swift */,
-				883C211D26503F23001D21EA /* Assets.xcassets */,
-				883C212226503F23001D21EA /* LaunchScreen.storyboard */,
-				883C212526503F23001D21EA /* Info.plist */,
-				883C211A26503F1F001D21EA /* X08_Dice.xcdatamodeld */,
-				883C211F26503F23001D21EA /* Preview Content */,
-				88110B2B265114C800C1875F /* GridStack.swift */,
-				88110B2E2651233200C1875F /* CellView.swift */,
-				8896BE1226515BDF00B7DC95 /* DiceView.swift */,
-				8896BE1B2652DE5100B7DC95 /* DiceListView.swift */,
 				8896BE1E2652E1C000B7DC95 /* DiceItem.swift */,
+				8896BE1B2652DE5100B7DC95 /* DiceListView.swift */,
+				8896BE1226515BDF00B7DC95 /* DiceView.swift */,
+				88110B2B265114C800C1875F /* GridStack.swift */,
+				883C212526503F23001D21EA /* Info.plist */,
+				883C212226503F23001D21EA /* LaunchScreen.storyboard */,
+				883C211F26503F23001D21EA /* Preview Content */,
+				883C211626503F1F001D21EA /* SceneDelegate.swift */,
+				883C211A26503F1F001D21EA /* X08_Dice.xcdatamodeld */,
 			);
 			path = "X08 Dice";
 			sourceTree = "<group>";
