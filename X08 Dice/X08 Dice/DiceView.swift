@@ -41,7 +41,7 @@ struct DiceView: View {
         for r in 0 ... row {
             for c in 0 ..< self.maxCols {
                 if r == row {
-                    if c < col {
+                    if c <= col {
                         index += 1
                         found = true
                     }
