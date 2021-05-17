@@ -15,8 +15,10 @@ struct Dice {
 }
 
 struct ContentView: View {
-    @State private var dice = Dice(sides: 4, numberOfDice: 4)
-    @State private var changedDice = Dice(sides: 0, numberOfDice: 0)
+    @State private var dice = Dice(sides: 0, numberOfDice: 0)
+
+    @State private var sides: Int = 4
+    @State private var numberOfDice: Int = 5
 
     let possibleSides = [4, 6, 8, 10, 12, 20, 100]
 
@@ -27,7 +29,7 @@ struct ContentView: View {
                     // Number of Sides
                     VStack(alignment: .leading) {
                         Text("Number of sides")
-                        Picker("", selection: $dice.sides) {
+                        Picker("", selection: $sides) {
                             ForEach(possibleSides, id: \.self) {
                                 Text("\($0)")
                             }
@@ -36,10 +38,10 @@ struct ContentView: View {
                     }
 
                     VStack {
-                        Stepper(value: $dice.numberOfDice, in: 1 ... 9, step: 1) {
+                        Stepper(value: $numberOfDice, in: 1 ... 9, step: 1) {
                             HStack {
                                 Text("Number of dice ")
-                                Text("\(dice.numberOfDice)")
+                                Text("\(numberOfDice)")
                                     .foregroundColor(.secondary)
                             }
                         }
@@ -63,7 +65,7 @@ struct ContentView: View {
                         HStack {
                             Spacer()
 
-                            DiceView(dice: $changedDice)
+                            DiceView(dice: $dice)
 
                             Spacer()
                         }
@@ -83,10 +85,15 @@ struct ContentView: View {
     }
 
     func spin() {
-        //dice.values = [5, 7, 3, 7, 1, 4, 5]
-        changedDice = dice
-        changedDice.values = [5, 7, 3, 7, 1, 4, 5]
-        changedDice.isRotating.toggle()
+        var ints: [Int] = []
+        for _ in 0..<numberOfDice {
+            let randomInt = Int.random(in: 1...sides)
+            ints.append(randomInt)
+        }
+        dice = Dice(sides: sides,
+                           values: ints,
+                           numberOfDice: numberOfDice,
+                           isRotating: true)
     }
 }
 
