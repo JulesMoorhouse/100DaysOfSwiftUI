@@ -33,7 +33,11 @@ struct CellView: View {
                     .foregroundColor(.blue)
             }
             .rotationEffect(Angle.degrees(isRotating ? 360 : 0))
-            .animation(.default)
+            .animation(isRotating ?
+                Animation.linear(duration: 0.5)
+                    .repeatCount(10, autoreverses: false)
+                        : .none
+            )
         }
     }
 }
