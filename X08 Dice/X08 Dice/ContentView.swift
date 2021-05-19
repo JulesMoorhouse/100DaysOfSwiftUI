@@ -16,8 +16,8 @@ struct ContentView: View {
     @State private var numberOfDice: Int = 5
     @State private var isRotating: Bool = false
     @State private var engine: CHHapticEngine?
+    @State private var counter = 0
 
-    
     let possibleSides = [4, 6, 8, 10, 12, 20, 100]
 
     var body: some View {
@@ -90,16 +90,27 @@ struct ContentView: View {
     }
 
     func spin() {
-        var ints: [Int] = []
-        for _ in 0 ..< numberOfDice {
-            let randomInt = Int.random(in: 1 ... sides)
-            ints.append(randomInt)
-        }
+        let ints = randomizeDice()
 
         dice = DiceItem(sides: sides,
                         values: ints,
                         numberOfDice: numberOfDice)
 
+        save(ints: ints)
+    }
+    
+    func randomizeDice() -> [Int]
+    {
+        var ints: [Int] = []
+        for _ in 0 ..< numberOfDice {
+            let randomInt = Int.random(in: 1 ... sides)
+            ints.append(randomInt)
+        }
+        return ints
+    }
+    
+    func save(ints: [Int])
+    {
         let stringArray = ints.map { String($0) }
 
         let temp = Dice(context: moc)
