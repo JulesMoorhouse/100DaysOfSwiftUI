@@ -27,23 +27,26 @@ struct ContentView: View {
                 VStack {
                     Form {
                         // Number of Sides
-                        VStack(alignment: .leading) {
-                            Text("Number of sides")
-                            Picker("", selection: $sides) {
-                                ForEach(possibleSides, id: \.self) {
-                                    Text("\($0)")
+                        Section(header: Text("").accessibility(hidden: true)) {
+                            VStack(alignment: .leading) {
+                                Text("Number of sides")
+                                Picker("", selection: $sides) {
+                                    ForEach(possibleSides, id: \.self) {
+                                        Text("\($0)")
+                                    }
                                 }
+                                .pickerStyle(SegmentedPickerStyle())
                             }
-                            .pickerStyle(SegmentedPickerStyle())
-                        }
 
-                        VStack {
-                            Stepper(value: $numberOfDice, in: 1 ... 9, step: 1) {
-                                HStack {
-                                    Text("Number of dice ")
-                                    Text("\(numberOfDice)")
-                                        .foregroundColor(.secondary)
+                            VStack {
+                                Stepper(value: $numberOfDice, in: 1 ... 9, step: 1) {
+                                    HStack {
+                                        Text("Number of dice ")
+                                        Text("\(numberOfDice)")
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
+                                .accessibility(value: Text("\(numberOfDice) dice"))
                             }
                         }
 
@@ -101,7 +104,7 @@ struct ContentView: View {
                             numberOfDice: numberOfDice)
 
             isRotating.toggle()
-            
+
             if runCount == 5 {
                 timer.invalidate()
                 runCount = 0
