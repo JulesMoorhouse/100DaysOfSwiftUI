@@ -2,4 +2,4 @@
 
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P19%20SnowSeeker/P19%20SnowSeeker/ContentView.swift)
   
-- tbc.
+- Working with two side by side views in SwiftUI.
