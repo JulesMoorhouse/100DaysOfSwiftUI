@@ -16,6 +16,7 @@
 		88CAEF892656D8CE00A2543F /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = 88CAEF882656D8CE00A2543F /* resorts.json */; };
 		88CAEF8C2656D96F00A2543F /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF8B2656D96F00A2543F /* Resort.swift */; };
 		88CAEF8F2656DA6A00A2543F /* Bundle-Decodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF8E2656DA6A00A2543F /* Bundle-Decodeable.swift */; };
+		88CAEF922656E03700A2543F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF912656E03700A2543F /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		88CAEF882656D8CE00A2543F /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resorts.json; sourceTree = "<group>"; };
 		88CAEF8B2656D96F00A2543F /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
 		88CAEF8E2656DA6A00A2543F /* Bundle-Decodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodeable.swift"; sourceTree = "<group>"; };
+		88CAEF912656E03700A2543F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				88CAEF742656D79700A2543F /* SceneDelegate.swift */,
 				88CAEF8B2656D96F00A2543F /* Resort.swift */,
 				88CAEF8E2656DA6A00A2543F /* Bundle-Decodeable.swift */,
+				88CAEF912656E03700A2543F /* WelcomeView.swift */,
 			);
 			path = "P19C SnowSeeker";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CAEF732656D79700A2543F /* AppDelegate.swift in Sources */,
+				88CAEF922656E03700A2543F /* WelcomeView.swift in Sources */,
 				88CAEF8F2656DA6A00A2543F /* Bundle-Decodeable.swift in Sources */,
 				88CAEF752656D79700A2543F /* SceneDelegate.swift in Sources */,
 				88CAEF8C2656D96F00A2543F /* Resort.swift in Sources */,
