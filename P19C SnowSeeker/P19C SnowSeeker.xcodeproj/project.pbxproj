@@ -13,6 +13,7 @@
 		88CAEF792656D79A00A2543F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CAEF782656D79A00A2543F /* Assets.xcassets */; };
 		88CAEF7C2656D79A00A2543F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CAEF7B2656D79A00A2543F /* Preview Assets.xcassets */; };
 		88CAEF7F2656D79A00A2543F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CAEF7D2656D79A00A2543F /* LaunchScreen.storyboard */; };
+		88CAEF892656D8CE00A2543F /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = 88CAEF882656D8CE00A2543F /* resorts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		88CAEF7B2656D79A00A2543F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		88CAEF7E2656D79A00A2543F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88CAEF802656D79A00A2543F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CAEF882656D8CE00A2543F /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resorts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		88CAEF712656D79600A2543F /* P19C SnowSeeker */ = {
 			isa = PBXGroup;
 			children = (
+				88CAEF882656D8CE00A2543F /* resorts.json */,
 				88CAEF722656D79700A2543F /* AppDelegate.swift */,
 				88CAEF742656D79700A2543F /* SceneDelegate.swift */,
 				88CAEF762656D79700A2543F /* ContentView.swift */,
@@ -134,6 +137,7 @@
 			files = (
 				88CAEF7F2656D79A00A2543F /* LaunchScreen.storyboard in Resources */,
 				88CAEF7C2656D79A00A2543F /* Preview Assets.xcassets in Resources */,
+				88CAEF892656D8CE00A2543F /* resorts.json in Resources */,
 				88CAEF792656D79A00A2543F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,6 +295,7 @@
 				DEVELOPMENT_TEAM = LW3B6G4NK9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P19C SnowSeeker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +317,7 @@
 				DEVELOPMENT_TEAM = LW3B6G4NK9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P19C SnowSeeker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
