@@ -3,3 +3,5 @@
 - [ContentView.swift](https://github.com/JulesMoorhouse/100DaysOfSwiftUI/blob/main/P19C%20SnowSeeker/P19C%20SnowSeeker/ContentView.swift)
 
 - Building a primary list of items.
+
+<img src="../Images/day97c.png" />
