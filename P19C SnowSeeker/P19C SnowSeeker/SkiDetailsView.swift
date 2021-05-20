@@ -11,7 +11,7 @@ struct SkiDetailsView: View {
     let resort: Resort
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("Elevation: \(resort.elevation)m")
             Text("Snow: \(resort.snowDepth)cm")
         }

@@ -26,8 +26,10 @@ struct ResortDetailsView: View {
     }
     
     var body: some View {
-        Text("Size: \(size)")
-        Text("Price: \(price)")
+        VStack(alignment: .leading) {
+            Text("Size: \(size)")
+            Text("Price: \(price)")
+        }
     }
 }
 
