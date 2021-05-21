@@ -30,6 +30,7 @@ struct ResortView: View {
                         .background(Color.black.opacity(0.75))
                         .clipShape(Capsule())
                         .offset(x: -5, y: -5)
+                        .accessibility(hidden: true)
                 }
                 
                 Group {

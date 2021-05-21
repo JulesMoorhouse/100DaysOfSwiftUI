@@ -10,6 +10,7 @@
 		88A11FBE2657898000CD30D4 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A11FBD2657898000CD30D4 /* Facility.swift */; };
 		88A11FC02657929000CD30D4 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A11FBF2657929000CD30D4 /* Favourites.swift */; };
 		88A11FC22657AA1800CD30D4 /* ResortFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A11FC12657AA1800CD30D4 /* ResortFilterView.swift */; };
+		88A11FC62657C21500CD30D4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A11FC52657C21500CD30D4 /* Filter.swift */; };
 		88CAEF732656D79700A2543F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF722656D79700A2543F /* AppDelegate.swift */; };
 		88CAEF752656D79700A2543F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF742656D79700A2543F /* SceneDelegate.swift */; };
 		88CAEF772656D79700A2543F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF762656D79700A2543F /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 		88A11FBD2657898000CD30D4 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		88A11FBF2657929000CD30D4 /* Favourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		88A11FC12657AA1800CD30D4 /* ResortFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResortFilterView.swift; sourceTree = "<group>"; };
+		88A11FC52657C21500CD30D4 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		88CAEF6F2656D79600A2543F /* P19C SnowSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P19C SnowSeeker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CAEF722656D79700A2543F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CAEF742656D79700A2543F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				88CAEF982656E3B000A2543F /* SkiDetailsView.swift */,
 				88CAEF912656E03700A2543F /* WelcomeView.swift */,
 				88A11FC12657AA1800CD30D4 /* ResortFilterView.swift */,
+				88A11FC52657C21500CD30D4 /* Filter.swift */,
 			);
 			path = "P19C SnowSeeker";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				88CAEF8C2656D96F00A2543F /* Resort.swift in Sources */,
 				88A11FC02657929000CD30D4 /* Favourites.swift in Sources */,
 				88CAEF9C2656E44900A2543F /* ResortDetailsView.swift in Sources */,
+				88A11FC62657C21500CD30D4 /* Filter.swift in Sources */,
 				88CAEF772656D79700A2543F /* ContentView.swift in Sources */,
 				88CAEF992656E3B000A2543F /* SkiDetailsView.swift in Sources */,
 			);
@@ -328,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"P19C SnowSeeker/Preview Content\"";
-				DEVELOPMENT_TEAM = LW3B6G4NK9;
+				DEVELOPMENT_TEAM = Z7TFUYTY6R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P19C SnowSeeker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -350,7 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"P19C SnowSeeker/Preview Content\"";
-				DEVELOPMENT_TEAM = LW3B6G4NK9;
+				DEVELOPMENT_TEAM = Z7TFUYTY6R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "P19C SnowSeeker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-// list of country
-// segement tabs x 3 for size - All, $$, $$$
-// segement tabs - size - All, small, average, large
 struct ResortFilterView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var filter: Filter
 
     let countries: [String]
-    @State private var selectedCountry: String = ""
-    @State private var selectedPrice: Int = 0
-    @State private var selectedCountrySize: Int = 0
-
     let possiblePrices = ["All", "$", "$$"]
     let possibleCountrySizes = ["All", "Small", "Medium", "Large"]
 
@@ -25,7 +19,7 @@ struct ResortFilterView: View {
         NavigationView {
             Form {
                 Section(header: Text("").accessibility(hidden: true)) {
-                    Picker("Country", selection: $selectedCountry) {
+                    Picker("Country", selection: $filter.selectedCountry) {
                         ForEach(countries, id: \.self) {
                             Text("\($0)")
                         }
@@ -35,7 +29,7 @@ struct ResortFilterView: View {
                 Section(header: Text("").accessibility(hidden: true)) {
                     VStack(alignment: .leading) {
                         Text("Price")
-                        Picker("", selection: $selectedPrice) {
+                        Picker("", selection: $filter.selectedPrice) {
                             ForEach(0 ..< possiblePrices.count) {
                                 Text("\(self.possiblePrices[$0])")
                             }
@@ -47,7 +41,7 @@ struct ResortFilterView: View {
                 Section(header: Text("").accessibility(hidden: true)) {
                     VStack(alignment: .leading) {
                         Text("Country size")
-                        Picker("", selection: $selectedCountrySize) {
+                        Picker("", selection: $filter.selectedCountrySize) {
                             ForEach(0 ..< possibleCountrySizes.count) {
                                 Text("\(self.possibleCountrySizes[$0])")
                             }
@@ -68,6 +62,6 @@ struct ResortFilterView: View {
 
 struct ResortFilterView_Previews: PreviewProvider {
     static var previews: some View {
-        ResortFilterView(countries: ["France", "Germany"])
+        ResortFilterView(filter: .constant(Filter()), countries: ["France", "Germany"])
     }
 }

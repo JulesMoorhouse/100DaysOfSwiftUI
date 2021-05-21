@@ -22,54 +22,21 @@ struct ContentView: View {
     var countries : [String] {
         let allCountries = resorts.map({ $0.country})
         let temp = Set(allCountries)
-        return Array(temp)
+        var arr = Array(temp)
+        arr.insert("All", at: 0)
+        return arr
     }
     
     @State private var showingActionSheet = false
     @State private var sort: SortType = .alphabetical
+    @State private var filter = Filter()
     @State private var showingFilterSheet = false
 
-    let filter: FilterType
-
-    var title: String {
-        switch filter {
-        case .none:
-            return "All"
-        case .countrySizeSmall:
-            return "Small Country"
-        case .countrySizeAverage:
-            return "Average Country"
-        case .countrySizeLarge:
-            return "Large Country"
-        case .price1:
-            return "Price $"
-        case .price2:
-            return "Price $$"
-        case .price3:
-            return "Price $$"
-        }
-    }
-    
     var filteredResorts: [Resort] {
         var result: [Resort]
         
-        switch filter {
-        case .none:
-            result = resorts
-        case .countrySizeSmall:
-            result = resorts.filter { $0.size == 1 }
-        case .countrySizeAverage:
-            result = resorts.filter { $0.size == 2 }
-        case .countrySizeLarge:
-            result = resorts.filter { $0.size == 3 }
-        case .price1:
-            result = resorts.filter { $0.price == 1 }
-        case .price2:
-            result = resorts.filter { $0.price == 2 }
-        case .price3:
-            result = resorts.filter { $0.price == 3 }
-        }
-        
+        result = resorts.filter { filter.matchCountry(country: $0.country) && filter.matchPrice(price: $0.price) && filter.matchCountrySize(size: $0.size)}
+
         switch sort {
         case .alphabetical:
             result.sort { $0.name < $1.name }
@@ -81,36 +48,44 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(filteredResorts) { resort in
-                NavigationLink(destination: ResortView(resort: resort)) {
-                    Image(resort.country)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40, height: 25)
-                        .clipShape(
-                            RoundedRectangle(cornerRadius: 5)
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.black, lineWidth: 1)
-                        )
+            VStack {
+                if filteredResorts.count > 0 {
+                    List(filteredResorts) { resort in
+                        NavigationLink(destination: ResortView(resort: resort)) {
+                            Image(resort.country)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 25)
+                                .clipShape(
+                                    RoundedRectangle(cornerRadius: 5)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
 
-                    VStack(alignment: .leading) {
-                        Text(resort.name)
-                            .font(.headline)
-                        Text("\(resort.runs) runs")
-                            .foregroundColor(.secondary)
-                    }
-                    .frame(minWidth: 200, alignment: .leading)
-                    .layoutPriority(1)
-                    
-                    if self.favourites.contains(resort) {
-                        Spacer()
+                            VStack(alignment: .leading) {
+                                Text(resort.name)
+                                    .font(.headline)
+                                Text("\(resort.runs) runs")
+                                    .foregroundColor(.secondary)
+                            }
+                            .frame(minWidth: 200, alignment: .leading)
+                            .layoutPriority(1)
                             
-                        Image(systemName: "heart.fill")
-                            .accessibility(label: Text("This is a favourite resort"))
-                            .foregroundColor(.red)
+                            if self.favourites.contains(resort) {
+                                Spacer()
+                                    
+                                Image(systemName: "heart.fill")
+                                    .accessibility(label: Text("This is a favourite resort"))
+                                    .foregroundColor(.red)
+                            }
+                        }
                     }
+                }
+                else {
+                    Text("No resorts matching this critera")
+                        .foregroundColor(.secondary)
                 }
             }
             .navigationBarTitle("Resorts")
@@ -132,14 +107,14 @@ struct ContentView: View {
                 }
             )
             .sheet(isPresented: $showingFilterSheet) {
-                ResortFilterView(countries: countries)
+                ResortFilterView(filter: $filter, countries: countries)
             }
             .actionSheet(isPresented: $showingActionSheet) {
-                ActionSheet(title: Text("Sort order"), message: Text("Please select how to sort your contact."), buttons: [
-                    .default(Text("Sort by name")) {
+                ActionSheet(title: Text("Sort order"), message: Text("Please select how to sort your resort."), buttons: [
+                    .default(Text("By alphabetical")) {
                         self.sort = .alphabetical
                     },
-                    .default(Text("Sort by most recent")) {
+                    .default(Text("By country")) {
                         self.sort = .country
                     },
                     .cancel()
@@ -165,6 +140,6 @@ extension View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(filter: .none)
+        ContentView()
     }
 }
