@@ -6,6 +6,7 @@
 - Making NavigationView work in landscape.
 - Creating a secondary view for NavigationView.
 - Changing a view’s layout in response to size classes.
+- Binding an alert to an optional string.
 
 <img src="../Images/day97c.png" />
 <img src="../Images/day97c.gif" />
