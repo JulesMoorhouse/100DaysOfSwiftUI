@@ -13,7 +13,8 @@ import SwiftUI
 struct ResortFilterView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @State private var selectedCountry = 1
+    let countries: [String]
+    @State private var selectedCountry: String = ""
     @State private var selectedPrice: Int = 0
     @State private var selectedCountrySize: Int = 0
 
@@ -25,7 +26,7 @@ struct ResortFilterView: View {
             Form {
                 Section(header: Text("").accessibility(hidden: true)) {
                     Picker("Country", selection: $selectedCountry) {
-                        ForEach(0 ..< 20) {
+                        ForEach(countries, id: \.self) {
                             Text("\($0)")
                         }
                     }
@@ -67,6 +68,6 @@ struct ResortFilterView: View {
 
 struct ResortFilterView_Previews: PreviewProvider {
     static var previews: some View {
-        ResortFilterView()
+        ResortFilterView(countries: ["France", "Germany"])
     }
 }

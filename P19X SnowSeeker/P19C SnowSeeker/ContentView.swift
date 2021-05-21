@@ -19,6 +19,12 @@ struct ContentView: View {
     @ObservedObject var favourites = Favourites()
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
     
+    var countries : [String] {
+        let allCountries = resorts.map({ $0.country})
+        let temp = Set(allCountries)
+        return Array(temp)
+    }
+    
     @State private var showingActionSheet = false
     @State private var sort: SortType = .alphabetical
     @State private var showingFilterSheet = false
@@ -126,7 +132,7 @@ struct ContentView: View {
                 }
             )
             .sheet(isPresented: $showingFilterSheet) {
-                ResortFilterView()
+                ResortFilterView(countries: countries)
             }
             .actionSheet(isPresented: $showingActionSheet) {
                 ActionSheet(title: Text("Sort order"), message: Text("Please select how to sort your contact."), buttons: [
