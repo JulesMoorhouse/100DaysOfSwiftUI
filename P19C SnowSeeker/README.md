@@ -7,7 +7,9 @@
 - Creating a secondary view for NavigationView.
 - Changing a view’s layout in response to size classes.
 - Binding an alert to an optional string.
+- Letting the user mark favorites.
 
+<img src="../Images/day98.gif" />
 <img src="../Images/day97c.png" />
 <img src="../Images/day97c.gif" />
 <img src="../Images/day97cipad.png" />
