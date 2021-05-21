@@ -33,13 +33,16 @@ struct ContentView: View {
                         Text("\(resort.runs) runs")
                             .foregroundColor(.secondary)
                     }
+                    .frame(minWidth: 200, alignment: .leading)
                     .layoutPriority(1)
                     
                     if self.favourites.contains(resort) {
                         Spacer()
+                            
                         Image(systemName: "heart.fill")
                             .accessibility(label: Text("This is a favourite resort"))
                             .foregroundColor(.red)
+
                     }
                 }
             }
