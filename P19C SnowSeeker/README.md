@@ -5,6 +5,7 @@
 - Building a primary list of items.
 - Making NavigationView work in landscape.
 - Creating a secondary view for NavigationView.
+- Changing a view’s layout in response to size classes.
 
 <img src="../Images/day97c.png" />
 <img src="../Images/day97c.gif" />

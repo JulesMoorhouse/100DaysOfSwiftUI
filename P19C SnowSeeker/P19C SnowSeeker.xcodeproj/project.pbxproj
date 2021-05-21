@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A11FBE2657898000CD30D4 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A11FBD2657898000CD30D4 /* Facility.swift */; };
 		88CAEF732656D79700A2543F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF722656D79700A2543F /* AppDelegate.swift */; };
 		88CAEF752656D79700A2543F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF742656D79700A2543F /* SceneDelegate.swift */; };
 		88CAEF772656D79700A2543F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CAEF762656D79700A2543F /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88A11FBD2657898000CD30D4 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
 		88CAEF6F2656D79600A2543F /* P19C SnowSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P19C SnowSeeker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CAEF722656D79700A2543F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CAEF742656D79700A2543F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				88CAEF742656D79700A2543F /* SceneDelegate.swift */,
 				88CAEF982656E3B000A2543F /* SkiDetailsView.swift */,
 				88CAEF912656E03700A2543F /* WelcomeView.swift */,
+				88A11FBD2657898000CD30D4 /* Facility.swift */,
 			);
 			path = "P19C SnowSeeker";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				88CAEF732656D79700A2543F /* AppDelegate.swift in Sources */,
 				88CAEF922656E03700A2543F /* WelcomeView.swift in Sources */,
+				88A11FBE2657898000CD30D4 /* Facility.swift in Sources */,
 				88CAEF8F2656DA6A00A2543F /* Bundle-Decodeable.swift in Sources */,
 				88CAEF952656E1FB00A2543F /* ResortView.swift in Sources */,
 				88CAEF752656D79700A2543F /* SceneDelegate.swift in Sources */,
